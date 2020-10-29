@@ -7,23 +7,81 @@
 
 import UIKit
 
+enum SettingUseCase: CaseIterable {
+    case shareApp
+    case contactUs
+    case termOfUse
+    case privacy
+    
+    var data: SettingModel {
+        switch self {
+        case .shareApp: return SettingModel(image: UIImage(named: "ic_shareapp")!, title: "Share app")
+        case .contactUs: return SettingModel(image: UIImage(named: "ic_contactus")!, title: "Contact us")
+        case .termOfUse: return SettingModel(image: UIImage(named: "ic_termofuse")!, title: "Term of User")
+        case .privacy: return SettingModel(image: UIImage(named: "ic_privacy")!, title: "Privacy Policy")
+        }
+    }
+}
+
 class SettingVC: UIViewController {
 
+    @IBOutlet weak var premiumView: UIView!
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    lazy var settingData: [SettingModel] = {
+        return SettingUseCase.allCases.map({$0.data})
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupGesture()
+        collectionView.registerCell(type: SettingCell.self)
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        collectionView.showsVerticalScrollIndicator = false
+        collectionView.showsHorizontalScrollIndicator = false
+//        let layout = UICollectionViewLayout()
+//        collectionView.collectionViewLayout = layout
+    }
 
-        // Do any additional setup after loading the view.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func setupGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        premiumView.addGestureRecognizer(tapGesture)
     }
-    */
+    
+    @objc func handleTap(_ sender: Any) {
+        // open inapp
+    }
+}
 
+extension SettingVC: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (collectionView.frame.width-12)/2, height: 100)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:break
+        case 1:break
+        case 2:break
+        case 3:break
+        default:break
+        }
+    }
+}
+
+extension SettingVC: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return settingData.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueCell(type: SettingCell.self, indexPath: indexPath)
+        cell!.bindData(model: settingData[indexPath.row])
+        return cell!
+    }
 }
