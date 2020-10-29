@@ -26,8 +26,6 @@ class DiscoverVC: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        
     }
 }
 
@@ -52,7 +50,6 @@ extension DiscoverVC: UITableViewDataSource{
 
 extension DiscoverVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("--------------------------")
         switch indexPath.row {
         case 0:
             NotificationCenter.default.post(name: .goToAU, object: nil)

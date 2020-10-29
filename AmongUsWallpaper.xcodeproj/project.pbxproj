@@ -26,6 +26,8 @@
 		FC36D094254A6E1D00CC0726 /* PushVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC36D093254A6E1D00CC0726 /* PushVC.swift */; };
 		FC36D096254A74D300CC0726 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC36D095254A74D300CC0726 /* RoundView.swift */; };
 		FC36D098254A78F400CC0726 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC36D097254A78F400CC0726 /* Extension.swift */; };
+		FC763CE6254AD6EB00ECF9E8 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC763CE4254AD6EB00ECF9E8 /* IconCell.swift */; };
+		FC763CE7254AD6EB00ECF9E8 /* IconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC763CE5254AD6EB00ECF9E8 /* IconCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		FC36D093254A6E1D00CC0726 /* PushVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushVC.swift; sourceTree = "<group>"; };
 		FC36D095254A74D300CC0726 /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
 		FC36D097254A78F400CC0726 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		FC763CE4254AD6EB00ECF9E8 /* IconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
+		FC763CE5254AD6EB00ECF9E8 /* IconCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +117,7 @@
 		BB70EDC0254950CA00520E6E /* MainVC */ = {
 			isa = PBXGroup;
 			children = (
+				FC763CE3254AD6C400ECF9E8 /* cell */,
 				BB70EDBB254950A800520E6E /* AmongUsMain.storyboard */,
 				BB70EDC1254950EE00520E6E /* AmongUsMainVC.swift */,
 			);
@@ -178,6 +183,15 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		FC763CE3254AD6C400ECF9E8 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				FC763CE4254AD6EB00ECF9E8 /* IconCell.swift */,
+				FC763CE5254AD6EB00ECF9E8 /* IconCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -241,6 +255,7 @@
 				BB70EDE52549725200520E6E /* Setting.storyboard in Resources */,
 				BB70EDAF25494AC200520E6E /* LaunchScreen.storyboard in Resources */,
 				BB70EDAC25494AC200520E6E /* Assets.xcassets in Resources */,
+				FC763CE7254AD6EB00ECF9E8 /* IconCell.xib in Resources */,
 				BB70EDC92549637B00520E6E /* Home.storyboard in Resources */,
 				BB70EDD6254971C200520E6E /* Discover.storyboard in Resources */,
 			);
@@ -255,6 +270,7 @@
 			files = (
 				BB70EDDF2549721700520E6E /* MyWallpaperVC.swift in Sources */,
 				BB70EDE22549724400520E6E /* SettingVC.swift in Sources */,
+				FC763CE6254AD6EB00ECF9E8 /* IconCell.swift in Sources */,
 				BB70EDA325494AC200520E6E /* AppDelegate.swift in Sources */,
 				BB70EDCC2549639500520E6E /* HomeVC.swift in Sources */,
 				FC36D098254A78F400CC0726 /* Extension.swift in Sources */,

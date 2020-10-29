@@ -69,7 +69,6 @@ class HomeVC: UIViewController {
     
     
     @objc func goToAUScreen() {
-        print("======================")
         PushVC.shared.goToAmongUs(nav: self.navigationController)
     }
 }
