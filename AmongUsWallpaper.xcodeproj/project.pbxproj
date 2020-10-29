@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5FE81B738D22C546C794D815 /* Pods_AmongUsWallpaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B94D9656224524999D1FB20E /* Pods_AmongUsWallpaper.framework */; };
 		BB70EDA325494AC200520E6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70EDA225494AC200520E6E /* AppDelegate.swift */; };
 		BB70EDA525494AC200520E6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70EDA425494AC200520E6E /* SceneDelegate.swift */; };
 		BB70EDAC25494AC200520E6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB70EDAB25494AC200520E6E /* Assets.xcassets */; };
@@ -21,6 +22,9 @@
 		BB70EDDF2549721700520E6E /* MyWallpaperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70EDDE2549721700520E6E /* MyWallpaperVC.swift */; };
 		BB70EDE22549724400520E6E /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70EDE12549724400520E6E /* SettingVC.swift */; };
 		BB70EDE52549725200520E6E /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB70EDE42549725200520E6E /* Setting.storyboard */; };
+		DA249BDE254B45BE00CCD5FA /* SettingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA249BDC254B45BE00CCD5FA /* SettingCell.swift */; };
+		DA249BDF254B45BE00CCD5FA /* SettingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA249BDD254B45BE00CCD5FA /* SettingCell.xib */; };
+		DA249BE2254B470800CCD5FA /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA249BE1254B470800CCD5FA /* UICollectionView+Ext.swift */; };
 		FC36D090254A6C3C00CC0726 /* DiscoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC36D08E254A6C3C00CC0726 /* DiscoverCell.swift */; };
 		FC36D091254A6C3C00CC0726 /* DiscoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC36D08F254A6C3C00CC0726 /* DiscoverCell.xib */; };
 		FC36D094254A6E1D00CC0726 /* PushVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC36D093254A6E1D00CC0726 /* PushVC.swift */; };
@@ -31,6 +35,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2418CC0304A797A6153F9305 /* Pods-AmongUsWallpaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmongUsWallpaper.release.xcconfig"; path = "Target Support Files/Pods-AmongUsWallpaper/Pods-AmongUsWallpaper.release.xcconfig"; sourceTree = "<group>"; };
+		B94D9656224524999D1FB20E /* Pods_AmongUsWallpaper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmongUsWallpaper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B97345771E024939C39851A8 /* Pods-AmongUsWallpaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmongUsWallpaper.debug.xcconfig"; path = "Target Support Files/Pods-AmongUsWallpaper/Pods-AmongUsWallpaper.debug.xcconfig"; sourceTree = "<group>"; };
 		BB70ED9F25494AC200520E6E /* AmongUsWallpaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmongUsWallpaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB70EDA225494AC200520E6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB70EDA425494AC200520E6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -47,6 +54,9 @@
 		BB70EDDE2549721700520E6E /* MyWallpaperVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWallpaperVC.swift; sourceTree = "<group>"; };
 		BB70EDE12549724400520E6E /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		BB70EDE42549725200520E6E /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		DA249BDC254B45BE00CCD5FA /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
+		DA249BDD254B45BE00CCD5FA /* SettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
+		DA249BE1254B470800CCD5FA /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
 		FC36D08E254A6C3C00CC0726 /* DiscoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCell.swift; sourceTree = "<group>"; };
 		FC36D08F254A6C3C00CC0726 /* DiscoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverCell.xib; sourceTree = "<group>"; };
 		FC36D093254A6E1D00CC0726 /* PushVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushVC.swift; sourceTree = "<group>"; };
@@ -61,17 +71,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5FE81B738D22C546C794D815 /* Pods_AmongUsWallpaper.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C671262D389DF5BDD84346B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B94D9656224524999D1FB20E /* Pods_AmongUsWallpaper.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BB70ED9625494AC200520E6E = {
 			isa = PBXGroup;
 			children = (
 				BB70EDA125494AC200520E6E /* AmongUsWallpaper */,
 				BB70EDA025494AC200520E6E /* Products */,
+				D672F4E1CCAFFE2F340FA43B /* Pods */,
+				7C671262D389DF5BDD84346B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -88,6 +109,7 @@
 			children = (
 				BB70EDB725494D2A00520E6E /* Scene */,
 				FC36D092254A6E0900CC0726 /* Utilities */,
+				DA249BDA254B2BC600CCD5FA /* Extension */,
 				BB70EDA225494AC200520E6E /* AppDelegate.swift */,
 				BB70EDA425494AC200520E6E /* SceneDelegate.swift */,
 				BB70EDAB25494AC200520E6E /* Assets.xcassets */,
@@ -160,8 +182,27 @@
 			children = (
 				BB70EDE12549724400520E6E /* SettingVC.swift */,
 				BB70EDE42549725200520E6E /* Setting.storyboard */,
+				DA249BDC254B45BE00CCD5FA /* SettingCell.swift */,
+				DA249BDD254B45BE00CCD5FA /* SettingCell.xib */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		D672F4E1CCAFFE2F340FA43B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B97345771E024939C39851A8 /* Pods-AmongUsWallpaper.debug.xcconfig */,
+				2418CC0304A797A6153F9305 /* Pods-AmongUsWallpaper.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		DA249BDA254B2BC600CCD5FA /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DA249BE1254B470800CCD5FA /* UICollectionView+Ext.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		FC36D087254A676300CC0726 /* cell */ = {
@@ -199,9 +240,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB70EDB325494AC200520E6E /* Build configuration list for PBXNativeTarget "AmongUsWallpaper" */;
 			buildPhases = (
+				34A4F016DD726F45844A177A /* [CP] Check Pods Manifest.lock */,
 				BB70ED9B25494AC200520E6E /* Sources */,
 				BB70ED9C25494AC200520E6E /* Frameworks */,
 				BB70ED9D25494AC200520E6E /* Resources */,
+				F1B2E43154D6400150FBACA4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -255,6 +298,7 @@
 				BB70EDE52549725200520E6E /* Setting.storyboard in Resources */,
 				BB70EDAF25494AC200520E6E /* LaunchScreen.storyboard in Resources */,
 				BB70EDAC25494AC200520E6E /* Assets.xcassets in Resources */,
+				DA249BDF254B45BE00CCD5FA /* SettingCell.xib in Resources */,
 				FC763CE7254AD6EB00ECF9E8 /* IconCell.xib in Resources */,
 				BB70EDC92549637B00520E6E /* Home.storyboard in Resources */,
 				BB70EDD6254971C200520E6E /* Discover.storyboard in Resources */,
@@ -262,6 +306,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		34A4F016DD726F45844A177A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AmongUsWallpaper-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F1B2E43154D6400150FBACA4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AmongUsWallpaper/Pods-AmongUsWallpaper-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-AmongUsWallpaper/Pods-AmongUsWallpaper-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AmongUsWallpaper/Pods-AmongUsWallpaper-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		BB70ED9B25494AC200520E6E /* Sources */ = {
@@ -275,8 +361,10 @@
 				BB70EDCC2549639500520E6E /* HomeVC.swift in Sources */,
 				FC36D098254A78F400CC0726 /* Extension.swift in Sources */,
 				FC36D090254A6C3C00CC0726 /* DiscoverCell.swift in Sources */,
+				DA249BDE254B45BE00CCD5FA /* SettingCell.swift in Sources */,
 				BB70EDA525494AC200520E6E /* SceneDelegate.swift in Sources */,
 				FC36D094254A6E1D00CC0726 /* PushVC.swift in Sources */,
+				DA249BE2254B470800CCD5FA /* UICollectionView+Ext.swift in Sources */,
 				BB70EDC2254950EE00520E6E /* AmongUsMainVC.swift in Sources */,
 				BB70EDD9254971E300520E6E /* DiscoverVC.swift in Sources */,
 				FC36D096254A74D300CC0726 /* RoundView.swift in Sources */,
@@ -415,6 +503,7 @@
 		};
 		BB70EDB425494AC200520E6E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B97345771E024939C39851A8 /* Pods-AmongUsWallpaper.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -435,6 +524,7 @@
 		};
 		BB70EDB525494AC200520E6E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2418CC0304A797A6153F9305 /* Pods-AmongUsWallpaper.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
