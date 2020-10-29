@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8749249E254B3C6000FDCECA /* VideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8749249D254B3C6000FDCECA /* VideoEditor.swift */; };
 		BB70EDA325494AC200520E6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70EDA225494AC200520E6E /* AppDelegate.swift */; };
 		BB70EDA525494AC200520E6E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70EDA425494AC200520E6E /* SceneDelegate.swift */; };
 		BB70EDAC25494AC200520E6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB70EDAB25494AC200520E6E /* Assets.xcassets */; };
@@ -34,6 +35,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8749249B254B3BE100FDCECA /* 8.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8.mp4; sourceTree = "<group>"; };
+		8749249D254B3C6000FDCECA /* VideoEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEditor.swift; sourceTree = "<group>"; };
 		BB70ED9F25494AC200520E6E /* AmongUsWallpaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmongUsWallpaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB70EDA225494AC200520E6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BB70EDA425494AC200520E6E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -73,6 +76,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8749249A254B3BCA00FDCECA /* Video */ = {
+			isa = PBXGroup;
+			children = (
+				8749249B254B3BE100FDCECA /* 8.mp4 */,
+			);
+			path = Video;
+			sourceTree = "<group>";
+		};
 		BB70ED9625494AC200520E6E = {
 			isa = PBXGroup;
 			children = (
@@ -117,6 +128,7 @@
 		BB70EDBE254950B000520E6E /* Among us */ = {
 			isa = PBXGroup;
 			children = (
+				8749249A254B3BCA00FDCECA /* Video */,
 				BB70EDC0254950CA00520E6E /* MainVC */,
 			);
 			path = "Among us";
@@ -201,6 +213,7 @@
 		FC36D092254A6E0900CC0726 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				8749249D254B3C6000FDCECA /* VideoEditor.swift */,
 				FC36D095254A74D300CC0726 /* RoundView.swift */,
 				FC36D093254A6E1D00CC0726 /* PushVC.swift */,
 				FC36D097254A78F400CC0726 /* Extension.swift */,
@@ -298,6 +311,7 @@
 				BB70EDE22549724400520E6E /* SettingVC.swift in Sources */,
 				FC763CE6254AD6EB00ECF9E8 /* IconCell.swift in Sources */,
 				BB70EDA325494AC200520E6E /* AppDelegate.swift in Sources */,
+				8749249E254B3C6000FDCECA /* VideoEditor.swift in Sources */,
 				BB70EDCC2549639500520E6E /* HomeVC.swift in Sources */,
 				FC36D098254A78F400CC0726 /* Extension.swift in Sources */,
 				FC36D090254A6C3C00CC0726 /* DiscoverCell.swift in Sources */,
