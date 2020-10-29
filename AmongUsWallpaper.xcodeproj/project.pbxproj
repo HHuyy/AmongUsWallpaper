@@ -15,13 +15,17 @@
 		BB70EDC2254950EE00520E6E /* AmongUsMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70EDC1254950EE00520E6E /* AmongUsMainVC.swift */; };
 		BB70EDC92549637B00520E6E /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB70EDC82549637B00520E6E /* Home.storyboard */; };
 		BB70EDCC2549639500520E6E /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70EDCB2549639500520E6E /* HomeVC.swift */; };
-		BB70EDCF25496BE900520E6E /* CustomTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70EDCE25496BE900520E6E /* CustomTabBarController.swift */; };
-		BB70EDD6254971C200520E6E /* Dicover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB70EDD5254971C200520E6E /* Dicover.storyboard */; };
+		BB70EDD6254971C200520E6E /* Discover.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB70EDD5254971C200520E6E /* Discover.storyboard */; };
 		BB70EDD9254971E300520E6E /* DiscoverVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70EDD8254971E300520E6E /* DiscoverVC.swift */; };
 		BB70EDDC2549720500520E6E /* MyWallpaper.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB70EDDB2549720500520E6E /* MyWallpaper.storyboard */; };
 		BB70EDDF2549721700520E6E /* MyWallpaperVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70EDDE2549721700520E6E /* MyWallpaperVC.swift */; };
 		BB70EDE22549724400520E6E /* SettingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70EDE12549724400520E6E /* SettingVC.swift */; };
 		BB70EDE52549725200520E6E /* Setting.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB70EDE42549725200520E6E /* Setting.storyboard */; };
+		FC36D090254A6C3C00CC0726 /* DiscoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC36D08E254A6C3C00CC0726 /* DiscoverCell.swift */; };
+		FC36D091254A6C3C00CC0726 /* DiscoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC36D08F254A6C3C00CC0726 /* DiscoverCell.xib */; };
+		FC36D094254A6E1D00CC0726 /* PushVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC36D093254A6E1D00CC0726 /* PushVC.swift */; };
+		FC36D096254A74D300CC0726 /* RoundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC36D095254A74D300CC0726 /* RoundView.swift */; };
+		FC36D098254A78F400CC0726 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC36D097254A78F400CC0726 /* Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,13 +39,17 @@
 		BB70EDC1254950EE00520E6E /* AmongUsMainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmongUsMainVC.swift; sourceTree = "<group>"; };
 		BB70EDC82549637B00520E6E /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		BB70EDCB2549639500520E6E /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
-		BB70EDCE25496BE900520E6E /* CustomTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBarController.swift; sourceTree = "<group>"; };
-		BB70EDD5254971C200520E6E /* Dicover.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Dicover.storyboard; sourceTree = "<group>"; };
+		BB70EDD5254971C200520E6E /* Discover.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Discover.storyboard; sourceTree = "<group>"; };
 		BB70EDD8254971E300520E6E /* DiscoverVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverVC.swift; sourceTree = "<group>"; };
 		BB70EDDB2549720500520E6E /* MyWallpaper.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyWallpaper.storyboard; sourceTree = "<group>"; };
 		BB70EDDE2549721700520E6E /* MyWallpaperVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWallpaperVC.swift; sourceTree = "<group>"; };
 		BB70EDE12549724400520E6E /* SettingVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingVC.swift; sourceTree = "<group>"; };
 		BB70EDE42549725200520E6E /* Setting.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Setting.storyboard; sourceTree = "<group>"; };
+		FC36D08E254A6C3C00CC0726 /* DiscoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCell.swift; sourceTree = "<group>"; };
+		FC36D08F254A6C3C00CC0726 /* DiscoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverCell.xib; sourceTree = "<group>"; };
+		FC36D093254A6E1D00CC0726 /* PushVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushVC.swift; sourceTree = "<group>"; };
+		FC36D095254A74D300CC0726 /* RoundView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundView.swift; sourceTree = "<group>"; };
+		FC36D097254A78F400CC0726 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,8 +83,8 @@
 			isa = PBXGroup;
 			children = (
 				BB70EDB725494D2A00520E6E /* Scene */,
+				FC36D092254A6E0900CC0726 /* Utilities */,
 				BB70EDA225494AC200520E6E /* AppDelegate.swift */,
-				BB70EDCE25496BE900520E6E /* CustomTabBarController.swift */,
 				BB70EDA425494AC200520E6E /* SceneDelegate.swift */,
 				BB70EDAB25494AC200520E6E /* Assets.xcassets */,
 				BB70EDAD25494AC200520E6E /* LaunchScreen.storyboard */,
@@ -126,7 +134,8 @@
 		BB70EDD125496FF600520E6E /* Discover */ = {
 			isa = PBXGroup;
 			children = (
-				BB70EDD5254971C200520E6E /* Dicover.storyboard */,
+				FC36D087254A676300CC0726 /* cell */,
+				BB70EDD5254971C200520E6E /* Discover.storyboard */,
 				BB70EDD8254971E300520E6E /* DiscoverVC.swift */,
 			);
 			path = Discover;
@@ -148,6 +157,25 @@
 				BB70EDE42549725200520E6E /* Setting.storyboard */,
 			);
 			path = Setting;
+			sourceTree = "<group>";
+		};
+		FC36D087254A676300CC0726 /* cell */ = {
+			isa = PBXGroup;
+			children = (
+				FC36D08E254A6C3C00CC0726 /* DiscoverCell.swift */,
+				FC36D08F254A6C3C00CC0726 /* DiscoverCell.xib */,
+			);
+			path = cell;
+			sourceTree = "<group>";
+		};
+		FC36D092254A6E0900CC0726 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				FC36D095254A74D300CC0726 /* RoundView.swift */,
+				FC36D093254A6E1D00CC0726 /* PushVC.swift */,
+				FC36D097254A78F400CC0726 /* Extension.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -207,13 +235,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FC36D091254A6C3C00CC0726 /* DiscoverCell.xib in Resources */,
 				BB70EDBC254950A800520E6E /* AmongUsMain.storyboard in Resources */,
 				BB70EDDC2549720500520E6E /* MyWallpaper.storyboard in Resources */,
 				BB70EDE52549725200520E6E /* Setting.storyboard in Resources */,
 				BB70EDAF25494AC200520E6E /* LaunchScreen.storyboard in Resources */,
 				BB70EDAC25494AC200520E6E /* Assets.xcassets in Resources */,
 				BB70EDC92549637B00520E6E /* Home.storyboard in Resources */,
-				BB70EDD6254971C200520E6E /* Dicover.storyboard in Resources */,
+				BB70EDD6254971C200520E6E /* Discover.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,10 +257,13 @@
 				BB70EDE22549724400520E6E /* SettingVC.swift in Sources */,
 				BB70EDA325494AC200520E6E /* AppDelegate.swift in Sources */,
 				BB70EDCC2549639500520E6E /* HomeVC.swift in Sources */,
-				BB70EDCF25496BE900520E6E /* CustomTabBarController.swift in Sources */,
+				FC36D098254A78F400CC0726 /* Extension.swift in Sources */,
+				FC36D090254A6C3C00CC0726 /* DiscoverCell.swift in Sources */,
 				BB70EDA525494AC200520E6E /* SceneDelegate.swift in Sources */,
+				FC36D094254A6E1D00CC0726 /* PushVC.swift in Sources */,
 				BB70EDC2254950EE00520E6E /* AmongUsMainVC.swift in Sources */,
 				BB70EDD9254971E300520E6E /* DiscoverVC.swift in Sources */,
+				FC36D096254A74D300CC0726 /* RoundView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,6 +405,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RN7Y92Z642;
 				INFOPLIST_FILE = AmongUsWallpaper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +413,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SwiftifyTeam.AmongUsWallpaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -392,6 +425,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = RN7Y92Z642;
 				INFOPLIST_FILE = AmongUsWallpaper/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -399,7 +433,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = SwiftifyTeam.AmongUsWallpaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

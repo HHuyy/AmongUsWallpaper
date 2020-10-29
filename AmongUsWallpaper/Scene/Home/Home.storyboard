@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2XB-0H-oDN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wzm-LG-NTW">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,17 +16,21 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZK-S5-OIA" userLabel="FakeUIView">
-                                <rect key="frame" x="0.0" y="814" width="414" height="82"/>
+                                <rect key="frame" x="0.0" y="818.5" width="414" height="77.5"/>
                                 <color key="backgroundColor" red="0.1215686275" green="0.1450980392" blue="0.18039215689999999" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TcW-CV-BTx" userLabel="Main View">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dqC-Sh-G3b">
+                                        <rect key="frame" x="0.0" y="65.5" width="414" height="675"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rte-R7-eF9" userLabel="Title View">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="65.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wUy-L7-adM">
-                                                <rect key="frame" x="183" y="4.5" width="48.5" height="31.5"/>
+                                                <rect key="frame" x="182.5" y="0.5" width="49" height="31.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="26"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -39,18 +43,21 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XtA-ky-xdR" userLabel="Tab View">
-                                        <rect key="frame" x="0.0" y="736" width="414" height="82"/>
+                                        <rect key="frame" x="0.0" y="740.5" width="414" height="77.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="gvx-DC-XzS">
-                                                <rect key="frame" x="0.0" y="0.0" width="414" height="82"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="77.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bUU-yk-7Ek">
-                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="82"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="77.5"/>
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m6d-Tv-Ec9">
-                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="82"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="77.5"/>
                                                                 <state key="normal" image="Home-tab-disc-icon-OFF"/>
                                                                 <state key="selected" image="Home-tab-disc-icon-ON"/>
+                                                                <connections>
+                                                                    <action selector="didPressTab:" destination="2XB-0H-oDN" eventType="touchUpInside" id="JRU-75-Zki"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -62,12 +69,15 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1U0-Lm-PbJ">
-                                                        <rect key="frame" x="138" y="0.0" width="138" height="82"/>
+                                                        <rect key="frame" x="138" y="0.0" width="138" height="77.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3NR-M6-50P">
-                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="82"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="77.5"/>
                                                                 <state key="normal" image="Home-tab-wallp-icon-OFF"/>
                                                                 <state key="selected" image="Home-tab-wallp-icon-ON"/>
+                                                                <connections>
+                                                                    <action selector="didPressTab:" destination="2XB-0H-oDN" eventType="touchUpInside" id="2Hm-Ly-i0T"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -79,12 +89,15 @@
                                                         </constraints>
                                                     </view>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8e5-56-HhO">
-                                                        <rect key="frame" x="276" y="0.0" width="138" height="82"/>
+                                                        <rect key="frame" x="276" y="0.0" width="138" height="77.5"/>
                                                         <subviews>
                                                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rsh-W0-Giq">
-                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="82"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="138" height="77.5"/>
                                                                 <state key="normal" image="Home-tab-setting-icon-OFF"/>
                                                                 <state key="selected" image="Home-tab-setting-icon-ON"/>
+                                                                <connections>
+                                                                    <action selector="didPressTab:" destination="2XB-0H-oDN" eventType="touchUpInside" id="Q9H-Xw-Lxs"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -109,18 +122,21 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="rte-R7-eF9" firstAttribute="height" secondItem="TcW-CV-BTx" secondAttribute="height" multiplier="0.1" id="Qa8-1s-BP2"/>
+                                    <constraint firstAttribute="trailing" secondItem="dqC-Sh-G3b" secondAttribute="trailing" id="82p-8P-EMl"/>
+                                    <constraint firstItem="rte-R7-eF9" firstAttribute="height" secondItem="TcW-CV-BTx" secondAttribute="height" multiplier="0.08" id="Qa8-1s-BP2"/>
                                     <constraint firstAttribute="bottom" secondItem="XtA-ky-xdR" secondAttribute="bottom" id="WG7-yP-3C9"/>
-                                    <constraint firstItem="XtA-ky-xdR" firstAttribute="height" secondItem="TcW-CV-BTx" secondAttribute="height" multiplier="0.1" id="gYw-Uu-Jz2"/>
+                                    <constraint firstItem="XtA-ky-xdR" firstAttribute="height" secondItem="TcW-CV-BTx" secondAttribute="height" multiplier="0.095" id="gYw-Uu-Jz2"/>
                                     <constraint firstAttribute="trailing" secondItem="rte-R7-eF9" secondAttribute="trailing" id="mu6-Ja-19u"/>
                                     <constraint firstItem="rte-R7-eF9" firstAttribute="leading" secondItem="TcW-CV-BTx" secondAttribute="leading" id="sqa-2J-YdP"/>
                                     <constraint firstAttribute="trailing" secondItem="XtA-ky-xdR" secondAttribute="trailing" id="usd-wE-7RY"/>
+                                    <constraint firstItem="dqC-Sh-G3b" firstAttribute="top" secondItem="rte-R7-eF9" secondAttribute="bottom" id="uxo-xz-PNl"/>
+                                    <constraint firstItem="dqC-Sh-G3b" firstAttribute="leading" secondItem="TcW-CV-BTx" secondAttribute="leading" id="w4P-Ga-zLX"/>
                                     <constraint firstItem="XtA-ky-xdR" firstAttribute="leading" secondItem="TcW-CV-BTx" secondAttribute="leading" id="wS4-nt-pPb"/>
+                                    <constraint firstItem="XtA-ky-xdR" firstAttribute="top" secondItem="dqC-Sh-G3b" secondAttribute="bottom" id="yRN-kQ-NeK"/>
                                     <constraint firstItem="rte-R7-eF9" firstAttribute="top" secondItem="TcW-CV-BTx" secondAttribute="top" id="ygW-O6-dsg"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="sgA-MH-cPO"/>
                         <color key="backgroundColor" red="0.047058823529411764" green="0.062745098039215685" blue="0.086274509803921567" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="aZK-S5-OIA" firstAttribute="height" secondItem="XtA-ky-xdR" secondAttribute="height" id="5Sy-RK-Up1"/>
@@ -132,14 +148,35 @@
                             <constraint firstAttribute="bottom" secondItem="aZK-S5-OIA" secondAttribute="bottom" id="c5j-O9-pNl"/>
                             <constraint firstItem="TcW-CV-BTx" firstAttribute="top" secondItem="sgA-MH-cPO" secondAttribute="top" id="d0H-3Q-uP2"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="sgA-MH-cPO"/>
                     </view>
+                    <navigationItem key="navigationItem" id="ETK-OO-c0f"/>
                     <connections>
+                        <outlet property="contentView" destination="dqC-Sh-G3b" id="nrP-wO-G1t"/>
+                        <outlet property="titleLabel" destination="wUy-L7-adM" id="GcO-VV-EmF"/>
                         <outletCollection property="tabButtons" destination="m6d-Tv-Ec9" collectionClass="NSMutableArray" id="2jw-qq-DUd"/>
                         <outletCollection property="tabButtons" destination="3NR-M6-50P" collectionClass="NSMutableArray" id="NZS-hB-4by"/>
                         <outletCollection property="tabButtons" destination="Rsh-W0-Giq" collectionClass="NSMutableArray" id="Mik-f4-mPW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FQF-cD-P78" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="528.98550724637687" y="162.72321428571428"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Ski-qO-Nxm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="wzm-LG-NTW" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ZR6-Ew-O5U">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2XB-0H-oDN" kind="relationship" relationship="rootViewController" id="HDM-76-Pxv"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3qe-NW-Hlc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-381.15942028985512" y="162.72321428571428"/>
         </scene>

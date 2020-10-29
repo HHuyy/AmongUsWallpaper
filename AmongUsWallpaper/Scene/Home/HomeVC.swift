@@ -10,6 +10,9 @@ import UIKit
 class HomeVC: UIViewController {
     
     @IBOutlet var tabButtons: [UIButton]!
+    @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var titleLabel: UILabel!
+    
     
     var discoverVC: UIViewController!
     var myWallpaperVC: UIViewController!
@@ -23,14 +26,50 @@ class HomeVC: UIViewController {
     }
 
     func setupUI() {
-        let dicoverSB = UIStoryboard(name: "Dicover", bundle: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(goToAUScreen), name: .goToAU, object: nil)
+        let dicoverSB = UIStoryboard(name: "Discover", bundle: nil)
         let myWallpaperSB = UIStoryboard(name: "MyWallpaper", bundle: nil)
         let settingSB = UIStoryboard(name: "Setting", bundle: nil)
         discoverVC = dicoverSB.instantiateInitialViewController()
         myWallpaperVC = myWallpaperSB.instantiateInitialViewController()
         settingVC = settingSB.instantiateInitialViewController()
         viewControllers = [discoverVC, myWallpaperVC, settingVC]
+        tabButtons[selectedIndex].isSelected = true
+        didPressTab(tabButtons[selectedIndex])
+    }
+    
+    @IBAction func didPressTab(_ sender: UIButton) {
+        let previousIndex = selectedIndex
+        selectedIndex = sender.tag
+        tabButtons[previousIndex].isSelected = false
+        
+        switch selectedIndex {
+        case 0:
+            titleLabel.text = "Discover"
+        case 1:
+            titleLabel.text = "My Wallpaper"
+        case 2:
+            titleLabel.text = "Setting"
+        default:
+            break
+        }
+        
+        let previousVC = viewControllers[previousIndex]
+        previousVC.willMove(toParent: nil)
+        previousVC.view.removeFromSuperview()
+        previousVC.removeFromParent()
+        
+        sender.isSelected = true
+        let vc = viewControllers[selectedIndex]
+        addChild(vc) //Calls the viewWillAppear method of the vc
+        vc.view.frame = contentView.bounds
+        contentView.addSubview(vc.view)
+        vc.didMove(toParent: self) //Call the viewDidAppear method of the vc
     }
     
     
+    @objc func goToAUScreen() {
+        print("======================")
+        PushVC.shared.goToAmongUs(nav: self.navigationController)
+    }
 }

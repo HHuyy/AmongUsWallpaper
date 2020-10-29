@@ -12,5 +12,14 @@ class AmongUsMainVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    @IBAction func tapBackButton(_ sender: Any) {
+        print("++++++++++++++++")
+        PushVC.shared.goToHome(nav: self.navigationController)
+    }
+    
 }
