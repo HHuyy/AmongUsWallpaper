@@ -15,7 +15,7 @@ class RoundUIView: UIView {
     @IBInspectable var fullRound: Bool = false {
         didSet {
             if fullRound == true {
-                self.layer.cornerRadius = (self.frame.height / 2) - 3
+                self.layer.cornerRadius = (self.frame.height / 2)
             } else {
                 self.layer.cornerRadius = cornerRadius
             }

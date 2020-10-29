@@ -8,7 +8,11 @@
 import UIKit
 
 class IconCell: UICollectionViewCell {
-
+    
+    @IBOutlet weak var imageIcon: UIImageView!
+    
+    @IBOutlet weak var bottomView: RoundUIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

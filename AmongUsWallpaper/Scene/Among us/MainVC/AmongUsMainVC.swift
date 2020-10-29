@@ -7,6 +7,11 @@
 
 import UIKit
 
+struct AUIconCellModel {
+    var imageName: String
+    var isSelected: Bool
+}
+
 class AmongUsMainVC: UIViewController {
 
     @IBOutlet weak var iconButton: UIButton!
@@ -15,12 +20,21 @@ class AmongUsMainVC: UIViewController {
     @IBOutlet weak var iconContainView: UIView!
     @IBOutlet weak var fontContainView: UIView!
     @IBOutlet weak var backgroundContainView: UIView!
-    
     @IBOutlet weak var iconCollectionView: UICollectionView!
+    
+    private let editor = VideoEditor()
+    var iconArray: [String]! = []
+    var selectedIndex = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.iconCollectionView.register(UINib.init(nibName: "DiscoverCell", bundle: .main), forCellWithReuseIdentifier: "IconCell")
+        self.iconCollectionView.register(UINib.init(nibName: "IconCell", bundle: .main), forCellWithReuseIdentifier: "IconCell")
+        var i = 1
+        while i <= 41 {
+            iconArray?.append("icon-\(i)")
+            i += 1
+            iconCollectionView.reloadData()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,6 +60,11 @@ class AmongUsMainVC: UIViewController {
         self.navigationController?.popViewController(animated: false)
     }
     
+    @IBAction func tapPreviewButton(_ sender: Any) {
+//        work()
+    }
+    
+    
     @IBAction func tapTabButtons(_ sender: UIButton) {
         iconButton.isSelected = false
         fontButton.isSelected = false
@@ -64,30 +83,46 @@ class AmongUsMainVC: UIViewController {
         }
     }
     
+    func work() {
+        if let urlPath = Bundle.main.url(forResource: "8", withExtension: "mp4") {
+            self.editor.makeBirthdayCard(fromVideoAt: urlPath, forName: "") { (exportedURL) in
+                guard let exportedURL = exportedURL else {
+                  return
+                }
+            }
+        }
+    }
+    
 }
 
 extension AmongUsMainVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        let scaledMulti = CGFloat(UIScreen.main.bounds.width / 375.0)
-        return CGSize(width: 100, height: 28)
+        return CGSize(width: 50, height: collectionView.frame.height)
     }
 }
 
 extension AmongUsMainVC: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        5
+        return iconArray.count
+        
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IconCell", for: indexPath) as? IconCell else {
             return UICollectionViewCell()
         }
-        
+        cell.imageIcon.image = UIImage(named: iconArray[indexPath.row])
+        if indexPath.row == selectedIndex {
+            cell.bottomView.isHidden = false
+        } else {
+            cell.bottomView.isHidden = true
+        }
         return cell
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        <#code#>
+        selectedIndex = indexPath.row
+        collectionView.reloadData()
     }
 
 }
