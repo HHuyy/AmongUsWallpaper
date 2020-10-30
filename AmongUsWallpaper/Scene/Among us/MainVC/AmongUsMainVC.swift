@@ -23,6 +23,8 @@ class AmongUsMainVC: UIViewController {
     @IBOutlet weak var iconCollectionView: UICollectionView!
     
     private let editor = VideoEditor()
+    var pickedPhoto: UIImage?
+    var pickedVideoURL: URL?
     var iconArray: [String]! = []
     var selectedIndex = 0
     
@@ -89,10 +91,14 @@ class AmongUsMainVC: UIViewController {
                 guard let exportedURL = exportedURL else {
                   return
                 }
+                
             }
         }
     }
     
+    func ss() {
+        
+    }
 }
 
 extension AmongUsMainVC: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
