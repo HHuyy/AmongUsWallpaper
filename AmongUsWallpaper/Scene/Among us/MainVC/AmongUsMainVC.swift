@@ -21,9 +21,10 @@ class AmongUsMainVC: UIViewController {
     @IBOutlet weak var fontContainView: UIView!
     @IBOutlet weak var backgroundContainView: UIView!
     @IBOutlet weak var iconCollectionView: UICollectionView!
+    @IBOutlet weak var progressView: UIProgressView!
     
     private let editor = VideoEditor()
-    var pickedPhoto: UIImage?
+    var pickedPhoto: URL?
     var pickedVideoURL: URL?
     var iconArray: [String]! = []
     var selectedIndex = 0
@@ -49,6 +50,7 @@ class AmongUsMainVC: UIViewController {
     }
     
     func setupUI() {
+        progressView.isHidden = true
         iconButton.isSelected = true
         fontButton.isSelected = false
         backgroundButton.isSelected = false
@@ -63,7 +65,7 @@ class AmongUsMainVC: UIViewController {
     }
     
     @IBAction func tapPreviewButton(_ sender: Any) {
-//        work()
+//        makeVideo()
     }
     
     @IBAction func tapTabButtons(_ sender: UIButton) {
@@ -84,19 +86,29 @@ class AmongUsMainVC: UIViewController {
         }
     }
     
-    func work() {
+    func makeVideo() {
         if let urlPath = Bundle.main.url(forResource: "8", withExtension: "mp4") {
             self.editor.makeBirthdayCard(fromVideoAt: urlPath, forName: "") { (exportedURL) in
                 guard let exportedURL = exportedURL else {
                   return
                 }
-                
+                self.pickedVideoURL = exportedURL
+                self.generateLivePhoto()
             }
         }
     }
     
-    func ss() {
+    func generateLivePhoto() {
         
+        if let urlPath = Bundle.main.url(forResource: "background-8", withExtension: "pdf") {
+            pickedPhoto = urlPath
+        } else {return}
+        LivePhoto.generate(from: pickedPhoto!, videoURL: pickedVideoURL!, progress: { (percent) in
+            self.progressView.isHidden = false
+            self.progressView.progress = Float(percent)
+        }) { (livePhoto, resources) in
+            
+        }
     }
 }
 

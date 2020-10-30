@@ -22,7 +22,9 @@
 		04F38687254BF00000EE7EE0 /* 2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 04F3867F254BF00000EE7EE0 /* 2.mp4 */; };
 		0F499FEA5433AA52D5964A1A /* Pods_AmongUsWallpaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6F38BCFB6A544D3B00B921 /* Pods_AmongUsWallpaper.framework */; };
 		8749249E254B3C6000FDCECA /* VideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8749249D254B3C6000FDCECA /* VideoEditor.swift */; };
+		88003E78E73DD1C70BDE1C83 /* Pods_AmongUsWallpaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DB30827BC60B3F80C2CCC468 /* Pods_AmongUsWallpaper.framework */; };
 		BB70EDA325494AC200520E6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70EDA225494AC200520E6E /* AppDelegate.swift */; };
+		BB70EDAC25494AC200520E6E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB70EDAB25494AC200520E6E /* Assets.xcassets */; };
 		BB70EDAF25494AC200520E6E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB70EDAD25494AC200520E6E /* LaunchScreen.storyboard */; };
 		BB70EDBC254950A800520E6E /* AmongUsMain.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB70EDBB254950A800520E6E /* AmongUsMain.storyboard */; };
 		BB70EDC2254950EE00520E6E /* AmongUsMainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70EDC1254950EE00520E6E /* AmongUsMainVC.swift */; };
@@ -44,14 +46,15 @@
 		FC36D098254A78F400CC0726 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC36D097254A78F400CC0726 /* Extension.swift */; };
 		FC763CE6254AD6EB00ECF9E8 /* IconCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC763CE4254AD6EB00ECF9E8 /* IconCell.swift */; };
 		FC763CE7254AD6EB00ECF9E8 /* IconCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC763CE5254AD6EB00ECF9E8 /* IconCell.xib */; };
-		FC844054254C1B470080148E /* LivePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC844053254C1B460080148E /* LivePhoto.swift */; };
-		FC84405A254C227F0080148E /* Player.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FC844059254C227F0080148E /* Player.storyboard */; };
-		FC84405C254C22990080148E /* PlayerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC84405B254C22990080148E /* PlayerVC.swift */; };
-		FC844060254C24350080148E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FC84405F254C24350080148E /* Assets.xcassets */; };
-		FC844062254C249C0080148E /* background-8.pdf in Resources */ = {isa = PBXBuildFile; fileRef = FC844061254C249C0080148E /* background-8.pdf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
+		719A4A08EB3C025C523857FA /* Pods-AmongUsWallpaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmongUsWallpaper.debug.xcconfig"; path = "Target Support Files/Pods-AmongUsWallpaper/Pods-AmongUsWallpaper.debug.xcconfig"; sourceTree = "<group>"; };
+		8749249B254B3BE100FDCECA /* 8.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8.mp4; sourceTree = "<group>"; };
+		8749249D254B3C6000FDCECA /* VideoEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEditor.swift; sourceTree = "<group>"; };
+		A06E85918E91295C26686429 /* Pods-AmongUsWallpaper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmongUsWallpaper.release.xcconfig"; path = "Target Support Files/Pods-AmongUsWallpaper/Pods-AmongUsWallpaper.release.xcconfig"; sourceTree = "<group>"; };
+=======
 		044ACAB0254BCC4A00DD8AD6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		044ACAD8254BCEFA00DD8AD6 /* Storyboarded.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storyboarded.swift; sourceTree = "<group>"; };
 		044ACB09254BD06F00DD8AD6 /* BaseNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigation.swift; sourceTree = "<group>"; };
@@ -69,8 +72,10 @@
 		8749249D254B3C6000FDCECA /* VideoEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEditor.swift; sourceTree = "<group>"; };
 		932D0EE6C2CCED89BAA48D90 /* Pods-AmongUsWallpaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmongUsWallpaper.debug.xcconfig"; path = "Target Support Files/Pods-AmongUsWallpaper/Pods-AmongUsWallpaper.debug.xcconfig"; sourceTree = "<group>"; };
 		9A6F38BCFB6A544D3B00B921 /* Pods_AmongUsWallpaper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmongUsWallpaper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+>>>>>>> b65c3758920d228b4c39cbf84acce62b8e3900aa
 		BB70ED9F25494AC200520E6E /* AmongUsWallpaper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AmongUsWallpaper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB70EDA225494AC200520E6E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		BB70EDAB25494AC200520E6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BB70EDAE25494AC200520E6E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BB70EDB025494AC200520E6E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BB70EDBB254950A800520E6E /* AmongUsMain.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AmongUsMain.storyboard; sourceTree = "<group>"; };
@@ -87,6 +92,7 @@
 		DA249BDC254B45BE00CCD5FA /* SettingCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCell.swift; sourceTree = "<group>"; };
 		DA249BDD254B45BE00CCD5FA /* SettingCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingCell.xib; sourceTree = "<group>"; };
 		DA249BE1254B470800CCD5FA /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
+		DB30827BC60B3F80C2CCC468 /* Pods_AmongUsWallpaper.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AmongUsWallpaper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FC36D08E254A6C3C00CC0726 /* DiscoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCell.swift; sourceTree = "<group>"; };
 		FC36D08F254A6C3C00CC0726 /* DiscoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverCell.xib; sourceTree = "<group>"; };
 		FC36D093254A6E1D00CC0726 /* PushVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushVC.swift; sourceTree = "<group>"; };
@@ -94,11 +100,6 @@
 		FC36D097254A78F400CC0726 /* Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		FC763CE4254AD6EB00ECF9E8 /* IconCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconCell.swift; sourceTree = "<group>"; };
 		FC763CE5254AD6EB00ECF9E8 /* IconCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IconCell.xib; sourceTree = "<group>"; };
-		FC844053254C1B460080148E /* LivePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivePhoto.swift; sourceTree = "<group>"; };
-		FC844059254C227F0080148E /* Player.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Player.storyboard; sourceTree = "<group>"; };
-		FC84405B254C22990080148E /* PlayerVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerVC.swift; sourceTree = "<group>"; };
-		FC84405F254C24350080148E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FC844061254C249C0080148E /* background-8.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "background-8.pdf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +107,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
+				88003E78E73DD1C70BDE1C83 /* Pods_AmongUsWallpaper.framework in Frameworks */,
+=======
 				0F499FEA5433AA52D5964A1A /* Pods_AmongUsWallpaper.framework in Frameworks */,
+>>>>>>> b65c3758920d228b4c39cbf84acce62b8e3900aa
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -159,7 +164,11 @@
 				BB70EDA125494AC200520E6E /* AmongUsWallpaper */,
 				BB70EDA025494AC200520E6E /* Products */,
 				D672F4E1CCAFFE2F340FA43B /* Pods */,
+<<<<<<< HEAD
+				F00672C3A78CA4311A447920 /* Frameworks */,
+=======
 				A2E16933802D98384EB326F2 /* Frameworks */,
+>>>>>>> b65c3758920d228b4c39cbf84acce62b8e3900aa
 			);
 			sourceTree = "<group>";
 		};
@@ -178,10 +187,9 @@
 				BB70EDB725494D2A00520E6E /* Scene */,
 				FC36D092254A6E0900CC0726 /* Utilities */,
 				04F38677254BE8C500EE7EE0 /* VideoBackground */,
-				FC844055254C21800080148E /* BackGround */,
 				DA249BDA254B2BC600CCD5FA /* Extension */,
-				FC84405F254C24350080148E /* Assets.xcassets */,
 				BB70EDA225494AC200520E6E /* AppDelegate.swift */,
+				BB70EDAB25494AC200520E6E /* Assets.xcassets */,
 				BB70EDAD25494AC200520E6E /* LaunchScreen.storyboard */,
 				BB70EDB025494AC200520E6E /* Info.plist */,
 			);
@@ -193,7 +201,6 @@
 			children = (
 				BB70EDC42549633800520E6E /* Home */,
 				BB70EDBE254950B000520E6E /* Among us */,
-				FC844058254C225C0080148E /* Player */,
 			);
 			path = Scene;
 			sourceTree = "<group>";
@@ -264,8 +271,13 @@
 		D672F4E1CCAFFE2F340FA43B /* Pods */ = {
 			isa = PBXGroup;
 			children = (
+<<<<<<< HEAD
+				719A4A08EB3C025C523857FA /* Pods-AmongUsWallpaper.debug.xcconfig */,
+				A06E85918E91295C26686429 /* Pods-AmongUsWallpaper.release.xcconfig */,
+=======
 				932D0EE6C2CCED89BAA48D90 /* Pods-AmongUsWallpaper.debug.xcconfig */,
 				C178CC06C556A5BE1096D671 /* Pods-AmongUsWallpaper.release.xcconfig */,
+>>>>>>> b65c3758920d228b4c39cbf84acce62b8e3900aa
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -276,6 +288,14 @@
 				DA249BE1254B470800CCD5FA /* UICollectionView+Ext.swift */,
 			);
 			path = Extension;
+			sourceTree = "<group>";
+		};
+		F00672C3A78CA4311A447920 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DB30827BC60B3F80C2CCC468 /* Pods_AmongUsWallpaper.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		FC36D087254A676300CC0726 /* cell */ = {
@@ -290,7 +310,6 @@
 		FC36D092254A6E0900CC0726 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				FC844053254C1B460080148E /* LivePhoto.swift */,
 				8749249D254B3C6000FDCECA /* VideoEditor.swift */,
 				FC36D095254A74D300CC0726 /* RoundView.swift */,
 				FC36D093254A6E1D00CC0726 /* PushVC.swift */,
@@ -309,23 +328,6 @@
 			path = cell;
 			sourceTree = "<group>";
 		};
-		FC844055254C21800080148E /* BackGround */ = {
-			isa = PBXGroup;
-			children = (
-				FC844061254C249C0080148E /* background-8.pdf */,
-			);
-			path = BackGround;
-			sourceTree = "<group>";
-		};
-		FC844058254C225C0080148E /* Player */ = {
-			isa = PBXGroup;
-			children = (
-				FC844059254C227F0080148E /* Player.storyboard */,
-				FC84405B254C22990080148E /* PlayerVC.swift */,
-			);
-			path = Player;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -333,11 +335,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BB70EDB325494AC200520E6E /* Build configuration list for PBXNativeTarget "AmongUsWallpaper" */;
 			buildPhases = (
+<<<<<<< HEAD
+				6B2F81CCCC5D90F793C2FBDE /* [CP] Check Pods Manifest.lock */,
+				BB70ED9B25494AC200520E6E /* Sources */,
+				BB70ED9C25494AC200520E6E /* Frameworks */,
+				BB70ED9D25494AC200520E6E /* Resources */,
+				885F3F56DD2D504219D84180 /* [CP] Embed Pods Frameworks */,
+=======
 				025583142AA0DA74147D6847 /* [CP] Check Pods Manifest.lock */,
 				BB70ED9B25494AC200520E6E /* Sources */,
 				BB70ED9C25494AC200520E6E /* Frameworks */,
 				BB70ED9D25494AC200520E6E /* Resources */,
 				8F780AF424CAF463F3527E77 /* [CP] Embed Pods Frameworks */,
+>>>>>>> b65c3758920d228b4c39cbf84acce62b8e3900aa
 			);
 			buildRules = (
 			);
@@ -387,19 +397,17 @@
 			files = (
 				FC36D091254A6C3C00CC0726 /* DiscoverCell.xib in Resources */,
 				BB70EDBC254950A800520E6E /* AmongUsMain.storyboard in Resources */,
-				FC844060254C24350080148E /* Assets.xcassets in Resources */,
-				FC844062254C249C0080148E /* background-8.pdf in Resources */,
 				BB70EDDC2549720500520E6E /* MyWallpaper.storyboard in Resources */,
 				04F38680254BF00000EE7EE0 /* 6.mp4 in Resources */,
 				BB70EDE52549725200520E6E /* Setting.storyboard in Resources */,
 				BB70EDAF25494AC200520E6E /* LaunchScreen.storyboard in Resources */,
 				044ACAB1254BCC4A00DD8AD6 /* GoogleService-Info.plist in Resources */,
-				FC84405A254C227F0080148E /* Player.storyboard in Resources */,
 				04F38681254BF00000EE7EE0 /* 1.mp4 in Resources */,
 				044ACB10254BD9E700DD8AD6 /* MyWallpaperCell.xib in Resources */,
 				04F38685254BF00000EE7EE0 /* 3.mp4 in Resources */,
 				04F38687254BF00000EE7EE0 /* 2.mp4 in Resources */,
 				04F38682254BF00000EE7EE0 /* 5.mp4 in Resources */,
+				BB70EDAC25494AC200520E6E /* Assets.xcassets in Resources */,
 				DA249BDF254B45BE00CCD5FA /* SettingCell.xib in Resources */,
 				04F38683254BF00000EE7EE0 /* 8.mp4 in Resources */,
 				FC763CE7254AD6EB00ECF9E8 /* IconCell.xib in Resources */,
@@ -413,7 +421,11 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+<<<<<<< HEAD
+		6B2F81CCCC5D90F793C2FBDE /* [CP] Check Pods Manifest.lock */ = {
+=======
 		025583142AA0DA74147D6847 /* [CP] Check Pods Manifest.lock */ = {
+>>>>>>> b65c3758920d228b4c39cbf84acce62b8e3900aa
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -435,7 +447,11 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+<<<<<<< HEAD
+		885F3F56DD2D504219D84180 /* [CP] Embed Pods Frameworks */ = {
+=======
 		8F780AF424CAF463F3527E77 /* [CP] Embed Pods Frameworks */ = {
+>>>>>>> b65c3758920d228b4c39cbf84acce62b8e3900aa
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -465,10 +481,8 @@
 				FC763CE6254AD6EB00ECF9E8 /* IconCell.swift in Sources */,
 				BB70EDA325494AC200520E6E /* AppDelegate.swift in Sources */,
 				8749249E254B3C6000FDCECA /* VideoEditor.swift in Sources */,
-				FC84405C254C22990080148E /* PlayerVC.swift in Sources */,
 				BB70EDCC2549639500520E6E /* HomeVC.swift in Sources */,
 				FC36D098254A78F400CC0726 /* Extension.swift in Sources */,
-				FC844054254C1B470080148E /* LivePhoto.swift in Sources */,
 				FC36D090254A6C3C00CC0726 /* DiscoverCell.swift in Sources */,
 				DA249BDE254B45BE00CCD5FA /* SettingCell.swift in Sources */,
 				044ACB0A254BD06F00DD8AD6 /* BaseNavigation.swift in Sources */,
@@ -613,7 +627,11 @@
 		};
 		BB70EDB425494AC200520E6E /* Debug */ = {
 			isa = XCBuildConfiguration;
+<<<<<<< HEAD
+			baseConfigurationReference = 719A4A08EB3C025C523857FA /* Pods-AmongUsWallpaper.debug.xcconfig */;
+=======
 			baseConfigurationReference = 932D0EE6C2CCED89BAA48D90 /* Pods-AmongUsWallpaper.debug.xcconfig */;
+>>>>>>> b65c3758920d228b4c39cbf84acce62b8e3900aa
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -634,7 +652,11 @@
 		};
 		BB70EDB525494AC200520E6E /* Release */ = {
 			isa = XCBuildConfiguration;
+<<<<<<< HEAD
+			baseConfigurationReference = A06E85918E91295C26686429 /* Pods-AmongUsWallpaper.release.xcconfig */;
+=======
 			baseConfigurationReference = C178CC06C556A5BE1096D671 /* Pods-AmongUsWallpaper.release.xcconfig */;
+>>>>>>> b65c3758920d228b4c39cbf84acce62b8e3900aa
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
