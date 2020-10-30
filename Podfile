@@ -12,6 +12,7 @@ target 'AmongUsWallpaper' do
   pod 'Firebase/Crashlytics'
   pod "Device", '~> 3.2.1'
   pod 'IQKeyboardManager'
+  pod 'UITextView+Placeholder'
   # Pods for AmongUsWallpaper
 
 end

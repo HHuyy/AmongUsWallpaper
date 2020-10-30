@@ -16,14 +16,16 @@ struct Coordinate {
 
 class VideoEditor: NSObject {
     var composition: AVMutableComposition!
-    var videoComposition: AVMutableVideoComposition?
+    var videoComposition: AVMutableVideoComposition!
     
     private var originComposition: AVMutableComposition!
     
     init(fileName: String, type: String) {
+        super.init()
         if let composition = makeCompositionFromFileName(filename: fileName, type: type) {
             self.composition = composition
             self.originComposition = composition
+            self.videoComposition = AVMutableVideoComposition(propertiesOf: self.composition)
         } else {
             fatalError()
         }
@@ -31,15 +33,17 @@ class VideoEditor: NSObject {
     
     private func makeCompositionFromFileName(filename: String, type: String) -> AVMutableComposition? {
         guard let sourceUrl = Bundle.main.url(forResource: filename, withExtension: type) else {
-            return
+            return nil
         }
         
         let asset = AVURLAsset(url: sourceUrl)
-        return AVMutableComposition().copyAllTrack(from: asset)
+        let compostion = AVMutableComposition()
+        compostion.copyAllTrack(from: asset)
+        return compostion
     }
      
-    func build(attrString: NSAttributedString, position: Coordinate) -> AVMutableComposition {
-        let videoInfo = orientation(from: composition.preferredTransform)
+    func build(attrString: NSAttributedString, position: Coordinate) -> AVMutableVideoComposition {
+        let videoInfo = self.orientation(from: composition.preferredTransform)
         let videoSize: CGSize
         if videoInfo.isPortrait {
             videoSize = CGSize(width: composition.naturalSize.height, height: composition.naturalSize.width)
@@ -60,10 +64,9 @@ class VideoEditor: NSObject {
         outputLayer.addSublayer(videoLayer)
         outputLayer.addSublayer(overlayLayer)
         
-        let videoComposition = AVMutableVideoComposition()
-        videoComposition.renderSize = videoSize
-        videoComposition.frameDuration = CMTime(value: 1, timescale: 30)
-        videoComposition.animationTool = AVVideoCompositionCoreAnimationTool(
+        self.videoComposition.renderSize = videoSize
+        self.videoComposition.frameDuration = CMTime(value: 1, timescale: 30)
+        self.videoComposition.animationTool = AVVideoCompositionCoreAnimationTool(
           postProcessingAsVideoLayer: videoLayer,
           in: outputLayer)
         
@@ -73,10 +76,25 @@ class VideoEditor: NSObject {
           duration: composition.duration)
         videoComposition.instructions = [instruction]
         
-        let layerInstruction = compositionLayerInstruction(
-          for: compositionTrack,
-          assetTrack: assetTrack)
-        instruction.layerInstructions = [layerInstruction]
+        return videoComposition
+    }
+    
+    private func orientation(from transform: CGAffineTransform) -> (orientation: UIImage.Orientation, isPortrait: Bool) {
+      var assetOrientation = UIImage.Orientation.up
+      var isPortrait = false
+      if transform.a == 0 && transform.b == 1.0 && transform.c == -1.0 && transform.d == 0 {
+        assetOrientation = .right
+        isPortrait = true
+      } else if transform.a == 0 && transform.b == -1.0 && transform.c == 1.0 && transform.d == 0 {
+        assetOrientation = .left
+        isPortrait = true
+      } else if transform.a == 1.0 && transform.b == 0 && transform.c == 0 && transform.d == 1.0 {
+        assetOrientation = .up
+      } else if transform.a == -1.0 && transform.b == 0 && transform.c == 0 && transform.d == -1.0 {
+        assetOrientation = .down
+      }
+      
+      return (assetOrientation, isPortrait)
     }
 }
 
