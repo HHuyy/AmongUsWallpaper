@@ -26,4 +26,9 @@ class SettingCell: UICollectionViewCell {
         self.titleLabel.text = model.title
         self.iconImageView.image = model.image
     }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.layer.cornerRadius = 20.0
+    }
 }

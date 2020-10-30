@@ -23,7 +23,8 @@ enum SettingUseCase: CaseIterable {
     }
 }
 
-class SettingVC: UIViewController {
+class SettingVC: UIViewController, StoryboardInstantiatable {
+    static var storyboardName: AppStoryboard = .setting
 
     @IBOutlet weak var premiumView: UIView!
     @IBOutlet weak var collectionView: UICollectionView!
@@ -40,6 +41,7 @@ class SettingVC: UIViewController {
         collectionView.dataSource = self
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
+        premiumView.layer.cornerRadius = 17.0
 //        let layout = UICollectionViewLayout()
 //        collectionView.collectionViewLayout = layout
     }
