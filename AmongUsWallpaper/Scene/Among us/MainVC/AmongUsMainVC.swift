@@ -150,7 +150,8 @@ class AmongUsMainVC: UIViewController {
         self.videoEditor = VideoEditor(fileName: currentBackground, type: videoType.rawValue)
         
         let videoCompostion = self.videoEditor.build(attrString: testAttrString, position: self.currentCoordinate)
-        self.editView.apply(with: videoCompostion)
+//        self.editView.apply(with: videoCompostion)
+        
     }
 }
 
