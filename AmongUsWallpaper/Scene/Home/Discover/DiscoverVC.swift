@@ -12,7 +12,8 @@ struct DiscoverCellModel {
     var labelName: String
 }
 
-class DiscoverVC: UIViewController {
+class DiscoverVC: UIViewController, StoryboardInstantiatable {
+    static var storyboardName: AppStoryboard = .discover
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -43,9 +44,6 @@ extension DiscoverVC: UITableViewDataSource{
         cell.imageTheme.image = UIImage(named: data[indexPath.row].imageName)
         return cell
     }
-    
-
-    
 }
 
 extension DiscoverVC: UITableViewDelegate {

@@ -7,7 +7,8 @@
 
 import UIKit
 
-class HomeVC: UIViewController {
+class HomeVC: UIViewController, StoryboardInstantiatable {
+    static var storyboardName: AppStoryboard = .home
     
     @IBOutlet var tabButtons: [UIButton]!
     @IBOutlet weak var contentView: UIView!

@@ -8,7 +8,10 @@ target 'AmongUsWallpaper' do
   pod 'SnapKit'
   pod 'SwiftyGif'
   pod 'RealmSwift'
-
+  pod 'Firebase/Analytics'
+  pod 'Firebase/Crashlytics'
+  pod "Device", '~> 3.2.1'
+  pod 'IQKeyboardManager'
   # Pods for AmongUsWallpaper
 
 end

@@ -59,13 +59,12 @@ class AmongUsMainVC: UIViewController {
     }
     
     @IBAction func tapBackButton(_ sender: Any) {
-        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func tapPreviewButton(_ sender: Any) {
 //        work()
     }
-    
     
     @IBAction func tapTabButtons(_ sender: UIButton) {
         iconButton.isSelected = false
