@@ -12,6 +12,14 @@
 		044ACB0A254BD06F00DD8AD6 /* BaseNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044ACB09254BD06F00DD8AD6 /* BaseNavigation.swift */; };
 		044ACB0F254BD9E700DD8AD6 /* MyWallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044ACB0D254BD9E700DD8AD6 /* MyWallpaperCell.swift */; };
 		044ACB10254BD9E700DD8AD6 /* MyWallpaperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044ACB0E254BD9E700DD8AD6 /* MyWallpaperCell.xib */; };
+		04F38680254BF00000EE7EE0 /* 6.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 04F38678254BEFFE00EE7EE0 /* 6.mp4 */; };
+		04F38681254BF00000EE7EE0 /* 1.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 04F38679254BEFFE00EE7EE0 /* 1.mp4 */; };
+		04F38682254BF00000EE7EE0 /* 5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 04F3867A254BEFFE00EE7EE0 /* 5.mp4 */; };
+		04F38683254BF00000EE7EE0 /* 8.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 04F3867B254BEFFF00EE7EE0 /* 8.mp4 */; };
+		04F38684254BF00000EE7EE0 /* 7.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 04F3867C254BEFFF00EE7EE0 /* 7.mp4 */; };
+		04F38685254BF00000EE7EE0 /* 3.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 04F3867D254BEFFF00EE7EE0 /* 3.mp4 */; };
+		04F38686254BF00000EE7EE0 /* 4.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 04F3867E254BEFFF00EE7EE0 /* 4.mp4 */; };
+		04F38687254BF00000EE7EE0 /* 2.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 04F3867F254BF00000EE7EE0 /* 2.mp4 */; };
 		0F499FEA5433AA52D5964A1A /* Pods_AmongUsWallpaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6F38BCFB6A544D3B00B921 /* Pods_AmongUsWallpaper.framework */; };
 		8749249E254B3C6000FDCECA /* VideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8749249D254B3C6000FDCECA /* VideoEditor.swift */; };
 		BB70EDA325494AC200520E6E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB70EDA225494AC200520E6E /* AppDelegate.swift */; };
@@ -45,6 +53,14 @@
 		044ACB09254BD06F00DD8AD6 /* BaseNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigation.swift; sourceTree = "<group>"; };
 		044ACB0D254BD9E700DD8AD6 /* MyWallpaperCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWallpaperCell.swift; sourceTree = "<group>"; };
 		044ACB0E254BD9E700DD8AD6 /* MyWallpaperCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyWallpaperCell.xib; sourceTree = "<group>"; };
+		04F38678254BEFFE00EE7EE0 /* 6.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 6.mp4; sourceTree = "<group>"; };
+		04F38679254BEFFE00EE7EE0 /* 1.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 1.mp4; sourceTree = "<group>"; };
+		04F3867A254BEFFE00EE7EE0 /* 5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 5.mp4; sourceTree = "<group>"; };
+		04F3867B254BEFFF00EE7EE0 /* 8.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8.mp4; sourceTree = "<group>"; };
+		04F3867C254BEFFF00EE7EE0 /* 7.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 7.mp4; sourceTree = "<group>"; };
+		04F3867D254BEFFF00EE7EE0 /* 3.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 3.mp4; sourceTree = "<group>"; };
+		04F3867E254BEFFF00EE7EE0 /* 4.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 4.mp4; sourceTree = "<group>"; };
+		04F3867F254BF00000EE7EE0 /* 2.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 2.mp4; sourceTree = "<group>"; };
 		8749249B254B3BE100FDCECA /* 8.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8.mp4; sourceTree = "<group>"; };
 		8749249D254B3C6000FDCECA /* VideoEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEditor.swift; sourceTree = "<group>"; };
 		932D0EE6C2CCED89BAA48D90 /* Pods-AmongUsWallpaper.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AmongUsWallpaper.debug.xcconfig"; path = "Target Support Files/Pods-AmongUsWallpaper/Pods-AmongUsWallpaper.debug.xcconfig"; sourceTree = "<group>"; };
@@ -97,6 +113,21 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		04F38677254BE8C500EE7EE0 /* VideoBackground */ = {
+			isa = PBXGroup;
+			children = (
+				04F38679254BEFFE00EE7EE0 /* 1.mp4 */,
+				04F3867F254BF00000EE7EE0 /* 2.mp4 */,
+				04F3867D254BEFFF00EE7EE0 /* 3.mp4 */,
+				04F3867E254BEFFF00EE7EE0 /* 4.mp4 */,
+				04F3867A254BEFFE00EE7EE0 /* 5.mp4 */,
+				04F38678254BEFFE00EE7EE0 /* 6.mp4 */,
+				04F3867C254BEFFF00EE7EE0 /* 7.mp4 */,
+				04F3867B254BEFFF00EE7EE0 /* 8.mp4 */,
+			);
+			path = VideoBackground;
+			sourceTree = "<group>";
+		};
 		8749249A254B3BCA00FDCECA /* Video */ = {
 			isa = PBXGroup;
 			children = (
@@ -138,6 +169,7 @@
 				044ACB08254BD06500DD8AD6 /* Base */,
 				BB70EDB725494D2A00520E6E /* Scene */,
 				FC36D092254A6E0900CC0726 /* Utilities */,
+				04F38677254BE8C500EE7EE0 /* VideoBackground */,
 				DA249BDA254B2BC600CCD5FA /* Extension */,
 				BB70EDA225494AC200520E6E /* AppDelegate.swift */,
 				BB70EDAB25494AC200520E6E /* Assets.xcassets */,
@@ -328,14 +360,22 @@
 				FC36D091254A6C3C00CC0726 /* DiscoverCell.xib in Resources */,
 				BB70EDBC254950A800520E6E /* AmongUsMain.storyboard in Resources */,
 				BB70EDDC2549720500520E6E /* MyWallpaper.storyboard in Resources */,
+				04F38680254BF00000EE7EE0 /* 6.mp4 in Resources */,
 				BB70EDE52549725200520E6E /* Setting.storyboard in Resources */,
 				BB70EDAF25494AC200520E6E /* LaunchScreen.storyboard in Resources */,
 				044ACAB1254BCC4A00DD8AD6 /* GoogleService-Info.plist in Resources */,
+				04F38681254BF00000EE7EE0 /* 1.mp4 in Resources */,
 				044ACB10254BD9E700DD8AD6 /* MyWallpaperCell.xib in Resources */,
+				04F38685254BF00000EE7EE0 /* 3.mp4 in Resources */,
+				04F38687254BF00000EE7EE0 /* 2.mp4 in Resources */,
+				04F38682254BF00000EE7EE0 /* 5.mp4 in Resources */,
 				BB70EDAC25494AC200520E6E /* Assets.xcassets in Resources */,
 				DA249BDF254B45BE00CCD5FA /* SettingCell.xib in Resources */,
+				04F38683254BF00000EE7EE0 /* 8.mp4 in Resources */,
 				FC763CE7254AD6EB00ECF9E8 /* IconCell.xib in Resources */,
+				04F38686254BF00000EE7EE0 /* 4.mp4 in Resources */,
 				BB70EDC92549637B00520E6E /* Home.storyboard in Resources */,
+				04F38684254BF00000EE7EE0 /* 7.mp4 in Resources */,
 				BB70EDD6254971C200520E6E /* Discover.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
