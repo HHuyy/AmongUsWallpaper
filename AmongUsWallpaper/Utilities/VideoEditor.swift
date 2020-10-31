@@ -242,11 +242,11 @@ class VideoEditors {
   private func add(text: String, to layer: CALayer, videoSize: CGSize) {
     let attributedText = NSAttributedString(
     string: text,
-    attributes: [
+        attributes: [
       .font: UIFont(name: "ArialRoundedMTBold", size: 60) as Any,
-      .foregroundColor: UIColor(named: "rw-green")!,
+        .foregroundColor: UIColor.green,
       .strokeColor: UIColor.white,
-      .strokeWidth: -3])
+            .strokeWidth: -3])
     let mainY = videoSize.height * 0.66
     
     let textLayer = CATextLayer()
@@ -421,21 +421,4 @@ class VideoEditors {
   }
 }
 
-extension NSAttributedString {
 
-    func height(containerWidth: CGFloat) -> CGFloat {
-
-        let rect = self.boundingRect(with: CGSize.init(width: containerWidth, height: CGFloat.greatestFiniteMagnitude),
-                                     options: [.usesLineFragmentOrigin, .usesFontLeading],
-                                     context: nil)
-        return ceil(rect.size.height)
-    }
-
-    func width(containerHeight: CGFloat) -> CGFloat {
-
-        let rect = self.boundingRect(with: CGSize.init(width: CGFloat.greatestFiniteMagnitude, height: containerHeight),
-                                     options: [.usesLineFragmentOrigin, .usesFontLeading],
-                                     context: nil)
-        return ceil(rect.size.width)
-    }
-}

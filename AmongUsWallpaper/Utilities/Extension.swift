@@ -6,7 +6,33 @@
 //
 
 import Foundation
+import UIKit
 
 extension Notification.Name {
     static let goToAU = Notification.Name("moveToAmongUsMain")
+}
+
+extension NSAttributedString {
+
+    func height(containerWidth: CGFloat) -> CGFloat {
+
+        let rect = self.boundingRect(with: CGSize.init(width: containerWidth, height: CGFloat.greatestFiniteMagnitude),
+                                     options: [.usesLineFragmentOrigin, .usesFontLeading],
+                                     context: nil)
+        return ceil(rect.size.height)
+    }
+
+    func width(containerHeight: CGFloat) -> CGFloat {
+
+        let rect = self.boundingRect(with: CGSize.init(width: CGFloat.greatestFiniteMagnitude, height: containerHeight),
+                                     options: [.usesLineFragmentOrigin, .usesFontLeading],
+                                     context: nil)
+        return ceil(rect.size.width)
+    }
+}
+
+extension UIColor {
+    convenience init(rgb: UInt) {
+       self.init(red: CGFloat((rgb & 0xFF0000) >> 16) / 255.0, green: CGFloat((rgb & 0x00FF00) >> 8) / 255.0, blue: CGFloat(rgb & 0x0000FF) / 255.0, alpha: CGFloat(1.0))
+    }
 }
