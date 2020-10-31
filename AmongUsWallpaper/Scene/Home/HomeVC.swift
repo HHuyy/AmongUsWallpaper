@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 class HomeVC: UIViewController, StoryboardInstantiatable {
     static var storyboardName: AppStoryboard = .home

@@ -8,6 +8,7 @@
 import UIKit
 import UITextView_Placeholder
 import SnapKit
+import GoogleMobileAds
 
 struct AUIconCellModel {
     var imageName: String
@@ -40,6 +41,7 @@ class AmongUsMainVC: UIViewController {
     @IBOutlet weak var widthEditTextViewConstraint: NSLayoutConstraint!
     
     private var videoEditor: VideoEditor!
+    var bannerView: GADBannerView!
     
     var iconArray: [String]! = []
     var selectedIndex = 0
@@ -227,5 +229,16 @@ extension AmongUsMainVC: UITextViewDelegate {
         
         self.previousText = textView.text
         print(widthEditTextViewConstraint.constant)
+    }
+}
+
+//MARK: Admob
+extension AmongUsMainVC: GADBannerViewDelegate {
+    func addBannerView() {
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.adUnitID = "ca-app-pub-6503869472106217/4674523867"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self
     }
 }

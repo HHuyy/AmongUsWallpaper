@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import IQKeyboardManager
 import RealmSwift
+import GoogleMobileAds
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().shouldShowToolbarPlaceholder = false
         let realm = try! Realm()
         print("Realm is located at:", realm.configuration.fileURL!)
+        GADMobileAds.sharedInstance().start(completionHandler: nil)
+
         return true
     }
 
