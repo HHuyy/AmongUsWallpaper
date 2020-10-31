@@ -34,6 +34,7 @@
                 <constraint firstItem="GdM-hf-bbm" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.9" id="HWR-cw-TX8"/>
                 <constraint firstItem="F5g-h4-bRu" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="MTh-WK-Ojz"/>
                 <constraint firstAttribute="trailing" secondItem="GdM-hf-bbm" secondAttribute="trailing" id="aQD-8s-dqr"/>
+                <constraint firstItem="F5g-h4-bRu" firstAttribute="top" relation="greaterThanOrEqual" secondItem="GdM-hf-bbm" secondAttribute="bottom" constant="6" id="ffh-rJ-8gV"/>
                 <constraint firstItem="GdM-hf-bbm" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="g58-bW-cN4"/>
                 <constraint firstAttribute="bottom" secondItem="F5g-h4-bRu" secondAttribute="bottom" id="giz-md-gr8"/>
                 <constraint firstItem="F5g-h4-bRu" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" multiplier="0.6" id="kY3-kX-ROF"/>

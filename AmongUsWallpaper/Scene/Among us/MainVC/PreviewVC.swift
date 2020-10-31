@@ -69,6 +69,16 @@ class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDele
         playerLayer.frame = videoView.bounds
         videoView.layer.addSublayer(playerLayer)
         player.play()
+        
+        NotificationCenter.default.addObserver(
+          forName: .AVPlayerItemDidPlayToEndTime,
+          object: nil,
+          queue: nil) { [weak self] _ in self?.restart() }
+    }
+    
+    private func restart() {
+      player.seek(to: .zero)
+      player.play()
     }
     
     override func viewWillAppear(_ animated: Bool) {

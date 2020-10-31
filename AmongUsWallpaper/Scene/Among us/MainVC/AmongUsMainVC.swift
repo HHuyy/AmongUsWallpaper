@@ -54,11 +54,14 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
     var fontStyleArray: [String]! = []
     var fontColorArray: [UInt]! = []
     var backgroundArray: [String]! = []
+    var reSizebackgroundArray: [UIImage] = []
     var iconSelectedIndex = 0
     var fontStyleSelectedIndex = 0
     var fontColorSelectedIndex = 0
     var backgroundSelectedIndex = 0
-    var currentPosition: CGAffineTransform?
+    var currentAlignment = 1
+    var positionY: CGFloat?
+//    var currentPosition: CGAffineTransform?
     
     
     private var currentAttrString: NSAttributedString!
@@ -89,6 +92,11 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
         editTextView.textColor = UIColor.init(rgb: fontColorArray[0])
         fontColorCollectionView.reloadData()
         backgroundArray = ["1", "2", "3", "4", "5", "6", "7", "8"]
+        backgroundArray.forEach { (i) in
+            let reSizeBG = resizeImage(image: UIImage.init(named: i)!, targetSize: CGSize(width: 70, height: 108))
+            
+            reSizebackgroundArray.append(reSizeBG)
+        }
         backgroundCollectionView.reloadData()
         
         editTextView.textContainer.maximumNumberOfLines = 3
@@ -117,6 +125,9 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
     }
     
     func setupUI() {
+        editTextView.isUserInteractionEnabled = false
+        editImageView.isUserInteractionEnabled = true
+        
         iconContainView.isHidden = false
         fontContainView.isHidden = true
         backgroundContainView.isHidden = true
@@ -132,6 +143,8 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
         self.videoEditor = VideoEditor(fileName: self.currentBackground, type: videoType.rawValue)
         self.editView.setupPlayerItem(asset: videoEditor.composition)
         self.editView.delegate = self
+        
+        positionY = editTextView.center.y
         
         setupEditView()
     }
@@ -158,7 +171,8 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
     }
     
     @IBAction func tapPreviewButton(_ sender: Any) {
-        showPreview()
+//        showPreview()
+        showDemo()
     }
     
     @IBAction func tapTabButtons(_ sender: UIButton) {
@@ -201,6 +215,7 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
             button.isSelected = false
         }
         sender.isSelected = true
+        currentAlignment = sender.tag
         switch sender.tag {
         case 1:
             editTextView.textAlignment = .left
@@ -232,8 +247,9 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
     
     private let editor = VideoEditors()
     func showDemo() {
-        let urlPath = Bundle.main.url(forResource: "1", withExtension: "mp4")
-        self.editor.makeBirthdayCard(fromVideoAt: urlPath!, forName: "name") { exportedURL in
+        let urlPath = Bundle.main.url(forResource: backgroundArray[backgroundSelectedIndex], withExtension: "mp4")!
+//        let icon = resizeImage(image: UIImage.init(named: iconArray[iconSelectedIndex])!, targetSize: CGSize(width: editImageView.frame.width, height: editImageView.frame.height))
+        self.editor.makeVideo(fromVideoAt: urlPath, icon: UIImage.init(named: iconArray[iconSelectedIndex])!, fontStyle: fontStyleArray[fontStyleSelectedIndex], textString: editTextView.text, textColor: fontColorArray[fontColorSelectedIndex], background: reSizebackgroundArray[backgroundSelectedIndex], textSize: editTextView.font!.pointSize, alignment: currentAlignment, y: positionY!) { exportedURL in
             guard let exportedURL = exportedURL else {
                 return
             }
@@ -247,7 +263,31 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
         }
     }
     
-    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage!
+    }
     
     @objc func handlePanGesture(gesture: UIPanGestureRecognizer) {
 //        if gesture.state == .began {
@@ -268,17 +308,15 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
 ////            print(translation.y)
 //        }
         let translation = gesture.translation(in: self.editView)
-//        let centerY = editContainerView.center.y + translation.y
         let centerY = editTextView.center.y + translation.y
         if centerY < 340, centerY > 40 {
-//            editContainerView.center = CGPoint(x: editContainerView.center.x, y: editContainerView.center.y + translation.y)
             editTextView.center = CGPoint(x: editTextView.center.x, y: editTextView.center.y + translation.y)
         } else {
-//            editContainerView.center = CGPoint(x: editContainerView.center.x, y: editContainerView.center.y)
             editTextView.center = CGPoint(x: editTextView.center.x, y: editTextView.center.y)
         }
         editImageView.center = CGPoint(x: editImageView.center.x, y: editTextView.center.y)
         gesture.setTranslation(CGPoint.zero, in: self.editView)
+        positionY = editTextView.center.y
         print(editTextView.center.y)
     }
 }
@@ -370,7 +408,7 @@ extension AmongUsMainVC: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "backgroundCell", for: indexPath) as? backgroundCell else {
                 return UICollectionViewCell()
             }
-            cell.backgroundImage.image = UIImage.init(named: backgroundArray[indexPath.row])
+            cell.backgroundImage.image = reSizebackgroundArray[indexPath.row]
             if indexPath.row == backgroundSelectedIndex {
                 cell.bottomView.isHidden = false
             } else {
@@ -395,7 +433,9 @@ extension AmongUsMainVC: UICollectionViewDataSource {
             self.editTextView.textColor = UIColor.init(rgb: fontColorArray[indexPath.row])
         case backgroundCollectionView:
             backgroundSelectedIndex = indexPath.row
-            
+            currentBackground = backgroundArray[indexPath.row]
+            self.videoEditor = VideoEditor(fileName: self.currentBackground, type: videoType.rawValue)
+            self.editView.setupPlayerItem(asset: videoEditor.composition)
         default:
             break
         }

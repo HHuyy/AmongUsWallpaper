@@ -215,7 +215,7 @@ class VideoEditor: NSObject {
 }
 
 class VideoEditors {
-  func makeBirthdayCard(fromVideoAt videoURL: URL, forName name: String, onComplete: @escaping (URL?) -> Void) {
+    func makeVideo(fromVideoAt videoURL: URL, icon: UIImage, fontStyle: String, textString text: String, textColor: UInt, background: UIImage, textSize: CGFloat, alignment: Int, y: CGFloat, onComplete: @escaping (URL?) -> Void) {
 //    onComplete(videoURL)
     let asset = AVURLAsset(url: videoURL)
     let composition = AVMutableComposition()
@@ -259,34 +259,18 @@ class VideoEditors {
       videoSize = assetTrack.naturalSize
     }
     
-    let backgroundLayer = CALayer()
-    backgroundLayer.frame = CGRect(origin: .zero, size: videoSize)
+//    let backgroundLayer = CALayer()
+//    backgroundLayer.frame = CGRect(origin: .zero, size: videoSize)
     let videoLayer = CALayer()
     videoLayer.frame = CGRect(origin: .zero, size: videoSize)
     let overlayLayer = CALayer()
     overlayLayer.frame = CGRect(origin: .zero, size: videoSize)
-    
-//    backgroundLayer.backgroundColor = UIColor(named: "rw-green")?.cgColor
-//    videoLayer.frame = CGRect(
-//      x: 20,
-//      y: 20,
-//      width: videoSize.width - 40,
-//      height: videoSize.height - 40)
-//    backgroundLayer.contents = UIImage(named: "background")?.cgImage
-//    backgroundLayer.contentsGravity = .resizeAspectFill
-    
-//    addImage(to: overlayLayer, videoSize: videoSize)
-    
-//    addConfetti(to: overlayLayer)
-    
-    add(
-    text: "Happy Birthday \(name)",
-    to: overlayLayer,
-    videoSize: videoSize)
-    
+
+    add(text: text, y: y, textStyle: fontStyle, textColor: UIColor.init(rgb: textColor), textSize: textSize, icon: icon, to: overlayLayer, videoSize: videoSize, alignment: alignment)
+        
     let outputLayer = CALayer()
     outputLayer.frame = CGRect(origin: .zero, size: videoSize)
-    outputLayer.addSublayer(backgroundLayer)
+//    outputLayer.addSublayer(backgroundLayer)
     outputLayer.addSublayer(videoLayer)
     outputLayer.addSublayer(overlayLayer)
     
@@ -355,28 +339,37 @@ class VideoEditors {
     layer.addSublayer(imageLayer)
   }
   
-  private func add(text: String, to layer: CALayer, videoSize: CGSize) {
+    private func add(text: String, y: CGFloat, textStyle: String, textColor: UIColor, textSize: CGFloat, icon: UIImage, to layer: CALayer, videoSize: CGSize, alignment: Int) {
     let attributedText = NSAttributedString(
     string: text,
         attributes: [
-      .font: UIFont(name: "ArialRoundedMTBold", size: 60) as Any,
-        .foregroundColor: UIColor.green,
-      .strokeColor: UIColor.white,
-            .strokeWidth: -3])
+            .font: UIFont(name: textStyle, size: textSize * 6.5) as Any,
+        .foregroundColor: textColor])
     let mainY = videoSize.height * 0.66
+//    let mainY = y
     
     let textLayer = CATextLayer()
     textLayer.string = attributedText
     textLayer.shouldRasterize = true
     textLayer.rasterizationScale = UIScreen.main.scale
-    textLayer.backgroundColor = UIColor.clear.cgColor
-    textLayer.alignmentMode = .center
+    textLayer.backgroundColor = UIColor.green.cgColor
+//        switch alignment {
+//        case 1:
+//            textLayer.alignmentMode = .left
+//        case 2:
+//            textLayer.alignmentMode = .center
+//        case 3:
+//            textLayer.alignmentMode = .right
+//        default:
+            textLayer.alignmentMode = .center
+//        }
+    
     
     textLayer.frame = CGRect(
       x: 0,
       y: mainY,
         width: videoSize.width,
-      height: 150)
+        height: videoSize.height * 0.15)
     textLayer.displayIfNeeded()
     
     let gradient = CAGradientLayer()
@@ -389,14 +382,14 @@ class VideoEditors {
     gradient.frame = CGRect(
         x: textLayer.frame.origin.x,
           y: mainY,
-          width: videoSize.width * 1.4,
-          height: 150)
+        width: videoSize.width,
+        height: textLayer.frame.height)
     gradient.displayIfNeeded()
     
     let textAnimation = CABasicAnimation(keyPath: "position")
-    textAnimation.fromValue = [attributedText.width(containerHeight: 200)/2, mainY + attributedText.height(containerWidth: videoSize.width)]
-    textAnimation.toValue = [attributedText.width(containerHeight: 200)*2, mainY + attributedText.height(containerWidth: videoSize.width)]
-    textAnimation.duration = 6
+    textAnimation.fromValue = [attributedText.width(containerHeight: videoSize.height)/2, mainY + attributedText.height(containerWidth: videoSize.width)]
+    textAnimation.toValue = [attributedText.width(containerHeight: videoSize.height)*2, mainY + attributedText.height(containerWidth: videoSize.width)]
+    textAnimation.duration = 5
 //    scaleAnimation.repeatCount = 0
     textAnimation.autoreverses = true
     textAnimation.timingFunction = CAMediaTimingFunction(name: .default)
@@ -405,21 +398,21 @@ class VideoEditors {
     gradient.add(textAnimation, forKey: "position1")
     
     let crewIconLayer = CALayer()
-    let myImage = UIImage(named: "icon-1")?.cgImage
-//    let imageWidth = attributedText.height(containerWidth: 200)
-    let w = myImage?.width
-    let h = myImage?.height
+    let myImage = icon.cgImage
+    let imageHeight = videoSize.height * 0.15
+//    let w = myImage?.width
+//    let h = myImage?.height
     crewIconLayer.frame = CGRect(
         x: 0,
-        y: Int(mainY),
-        width: Int(Double(w!) * 1.1),
-        height: Int(Double(h!) * 1.1) )
+        y: mainY,
+        width: imageHeight * (2/3),
+        height: imageHeight)
     crewIconLayer.contents = myImage
     
     let crewMoveAnimation = CABasicAnimation(keyPath: "position")
     crewMoveAnimation.fromValue = [ -crewIconLayer.frame.width, mainY + attributedText.height(containerWidth: videoSize.width)]
-    crewMoveAnimation.toValue = [attributedText.width(containerHeight: 200)*2, mainY + attributedText.height(containerWidth: videoSize.width)]
-    crewMoveAnimation.duration = 8
+    crewMoveAnimation.toValue = [attributedText.width(containerHeight: videoSize.height)*2, mainY + attributedText.height(containerWidth: videoSize.width)] //attributedText.width(containerHeight: 200)*2
+    crewMoveAnimation.duration = 5
     crewMoveAnimation.autoreverses = true
     crewMoveAnimation.timingFunction = CAMediaTimingFunction(name: .default)
     crewMoveAnimation.beginTime = AVCoreAnimationBeginTimeAtZero
@@ -437,48 +430,31 @@ class VideoEditors {
     groupAnimation.duration = 5
     groupAnimation.animations = [crewRotationAnimation, crewMoveAnimation]
     crewIconLayer.add(groupAnimation, forKey: "groupAnimation")
-//    crewIconLayer.contentsGravity = CALayerContentsGravity.left
-//    crewIconLayer.isGeometryFlipped = true
-
     
-//    let scaleAnimation = CABasicAnimation(keyPath: "opacity")
-//    scaleAnimation.beginTime = AVCoreAnimationBeginTimeAtZero
-//    scaleAnimation.duration = 3.0
-//    scaleAnimation.fromValue = 0
-//    scaleAnimation.toValue = textLayer.bounds.size.width
-// //    scaleAnimation.fillMode =
-//    scaleAnimation.isRemovedOnCompletion = false
-//    textLayer.add(scaleAnimation, forKey: "scale")
-    
-    
-    let containerView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0))
-//    XCPShowView("Container View", view: containerView)
+//    let containerView = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 375.0, height: 667.0))
+////    XCPShowView("Container View", view: containerView)
+//
+//    let rectangle = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 50.0, height: 50.0))
+//    rectangle.center = containerView.center
+//    rectangle.layer.cornerRadius = 5.0
+//
+//
+//    let tf:UITextField = UITextField(frame: containerView.bounds)
+//    tf.textColor = UIColor.white
+//    tf.text = "this is text"
+//    tf.textAlignment = NSTextAlignment.center;
+//
+//    let gradientMaskLayer:CAGradientLayer = CAGradientLayer()
+//    gradientMaskLayer.frame = containerView.bounds
+//    gradientMaskLayer.colors = [UIColor.clear.cgColor, UIColor.red.cgColor, UIColor.red.cgColor, UIColor.clear.cgColor ]
+//    gradientMaskLayer.startPoint = CGPoint(x: 0.1, y: 0.0)
+//    gradientMaskLayer.endPoint = CGPoint(x: 0.55, y: 0.0)
+//
+//    containerView.addSubview(tf)
 
-    let rectangle = UIView(frame: CGRect(x: 0.0, y: 0.0, width: 50.0, height: 50.0))
-    rectangle.center = containerView.center
-    rectangle.layer.cornerRadius = 5.0
-
-
-    let tf:UITextField = UITextField(frame: containerView.bounds)
-    tf.textColor = UIColor.white
-    tf.text = "this is text"
-    tf.textAlignment = NSTextAlignment.center;
-
-    let gradientMaskLayer:CAGradientLayer = CAGradientLayer()
-    gradientMaskLayer.frame = containerView.bounds
-    gradientMaskLayer.colors = [UIColor.clear.cgColor, UIColor.red.cgColor, UIColor.red.cgColor, UIColor.clear.cgColor ]
-    gradientMaskLayer.startPoint = CGPoint(x: 0.1, y: 0.0)
-    gradientMaskLayer.endPoint = CGPoint(x: 0.55, y: 0.0)
-
-    containerView.addSubview(tf)
-
-//    tf.layer.mask = gradientMaskLayer
-    
-//    layer.mask = gradientMaskLayer
     layer.addSublayer(textLayer)
     layer.addSublayer(gradient)
     layer.addSublayer(crewIconLayer)
-//    layer.insertSublayer(gradientMaskLayer, at: 0)
   }
   
   private func orientation(from transform: CGAffineTransform) -> (orientation: UIImage.Orientation, isPortrait: Bool) {
