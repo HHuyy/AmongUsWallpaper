@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="eQe-ym-dzS">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,6 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MHJ-zQ-pr1">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bia-Kl-5Kj" customClass="PHLivePhotoView">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XMo-vz-Ftp">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="77"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -102,11 +111,16 @@
                             <constraint firstItem="e6L-jk-4OC" firstAttribute="centerX" secondItem="M2m-Bm-Lkq" secondAttribute="centerX" id="EZK-qa-hmw"/>
                             <constraint firstItem="yaz-XP-5ez" firstAttribute="leading" secondItem="bbA-iN-H6N" secondAttribute="trailing" id="I05-eM-b3Q"/>
                             <constraint firstItem="e6L-jk-4OC" firstAttribute="leading" secondItem="PbD-F2-Qmc" secondAttribute="trailing" id="K0c-t8-caH"/>
+                            <constraint firstAttribute="trailing" secondItem="bia-Kl-5Kj" secondAttribute="trailing" id="MCZ-eT-tPX"/>
+                            <constraint firstAttribute="trailing" secondItem="MHJ-zQ-pr1" secondAttribute="trailing" id="MUg-ZA-XPf"/>
                             <constraint firstItem="3eO-2T-O5t" firstAttribute="top" secondItem="HtN-Cm-NuD" secondAttribute="bottom" id="O93-U5-2F4"/>
                             <constraint firstAttribute="bottom" secondItem="8yw-AM-r1w" secondAttribute="bottom" id="Qo5-ct-vxh"/>
                             <constraint firstItem="HtN-Cm-NuD" firstAttribute="trailing" secondItem="3Q3-7b-9f4" secondAttribute="trailing" id="R6M-bg-mbS"/>
+                            <constraint firstItem="MHJ-zQ-pr1" firstAttribute="top" secondItem="cgZ-ky-UVE" secondAttribute="top" id="RJ9-Hk-KpQ"/>
+                            <constraint firstAttribute="bottom" secondItem="bia-Kl-5Kj" secondAttribute="bottom" id="RSX-yQ-e1A"/>
                             <constraint firstItem="3eO-2T-O5t" firstAttribute="centerX" secondItem="M2m-Bm-Lkq" secondAttribute="centerX" id="Rur-sm-88b"/>
                             <constraint firstItem="PbD-F2-Qmc" firstAttribute="leading" secondItem="xah-2c-VDe" secondAttribute="trailing" id="Sgq-xp-lv3"/>
+                            <constraint firstItem="MHJ-zQ-pr1" firstAttribute="leading" secondItem="cgZ-ky-UVE" secondAttribute="leading" id="T4Q-JT-TAb"/>
                             <constraint firstItem="xah-2c-VDe" firstAttribute="height" secondItem="e6L-jk-4OC" secondAttribute="height" multiplier="34/60" id="TpJ-7v-aQc"/>
                             <constraint firstItem="HtN-Cm-NuD" firstAttribute="top" secondItem="3Q3-7b-9f4" secondAttribute="bottom" id="VCC-cO-6Yb"/>
                             <constraint firstItem="XMo-vz-Ftp" firstAttribute="height" secondItem="cgZ-ky-UVE" secondAttribute="height" multiplier="77/896" id="XLY-Yy-uzc"/>
@@ -118,9 +132,12 @@
                             <constraint firstItem="3Q3-7b-9f4" firstAttribute="height" secondItem="cgZ-ky-UVE" secondAttribute="height" multiplier="0.0524554" id="ad8-yz-ag6"/>
                             <constraint firstItem="PbD-F2-Qmc" firstAttribute="top" secondItem="e6L-jk-4OC" secondAttribute="top" id="anv-ng-43h"/>
                             <constraint firstItem="3Q3-7b-9f4" firstAttribute="top" secondItem="XMo-vz-Ftp" secondAttribute="bottom" id="aoO-zF-jvy"/>
+                            <constraint firstItem="bia-Kl-5Kj" firstAttribute="leading" secondItem="cgZ-ky-UVE" secondAttribute="leading" id="b5t-cN-0jN"/>
                             <constraint firstItem="8yw-AM-r1w" firstAttribute="height" secondItem="cgZ-ky-UVE" secondAttribute="height" multiplier="51/896" id="fXr-e0-age"/>
                             <constraint firstItem="HtN-Cm-NuD" firstAttribute="height" secondItem="cgZ-ky-UVE" secondAttribute="height" multiplier="34/896" id="i2q-En-VCU"/>
                             <constraint firstItem="XMo-vz-Ftp" firstAttribute="leading" secondItem="M2m-Bm-Lkq" secondAttribute="leading" id="icC-M0-0pw"/>
+                            <constraint firstItem="bia-Kl-5Kj" firstAttribute="top" secondItem="cgZ-ky-UVE" secondAttribute="top" id="pOL-bM-LO2"/>
+                            <constraint firstAttribute="bottom" secondItem="MHJ-zQ-pr1" secondAttribute="bottom" id="qca-HD-cz7"/>
                             <constraint firstItem="xah-2c-VDe" firstAttribute="centerY" secondItem="e6L-jk-4OC" secondAttribute="centerY" id="rYT-mm-UPG"/>
                             <constraint firstItem="HtN-Cm-NuD" firstAttribute="leading" secondItem="3Q3-7b-9f4" secondAttribute="leading" id="s5b-0f-dP2"/>
                             <constraint firstItem="bbA-iN-H6N" firstAttribute="top" secondItem="e6L-jk-4OC" secondAttribute="top" id="vhf-QW-iTx"/>
@@ -133,8 +150,10 @@
                     <connections>
                         <outlet property="backButton" destination="xah-2c-VDe" id="YNp-rz-ZMY"/>
                         <outlet property="downloadButton" destination="e6L-jk-4OC" id="K0r-xL-czL"/>
+                        <outlet property="livePhotoView" destination="bia-Kl-5Kj" id="0wh-AS-36l"/>
                         <outlet property="moreButton" destination="yaz-XP-5ez" id="c5i-MV-Btg"/>
                         <outlet property="playerView" destination="cgZ-ky-UVE" id="f9N-mT-zjG"/>
+                        <outlet property="videoView" destination="MHJ-zQ-pr1" id="og4-Xw-Hvi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fms-WA-W9Q" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -146,5 +165,8 @@
         <image name="ic_lock" width="38" height="47"/>
         <image name="ic_preview_back" width="34" height="34"/>
         <image name="ic_preview_more" width="34" height="34"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

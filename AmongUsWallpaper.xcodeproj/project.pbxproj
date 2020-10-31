@@ -29,6 +29,8 @@
 		8749249E254B3C6000FDCECA /* VideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8749249D254B3C6000FDCECA /* VideoEditor.swift */; };
 		879A065E254DB48C008C9F07 /* backgroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879A065C254DB48C008C9F07 /* backgroundCell.swift */; };
 		879A065F254DB48C008C9F07 /* backgroundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 879A065D254DB48C008C9F07 /* backgroundCell.xib */; };
+		879A0664254DC53B008C9F07 /* LivePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879A0663254DC53B008C9F07 /* LivePhoto.swift */; };
+		879A0667254DCF07008C9F07 /* 8.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 879A0666254DCF07008C9F07 /* 8.pdf */; };
 		87A98D42254D777300ADC9E2 /* fontStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A98D40254D777300ADC9E2 /* fontStyleCell.swift */; };
 		87A98D43254D777300ADC9E2 /* fontStyleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87A98D41254D777300ADC9E2 /* fontStyleCell.xib */; };
 		87A98D47254D778C00ADC9E2 /* fontColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A98D45254D778C00ADC9E2 /* fontColorCell.swift */; };
@@ -82,6 +84,8 @@
 		8749249D254B3C6000FDCECA /* VideoEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEditor.swift; sourceTree = "<group>"; };
 		879A065C254DB48C008C9F07 /* backgroundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backgroundCell.swift; sourceTree = "<group>"; };
 		879A065D254DB48C008C9F07 /* backgroundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = backgroundCell.xib; sourceTree = "<group>"; };
+		879A0663254DC53B008C9F07 /* LivePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivePhoto.swift; sourceTree = "<group>"; };
+		879A0666254DCF07008C9F07 /* 8.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 8.pdf; sourceTree = "<group>"; };
 		87A98D40254D777300ADC9E2 /* fontStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fontStyleCell.swift; sourceTree = "<group>"; };
 		87A98D41254D777300ADC9E2 /* fontStyleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = fontStyleCell.xib; sourceTree = "<group>"; };
 		87A98D45254D778C00ADC9E2 /* fontColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fontColorCell.swift; sourceTree = "<group>"; };
@@ -141,6 +145,7 @@
 		04F38677254BE8C500EE7EE0 /* VideoBackground */ = {
 			isa = PBXGroup;
 			children = (
+				879A0666254DCF07008C9F07 /* 8.pdf */,
 				04F3867B254BEFFF00EE7EE0 /* 1.mp4 */,
 				04F3867F254BF00000EE7EE0 /* 2.mp4 */,
 				04F3867D254BEFFF00EE7EE0 /* 3.mp4 */,
@@ -311,6 +316,7 @@
 		FC36D092254A6E0900CC0726 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				879A0663254DC53B008C9F07 /* LivePhoto.swift */,
 				8749249D254B3C6000FDCECA /* VideoEditor.swift */,
 				FC36D095254A74D300CC0726 /* RoundView.swift */,
 				FC36D093254A6E1D00CC0726 /* PushVC.swift */,
@@ -412,6 +418,7 @@
 				04F38687254BF00000EE7EE0 /* 2.mp4 in Resources */,
 				04F38682254BF00000EE7EE0 /* 5.mp4 in Resources */,
 				BB70EDAC25494AC200520E6E /* Assets.xcassets in Resources */,
+				879A0667254DCF07008C9F07 /* 8.pdf in Resources */,
 				DA249BDF254B45BE00CCD5FA /* SettingCell.xib in Resources */,
 				04F38683254BF00000EE7EE0 /* 1.mp4 in Resources */,
 				FC763CE7254AD6EB00ECF9E8 /* IconCell.xib in Resources */,
@@ -497,6 +504,7 @@
 				FC36D096254A74D300CC0726 /* RoundView.swift in Sources */,
 				87A98D42254D777300ADC9E2 /* fontStyleCell.swift in Sources */,
 				DA3C3355254C7497000CB8DB /* PreviewVC.swift in Sources */,
+				879A0664254DC53B008C9F07 /* LivePhoto.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

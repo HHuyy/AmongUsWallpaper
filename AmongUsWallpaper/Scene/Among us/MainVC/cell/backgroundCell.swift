@@ -8,7 +8,10 @@
 import UIKit
 
 class backgroundCell: UICollectionViewCell {
-
+    
+    @IBOutlet weak var backgroundImage: UIImageView!
+    @IBOutlet weak var bottomView: RoundUIView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

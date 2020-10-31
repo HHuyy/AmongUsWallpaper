@@ -8,6 +8,8 @@
 import UIKit
 import UITextView_Placeholder
 import SnapKit
+import Photos
+import PhotosUI
 
 struct AUIconCellModel {
     var imageName: String
@@ -23,7 +25,7 @@ private struct Const {
     static let maxLines: CGFloat = 3
 }
 
-class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate {
+class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoViewDelegate {
 
     @IBOutlet weak var iconButton: UIButton!
     @IBOutlet weak var fontButton: UIButton!
@@ -51,16 +53,18 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate {
     var iconArray: [String]! = []
     var fontStyleArray: [String]! = []
     var fontColorArray: [UInt]! = []
+    var backgroundArray: [String]! = []
     var iconSelectedIndex = 0
     var fontStyleSelectedIndex = 0
     var fontColorSelectedIndex = 0
+    var backgroundSelectedIndex = 0
     var currentPosition: CGAffineTransform?
     
     
     private var currentAttrString: NSAttributedString!
     private var currentCoordinate: Coordinate!
     private var videoType: VideoType = .mp4
-    private var currentBackground: String = "8"
+    private var currentBackground: String = "1"
     private var currentTextColor: UIColor = .white
     private var previousText: String = ""
     
@@ -71,6 +75,7 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate {
         self.iconCollectionView.register(UINib.init(nibName: "IconCell", bundle: .main), forCellWithReuseIdentifier: "IconCell")
         self.fontStyleCollectionView.register(UINib.init(nibName: "fontStyleCell", bundle: .main), forCellWithReuseIdentifier: "fontStyleCell")
         self.fontColorCollectionView.register(UINib.init(nibName: "fontColorCell", bundle: .main), forCellWithReuseIdentifier: "fontColorCell")
+        self.backgroundCollectionView.register(UINib.init(nibName: "backgroundCell", bundle: .main), forCellWithReuseIdentifier: "backgroundCell")
         var i = 1
         while i <= 41 {
             iconArray?.append("icon-\(i)")
@@ -83,6 +88,8 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate {
         self.fontColorArray = [0xFFFFFF, 0xF98B8E, 0xFFA1EC, 0x9D9AFB, 0xA7FEF5, 0xA7FF97, 0xFFCA7B, 0xFF9D9C] // add 0x at the beginning of hex color code
         editTextView.textColor = UIColor.init(rgb: fontColorArray[0])
         fontColorCollectionView.reloadData()
+        backgroundArray = ["1", "2", "3", "4", "5", "6", "7", "8"]
+        backgroundCollectionView.reloadData()
         
         editTextView.textContainer.maximumNumberOfLines = 3
         
@@ -223,6 +230,25 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate {
         
     }
     
+    private let editor = VideoEditors()
+    func showDemo() {
+        let urlPath = Bundle.main.url(forResource: "1", withExtension: "mp4")
+        self.editor.makeBirthdayCard(fromVideoAt: urlPath!, forName: "name") { exportedURL in
+            guard let exportedURL = exportedURL else {
+                return
+            }
+//          self.pickedURL = exportedURL
+            let sb = UIStoryboard(name: "Preview", bundle: nil)
+            if let vc = sb.instantiateInitialViewController() as? PreviewVC {
+                vc.pickedURL = exportedURL
+                self.navigationController!.pushViewController(vc, animated: true)
+            }
+        
+        }
+    }
+    
+    
+    
     @objc func handlePanGesture(gesture: UIPanGestureRecognizer) {
 //        if gesture.state == .began {
 //            print("began")
@@ -266,6 +292,8 @@ extension AmongUsMainVC: UICollectionViewDelegate, UICollectionViewDelegateFlowL
             return CGSize(width: 50, height: collectionView.frame.height)
         case fontColorCollectionView:
             return CGSize(width: 50, height: collectionView.frame.height)
+        case backgroundCollectionView:
+            return CGSize(width: 70, height: collectionView.frame.height)
         default:
             return CGSize(width: 0, height: 0)
         }
@@ -282,6 +310,8 @@ extension AmongUsMainVC: UICollectionViewDataSource {
             return fontStyleArray.count
         case fontColorCollectionView:
             return fontColorArray.count
+        case backgroundCollectionView:
+            return backgroundArray.count
         default:
             return 0
         }
@@ -293,7 +323,14 @@ extension AmongUsMainVC: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IconCell", for: indexPath) as? IconCell else {
                 return UICollectionViewCell()
             }
-            cell.imageIcon.image = UIImage(named: iconArray[indexPath.row])
+
+            DispatchQueue.global(qos: .background).async {
+                let image = UIImage(named: self.iconArray[indexPath.row])
+
+                DispatchQueue.main.async {
+                    cell.imageIcon.image = image
+                }
+            }
             if indexPath.row == iconSelectedIndex {
                 cell.bottomView.isHidden = false
             } else {
@@ -329,6 +366,17 @@ extension AmongUsMainVC: UICollectionViewDataSource {
                 cell.bottomView.isHidden = true
             }
             return cell
+        case backgroundCollectionView:
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "backgroundCell", for: indexPath) as? backgroundCell else {
+                return UICollectionViewCell()
+            }
+            cell.backgroundImage.image = UIImage.init(named: backgroundArray[indexPath.row])
+            if indexPath.row == backgroundSelectedIndex {
+                cell.bottomView.isHidden = false
+            } else {
+                cell.bottomView.isHidden = true
+            }
+            return cell
         default:
             return UICollectionViewCell()
         }
@@ -345,6 +393,9 @@ extension AmongUsMainVC: UICollectionViewDataSource {
         case fontColorCollectionView:
             fontColorSelectedIndex = indexPath.row
             self.editTextView.textColor = UIColor.init(rgb: fontColorArray[indexPath.row])
+        case backgroundCollectionView:
+            backgroundSelectedIndex = indexPath.row
+            
         default:
             break
         }
