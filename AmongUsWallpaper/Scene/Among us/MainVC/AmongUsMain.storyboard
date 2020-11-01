@@ -3,7 +3,7 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -86,6 +86,13 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lMa-Rt-XjU" userLabel="Play View">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="47"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mjy-kY-k6h">
+                                                        <rect key="frame" x="319" y="4" width="95" height="39"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <color key="backgroundColor" systemColor="systemYellowColor"/>
+                                                    </view>
+                                                </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="syV-p7-Zqb" userLabel="Tab Buttons View">
@@ -371,6 +378,11 @@
                                                     <constraint firstItem="OMX-Vo-hEz" firstAttribute="top" secondItem="XGy-kX-tjp" secondAttribute="top" id="uyb-CI-Ybz"/>
                                                 </constraints>
                                             </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VY7-vN-8gN">
+                                                <rect key="frame" x="8" y="0.0" width="192" height="39"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="systemGreenColor"/>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" red="0.12156862745098039" green="0.14509803921568626" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -408,14 +420,33 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                             </textView>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S4G-1h-14f" customClass="RoundUIView" customModule="AmongUsWallpaper" customModuleProvider="target">
+                                                <rect key="frame" x="10" y="220.66666666666669" width="40" height="50"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="W6H-db-sVU" firstAttribute="height" secondItem="qjY-Ev-7xa" secondAttribute="height" multiplier="0.15" id="FY8-20-JXa"/>
+                                            <constraint firstItem="S4G-1h-14f" firstAttribute="centerY" secondItem="v5r-hV-RPa" secondAttribute="centerY" id="FzS-Tf-ylz"/>
                                             <constraint firstItem="v5r-hV-RPa" firstAttribute="centerY" secondItem="qjY-Ev-7xa" secondAttribute="centerY" id="M8C-BJ-icw"/>
                                             <constraint firstItem="W6H-db-sVU" firstAttribute="leading" secondItem="v5r-hV-RPa" secondAttribute="trailing" constant="-20" id="MAw-8N-4Gd"/>
+                                            <constraint firstItem="S4G-1h-14f" firstAttribute="height" secondItem="v5r-hV-RPa" secondAttribute="height" id="R3b-Jj-FL8"/>
                                             <constraint firstItem="v5r-hV-RPa" firstAttribute="leading" secondItem="qjY-Ev-7xa" secondAttribute="leading" constant="10" id="TYm-J3-2s0"/>
                                             <constraint firstItem="W6H-db-sVU" firstAttribute="centerY" secondItem="v5r-hV-RPa" secondAttribute="centerY" id="WdM-1A-s5q"/>
+                                            <constraint firstItem="S4G-1h-14f" firstAttribute="width" secondItem="v5r-hV-RPa" secondAttribute="width" id="m0h-V6-vUu"/>
+                                            <constraint firstItem="S4G-1h-14f" firstAttribute="centerX" secondItem="v5r-hV-RPa" secondAttribute="centerX" id="sMX-vh-ogo"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -507,8 +538,14 @@
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemOrangeColor">
             <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemYellowColor">
+            <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

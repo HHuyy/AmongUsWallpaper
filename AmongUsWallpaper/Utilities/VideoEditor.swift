@@ -123,7 +123,7 @@ class VideoEditor: NSObject {
       gradient.displayIfNeeded()
       
       let textAnimation = CABasicAnimation(keyPath: "position")
-      textAnimation.fromValue = [attributedText.width(containerHeight: 200)/2, mainY + attributedText.height(containerWidth: videoSize.width)]
+      textAnimation.fromValue = [attributedText.width(containerHeight: 200), mainY + attributedText.height(containerWidth: videoSize.width)]
       textAnimation.toValue = [attributedText.width(containerHeight: 200)*2, mainY + attributedText.height(containerWidth: videoSize.width)]
       textAnimation.duration = 6
       textAnimation.autoreverses = true
@@ -215,7 +215,7 @@ class VideoEditor: NSObject {
 }
 
 class VideoEditors {
-    func makeVideo(fromVideoAt videoURL: URL, icon: UIImage, fontStyle: String, textString text: String, textColor: UInt, background: UIImage, textSize: CGFloat, alignment: Int, y: CGFloat, scale: CGFloat, onComplete: @escaping (URL?) -> Void) {
+    func makeVideo(fromVideoAt videoURL: URL, icon: UIImage, fontStyle: String, textString text: String, textColor: UInt, background: UIImage, textSize: CGFloat, alignment: Int, y: CGFloat, scaleHeight: CGFloat, textScaleWidth: CGFloat, onComplete: @escaping (URL?) -> Void) {
 //    onComplete(videoURL)
     let asset = AVURLAsset(url: videoURL)
     let composition = AVMutableComposition()
@@ -266,7 +266,7 @@ class VideoEditors {
     let overlayLayer = CALayer()
     overlayLayer.frame = CGRect(origin: .zero, size: videoSize)
         overlayLayer.isGeometryFlipped = true
-        add(text: text, y: y, textStyle: fontStyle, textColor: UIColor.init(rgb: textColor), textSize: textSize, icon: icon, to: overlayLayer, videoSize: videoSize, alignment: alignment, scale: scale)
+        add(text: text, y: y, textStyle: fontStyle, textColor: UIColor.init(rgb: textColor), textSize: textSize, icon: icon, to: overlayLayer, videoSize: videoSize, alignment: alignment, scaleHeight: scaleHeight, textScaleWidth: textScaleWidth)
         
     let outputLayer = CALayer()
     outputLayer.frame = CGRect(origin: .zero, size: videoSize)
@@ -339,13 +339,13 @@ class VideoEditors {
     layer.addSublayer(imageLayer)
   }
   
-    private func add(text: String, y: CGFloat, textStyle: String, textColor: UIColor, textSize: CGFloat, icon: UIImage, to layer: CALayer, videoSize: CGSize, alignment: Int, scale: CGFloat) {
+    private func add(text: String, y: CGFloat, textStyle: String, textColor: UIColor, textSize: CGFloat, icon: UIImage, to layer: CALayer, videoSize: CGSize, alignment: Int, scaleHeight: CGFloat, textScaleWidth: CGFloat) {
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = .center
     let attributedText = NSAttributedString(
     string: text,
         attributes: [
-            .font: UIFont(name: textStyle, size: textSize * scale) as Any,
+            .font: UIFont(name: textStyle, size: textSize * scaleHeight) as Any,
             .foregroundColor: textColor])
 //    let mainY = videoSize.height * 0.66
     let mainY = 1920 * y
@@ -370,7 +370,7 @@ class VideoEditors {
     textLayer.frame = CGRect(
       x: 0,
       y: mainY,
-        width: videoSize.width,
+        width: videoSize.width * textScaleWidth,
         height: attributedText.height(containerWidth: videoSize.width))
     
     
@@ -384,7 +384,7 @@ class VideoEditors {
     gradient.frame = CGRect(
         x: textLayer.frame.origin.x,
           y: mainY,
-        width: videoSize.width*1.5,
+        width: videoSize.width * textScaleWidth,
         height: textLayer.frame.height)
 //    gradient.displayIfNeeded()
     

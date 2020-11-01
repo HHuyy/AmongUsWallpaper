@@ -138,9 +138,9 @@ class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDele
     }
     
     func livePhotoDemo() {
-        let urlPath = Bundle.main.url(forResource: "8", withExtension: "pdf")
+//        let urlPath = Bundle.main.url(forResource: "8", withExtension: "pdf")
 
-            LivePhoto.generate(from: urlPath, videoURL: pickedURL!) { (percent) in
+            LivePhoto.generate(from: nil, videoURL: pickedURL!) { (percent) in
 //                DispatchQueue.main.async {
 //                    self.progressView.progress = Float(percent)
 //                }
