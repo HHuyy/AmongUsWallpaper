@@ -144,7 +144,7 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
         self.editView.setupPlayerItem(asset: videoEditor.composition)
         self.editView.delegate = self
         
-        positionY = editTextView.center.y
+        positionY = editView.frame.width/2
         
         setupEditView()
     }

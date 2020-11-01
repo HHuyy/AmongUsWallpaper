@@ -129,8 +129,10 @@ class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDele
     }
     
     @IBAction func downloadButtonDidTap(_ sender: Any) {
+        livePhotoDemo()
     }
     @IBAction func backButtonDidTap(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
     @IBAction func moreButtonDidTap(_ sender: Any) {
     }
@@ -147,10 +149,10 @@ class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDele
                 if let resources = resources {
                     LivePhoto.saveToLibrary(resources, completion: { (success) in
                         if success {
-//                            self.postAlert("Live Photo Saved", message:"The live photo was successfully saved to Photos.")
+                            self.postAlert("Live Photo Saved", message:"The live photo was successfully saved to Photos.")
                         }
                         else {
-//                            self.postAlert("Live Photo Not Saved", message:"The live photo was not saved to Photos.")
+                            self.postAlert("Live Photo Not Saved", message:"The live photo was not saved to Photos.")
                         }
                     })
                 }

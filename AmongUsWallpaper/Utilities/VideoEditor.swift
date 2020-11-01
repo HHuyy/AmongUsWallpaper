@@ -354,7 +354,7 @@ class VideoEditors {
     textLayer.string = attributedText
     textLayer.shouldRasterize = true
     textLayer.rasterizationScale = UIScreen.main.scale
-    textLayer.backgroundColor = UIColor.green.cgColor
+    textLayer.backgroundColor = UIColor.clear.cgColor
 //    textLayer.isGeometryFlipped = true
         switch alignment {
         case 1:
