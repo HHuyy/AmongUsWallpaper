@@ -66,6 +66,7 @@ class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDele
         //demo
         player = AVPlayer(url: pickedURL!)
         playerLayer = AVPlayerLayer(player: player)
+        videoView.frame = self.view.bounds
         playerLayer.frame = videoView.bounds
         videoView.layer.addSublayer(playerLayer)
         player.play()
