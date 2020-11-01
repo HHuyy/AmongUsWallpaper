@@ -45,6 +45,7 @@
 		DA249BE2254B470800CCD5FA /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA249BE1254B470800CCD5FA /* UICollectionView+Ext.swift */; };
 		DA3C3352254C747D000CB8DB /* Preview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3C3351254C747D000CB8DB /* Preview.storyboard */; };
 		DA3C3355254C7497000CB8DB /* PreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C3354254C7497000CB8DB /* PreviewVC.swift */; };
+		DAEE6D4D254DE8E8005BA38A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE6D4C254DE8E8005BA38A /* Constant.swift */; };
 		FC36D090254A6C3C00CC0726 /* DiscoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC36D08E254A6C3C00CC0726 /* DiscoverCell.swift */; };
 		FC36D091254A6C3C00CC0726 /* DiscoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC36D08F254A6C3C00CC0726 /* DiscoverCell.xib */; };
 		FC36D094254A6E1D00CC0726 /* PushVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC36D093254A6E1D00CC0726 /* PushVC.swift */; };
@@ -97,6 +98,7 @@
 		DA249BE1254B470800CCD5FA /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
 		DA3C3351254C747D000CB8DB /* Preview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preview.storyboard; sourceTree = "<group>"; };
 		DA3C3354254C7497000CB8DB /* PreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewVC.swift; sourceTree = "<group>"; };
+		DAEE6D4C254DE8E8005BA38A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		FC36D08E254A6C3C00CC0726 /* DiscoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCell.swift; sourceTree = "<group>"; };
 		FC36D08F254A6C3C00CC0726 /* DiscoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverCell.xib; sourceTree = "<group>"; };
 		FC36D093254A6E1D00CC0726 /* PushVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushVC.swift; sourceTree = "<group>"; };
@@ -312,6 +314,7 @@
 				FC36D093254A6E1D00CC0726 /* PushVC.swift */,
 				FC36D097254A78F400CC0726 /* Extension.swift */,
 				044ACAD8254BCEFA00DD8AD6 /* Storyboarded.swift */,
+				DAEE6D4C254DE8E8005BA38A /* Constant.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -468,6 +471,7 @@
 				FC36D090254A6C3C00CC0726 /* DiscoverCell.swift in Sources */,
 				DA249BDE254B45BE00CCD5FA /* SettingCell.swift in Sources */,
 				044ACB0A254BD06F00DD8AD6 /* BaseNavigation.swift in Sources */,
+				DAEE6D4D254DE8E8005BA38A /* Constant.swift in Sources */,
 				FC36D094254A6E1D00CC0726 /* PushVC.swift in Sources */,
 				04F38693254C276B00EE7EE0 /* UIView+Ext.swift in Sources */,
 				DA249BE2254B470800CCD5FA /* UICollectionView+Ext.swift in Sources */,

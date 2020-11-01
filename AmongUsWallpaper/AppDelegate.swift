@@ -31,6 +31,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func configRootVC() {
         let homeVC = HomeVC.instantiate()
+//        let homeVC = PreviewVC.instantiate()
         let navigation = BaseNavigation(rootViewController: homeVC)
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()

@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import GoogleMobileAds
 
 struct DiscoverCellModel {
     var imageName: String
@@ -18,6 +19,7 @@ class DiscoverVC: UIViewController, StoryboardInstantiatable {
     @IBOutlet weak var tableView: UITableView!
     
     var data: [DiscoverCellModel]!
+    var bannerView: GADBannerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -58,5 +60,15 @@ extension DiscoverVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 200
+    }
+}
+
+extension DiscoverVC: GADBannerViewDelegate {
+    func addBannerView() {
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.adUnitID = "ca-app-pub-6503869472106217/4674523867"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self
     }
 }
