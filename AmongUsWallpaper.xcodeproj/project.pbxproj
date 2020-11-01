@@ -25,6 +25,8 @@
 		04F38693254C276B00EE7EE0 /* UIView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F38692254C276B00EE7EE0 /* UIView+Ext.swift */; };
 		04F38696254C286200EE7EE0 /* UIBezierPath+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F38695254C286200EE7EE0 /* UIBezierPath+Ext.swift */; };
 		04F386AD254C381500EE7EE0 /* UITextView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F386AC254C381500EE7EE0 /* UITextView+Ext.swift */; };
+		04F386C7254E675600EE7EE0 /* RealmDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F386C6254E675600EE7EE0 /* RealmDao.swift */; };
+		04F386CA254E676000EE7EE0 /* AmongUsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F386C9254E676000EE7EE0 /* AmongUsDao.swift */; };
 		0F499FEA5433AA52D5964A1A /* Pods_AmongUsWallpaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6F38BCFB6A544D3B00B921 /* Pods_AmongUsWallpaper.framework */; };
 		8749249E254B3C6000FDCECA /* VideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8749249D254B3C6000FDCECA /* VideoEditor.swift */; };
 		879A065E254DB48C008C9F07 /* backgroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879A065C254DB48C008C9F07 /* backgroundCell.swift */; };
@@ -81,6 +83,8 @@
 		04F38692254C276B00EE7EE0 /* UIView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Ext.swift"; sourceTree = "<group>"; };
 		04F38695254C286200EE7EE0 /* UIBezierPath+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIBezierPath+Ext.swift"; sourceTree = "<group>"; };
 		04F386AC254C381500EE7EE0 /* UITextView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Ext.swift"; sourceTree = "<group>"; };
+		04F386C6254E675600EE7EE0 /* RealmDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDao.swift; sourceTree = "<group>"; };
+		04F386C9254E676000EE7EE0 /* AmongUsDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmongUsDao.swift; sourceTree = "<group>"; };
 		8749249D254B3C6000FDCECA /* VideoEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEditor.swift; sourceTree = "<group>"; };
 		879A065C254DB48C008C9F07 /* backgroundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backgroundCell.swift; sourceTree = "<group>"; };
 		879A065D254DB48C008C9F07 /* backgroundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = backgroundCell.xib; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 		04F38690254C266000EE7EE0 /* Realm */ = {
 			isa = PBXGroup;
 			children = (
+				04F386C6254E675600EE7EE0 /* RealmDao.swift */,
+				04F386C9254E676000EE7EE0 /* AmongUsDao.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 				BB70EDDF2549721700520E6E /* MyWallpaperVC.swift in Sources */,
 				BB70EDE22549724400520E6E /* SettingVC.swift in Sources */,
 				044ACAD9254BCEFA00DD8AD6 /* Storyboarded.swift in Sources */,
+				04F386CA254E676000EE7EE0 /* AmongUsDao.swift in Sources */,
 				FC763CE6254AD6EB00ECF9E8 /* IconCell.swift in Sources */,
 				BB70EDA325494AC200520E6E /* AppDelegate.swift in Sources */,
 				879A065E254DB48C008C9F07 /* backgroundCell.swift in Sources */,
@@ -500,6 +507,7 @@
 				04F3868A254BFAA100EE7EE0 /* AVMutableComposition+Ext.swift in Sources */,
 				04F3868E254C225100EE7EE0 /* PlayerView.swift in Sources */,
 				04F386AD254C381500EE7EE0 /* UITextView+Ext.swift in Sources */,
+				04F386C7254E675600EE7EE0 /* RealmDao.swift in Sources */,
 				04F38696254C286200EE7EE0 /* UIBezierPath+Ext.swift in Sources */,
 				FC36D096254A74D300CC0726 /* RoundView.swift in Sources */,
 				87A98D42254D777300ADC9E2 /* fontStyleCell.swift in Sources */,

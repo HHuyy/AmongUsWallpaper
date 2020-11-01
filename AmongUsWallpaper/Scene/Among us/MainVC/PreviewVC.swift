@@ -128,10 +128,16 @@ class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDele
     }
     
     @IBAction func downloadButtonDidTap(_ sender: Any) {
+        
     }
     @IBAction func backButtonDidTap(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
     }
+    
     @IBAction func moreButtonDidTap(_ sender: Any) {
+        var item: Any?
+        let ac = UIActivityViewController(activityItems: item, applicationActivities: nil)
+        present(ac, animated: true)
     }
     
     func livePhotoDemo() {
