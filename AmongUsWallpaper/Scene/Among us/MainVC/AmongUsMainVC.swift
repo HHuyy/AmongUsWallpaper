@@ -23,6 +23,7 @@ enum VideoType: String {
 private struct Const {
     static let placeholder: String = "Enter text here ..."
     static let maxLines: CGFloat = 3
+    static let originVideoHeight: CGFloat = 1920
 }
 
 class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoViewDelegate {
@@ -59,9 +60,11 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
     var fontStyleSelectedIndex = 0
     var fontColorSelectedIndex = 0
     var backgroundSelectedIndex = 0
-    var currentAlignment = 1
     var positionY: CGFloat?
 //    var currentPosition: CGAffineTransform?
+
+    var currentAlignment: TextAlignment = .left
+    var currentIconDirection: Bool = false
     
     
     private var currentAttrString: NSAttributedString!
@@ -144,7 +147,7 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
         self.editView.setupPlayerItem(asset: videoEditor.composition)
         self.editView.delegate = self
         
-        positionY = editTextView.center.y
+        positionY = editView.frame.width/2
         
         setupEditView()
     }
@@ -215,14 +218,16 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
             button.isSelected = false
         }
         sender.isSelected = true
-        currentAlignment = sender.tag
         switch sender.tag {
         case 1:
             editTextView.textAlignment = .left
+            currentAlignment = .left
         case 2:
             editTextView.textAlignment = .center
+            currentAlignment = .center
         case 3:
             editTextView.textAlignment = .right
+            currentAlignment = .right
         default:
             break
         }
@@ -247,19 +252,33 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
     
     private let editor = VideoEditors()
     func showDemo() {
+        let backgroundImage = backgroundArray[backgroundSelectedIndex]
+        let icon = iconArray[iconSelectedIndex]
+        let text = (editTextView.text!.isEmpty) ? editTextView.placeholder : editTextView.text!
+        let fontSize = Float(editTextView.font!.pointSize)
+        let font = editTextView.font!.fontName
+        let textColor: UInt = fontColorArray[fontColorSelectedIndex]
+        let position: Float = Float(positionY!)
+        
         let urlPath = Bundle.main.url(forResource: backgroundArray[backgroundSelectedIndex], withExtension: "mp4")!
 //        let icon = resizeImage(image: UIImage.init(named: iconArray[iconSelectedIndex])!, targetSize: CGSize(width: editImageView.frame.width, height: editImageView.frame.height))
-        self.editor.makeVideo(fromVideoAt: urlPath, icon: UIImage.init(named: iconArray[iconSelectedIndex])!, fontStyle: fontStyleArray[fontStyleSelectedIndex], textString: editTextView.text, textColor: fontColorArray[fontColorSelectedIndex], background: reSizebackgroundArray[backgroundSelectedIndex], textSize: editTextView.font!.pointSize, alignment: currentAlignment, y: positionY!) { exportedURL in
+        self.editor.makeVideo(fromVideoAt: urlPath, icon: UIImage.init(named: iconArray[iconSelectedIndex])!, fontStyle: fontStyleArray[fontStyleSelectedIndex], textString: editTextView.text, textColor: fontColorArray[fontColorSelectedIndex], background: reSizebackgroundArray[backgroundSelectedIndex], textSize: editTextView.font!.pointSize, alignment: currentAlignment, y: positionY!/editView.frame.height, scale: Const.originVideoHeight / editView.frame.height) { exportedURL in
             guard let exportedURL = exportedURL else {
                 return
             }
-//          self.pickedURL = exportedURL
-            let sb = UIStoryboard(name: "Preview", bundle: nil)
-            if let vc = sb.instantiateInitialViewController() as? PreviewVC {
-                vc.pickedURL = exportedURL
-                self.navigationController!.pushViewController(vc, animated: true)
-            }
-        
+            
+            // Refactor
+            let previewVC = PreviewVC.instantiate()
+            let id = exportedURL.deletingPathExtension().lastPathComponent
+            
+            let amongUsModel = AmongUsModel(id: id, position: position,
+                                            backgoundImage: backgroundImage, icon: icon,
+                                            text: text ?? "", fontSize: fontSize, font: font,
+                                            textColor: textColor, iconDirection: self.currentIconDirection, textAlignment: self.currentAlignment)
+            
+            previewVC.pickedURL = exportedURL
+            previewVC.amongUs = amongUsModel
+            self.navigationController?.pushViewController(previewVC, animated: true)
         }
     }
     

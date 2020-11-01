@@ -20,5 +20,12 @@ class MyWallpaperCell: UICollectionViewCell {
     func bindData(backgroundImage: UIImage) {
         playImageView.image = UIImage(named: "ic_play")
         backgroundImageView.image = backgroundImage
+        backgroundImageView.contentMode = .scaleAspectFill
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        self.layer.borderWidth = 1.0
+        self.layer.borderColor = UIColor.lightGray.cgColor
     }
 }

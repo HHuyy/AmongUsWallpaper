@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        clearTempDirectory()
         FirebaseApp.configure()
         self.window = UIWindow(frame: UIScreen.main.bounds)
         configRootVC()
@@ -32,5 +32,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navigation
         window?.makeKeyAndVisible()
     }
+    
+    func clearTempDirectory() {
+//        guard let contents = try? FileManager.default.contentsOfDirectory(atPath: NSTemporaryDirectory()) else {
+//            return
+//        }
+//
+//        contents.forEach { (path) in
+//            try? FileManager.default.removeItem(atPath: "\(NSTemporaryDirectory())\(path)")
+//        }
+        
+        FileManager.createWallpaperDirIfNeeded()
+    }
 }
-

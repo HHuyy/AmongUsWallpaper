@@ -12,6 +12,15 @@
 		044ACB0A254BD06F00DD8AD6 /* BaseNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044ACB09254BD06F00DD8AD6 /* BaseNavigation.swift */; };
 		044ACB0F254BD9E700DD8AD6 /* MyWallpaperCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044ACB0D254BD9E700DD8AD6 /* MyWallpaperCell.swift */; };
 		044ACB10254BD9E700DD8AD6 /* MyWallpaperCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 044ACB0E254BD9E700DD8AD6 /* MyWallpaperCell.xib */; };
+		0484A08A254EE4C200918A65 /* 4.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0484A07B254EE2FE00918A65 /* 4.pdf */; };
+		0484A08B254EE4C200918A65 /* 6.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0484A07A254EE2FE00918A65 /* 6.pdf */; };
+		0484A08C254EE4C200918A65 /* 8.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0484A077254EE2FE00918A65 /* 8.pdf */; };
+		0484A08D254EE4C200918A65 /* 1.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0484A078254EE2FE00918A65 /* 1.pdf */; };
+		0484A08E254EE4C200918A65 /* 2.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0484A07C254EE2FE00918A65 /* 2.pdf */; };
+		0484A08F254EE4C200918A65 /* 7.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0484A07E254EE2FF00918A65 /* 7.pdf */; };
+		0484A090254EE4C200918A65 /* 3.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0484A07D254EE2FE00918A65 /* 3.pdf */; };
+		0484A091254EE4C200918A65 /* 5.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0484A079254EE2FE00918A65 /* 5.pdf */; };
+		0484A096254EF84200918A65 /* UIImage+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0484A095254EF84200918A65 /* UIImage+Ext.swift */; };
 		04F38680254BF00000EE7EE0 /* 6.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 04F38678254BEFFE00EE7EE0 /* 6.mp4 */; };
 		04F38681254BF00000EE7EE0 /* 8.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 04F38679254BEFFE00EE7EE0 /* 8.mp4 */; };
 		04F38682254BF00000EE7EE0 /* 5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 04F3867A254BEFFE00EE7EE0 /* 5.mp4 */; };
@@ -27,12 +36,13 @@
 		04F386AD254C381500EE7EE0 /* UITextView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F386AC254C381500EE7EE0 /* UITextView+Ext.swift */; };
 		04F386C7254E675600EE7EE0 /* RealmDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F386C6254E675600EE7EE0 /* RealmDao.swift */; };
 		04F386CA254E676000EE7EE0 /* AmongUsDao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F386C9254E676000EE7EE0 /* AmongUsDao.swift */; };
+		04F386CE254EA06F00EE7EE0 /* FileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F386CD254EA06F00EE7EE0 /* FileManager.swift */; };
+		04F386D1254EAAB300EE7EE0 /* AmongUsEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04F386D0254EAAB300EE7EE0 /* AmongUsEntity.swift */; };
 		0F499FEA5433AA52D5964A1A /* Pods_AmongUsWallpaper.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9A6F38BCFB6A544D3B00B921 /* Pods_AmongUsWallpaper.framework */; };
 		8749249E254B3C6000FDCECA /* VideoEditor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8749249D254B3C6000FDCECA /* VideoEditor.swift */; };
 		879A065E254DB48C008C9F07 /* backgroundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879A065C254DB48C008C9F07 /* backgroundCell.swift */; };
 		879A065F254DB48C008C9F07 /* backgroundCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 879A065D254DB48C008C9F07 /* backgroundCell.xib */; };
 		879A0664254DC53B008C9F07 /* LivePhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 879A0663254DC53B008C9F07 /* LivePhoto.swift */; };
-		879A0667254DCF07008C9F07 /* 8.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 879A0666254DCF07008C9F07 /* 8.pdf */; };
 		87A98D42254D777300ADC9E2 /* fontStyleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A98D40254D777300ADC9E2 /* fontStyleCell.swift */; };
 		87A98D43254D777300ADC9E2 /* fontStyleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 87A98D41254D777300ADC9E2 /* fontStyleCell.xib */; };
 		87A98D47254D778C00ADC9E2 /* fontColorCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87A98D45254D778C00ADC9E2 /* fontColorCell.swift */; };
@@ -70,6 +80,15 @@
 		044ACB09254BD06F00DD8AD6 /* BaseNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigation.swift; sourceTree = "<group>"; };
 		044ACB0D254BD9E700DD8AD6 /* MyWallpaperCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyWallpaperCell.swift; sourceTree = "<group>"; };
 		044ACB0E254BD9E700DD8AD6 /* MyWallpaperCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyWallpaperCell.xib; sourceTree = "<group>"; };
+		0484A077254EE2FE00918A65 /* 8.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 8.pdf; sourceTree = "<group>"; };
+		0484A078254EE2FE00918A65 /* 1.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 1.pdf; sourceTree = "<group>"; };
+		0484A079254EE2FE00918A65 /* 5.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 5.pdf; sourceTree = "<group>"; };
+		0484A07A254EE2FE00918A65 /* 6.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 6.pdf; sourceTree = "<group>"; };
+		0484A07B254EE2FE00918A65 /* 4.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 4.pdf; sourceTree = "<group>"; };
+		0484A07C254EE2FE00918A65 /* 2.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 2.pdf; sourceTree = "<group>"; };
+		0484A07D254EE2FE00918A65 /* 3.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 3.pdf; sourceTree = "<group>"; };
+		0484A07E254EE2FF00918A65 /* 7.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 7.pdf; sourceTree = "<group>"; };
+		0484A095254EF84200918A65 /* UIImage+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Ext.swift"; sourceTree = "<group>"; };
 		04F38678254BEFFE00EE7EE0 /* 6.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 6.mp4; sourceTree = "<group>"; };
 		04F38679254BEFFE00EE7EE0 /* 8.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8.mp4; sourceTree = "<group>"; };
 		04F3867A254BEFFE00EE7EE0 /* 5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 5.mp4; sourceTree = "<group>"; };
@@ -85,11 +104,12 @@
 		04F386AC254C381500EE7EE0 /* UITextView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextView+Ext.swift"; sourceTree = "<group>"; };
 		04F386C6254E675600EE7EE0 /* RealmDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmDao.swift; sourceTree = "<group>"; };
 		04F386C9254E676000EE7EE0 /* AmongUsDao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmongUsDao.swift; sourceTree = "<group>"; };
+		04F386CD254EA06F00EE7EE0 /* FileManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManager.swift; sourceTree = "<group>"; };
+		04F386D0254EAAB300EE7EE0 /* AmongUsEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmongUsEntity.swift; sourceTree = "<group>"; };
 		8749249D254B3C6000FDCECA /* VideoEditor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideoEditor.swift; sourceTree = "<group>"; };
 		879A065C254DB48C008C9F07 /* backgroundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = backgroundCell.swift; sourceTree = "<group>"; };
 		879A065D254DB48C008C9F07 /* backgroundCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = backgroundCell.xib; sourceTree = "<group>"; };
 		879A0663254DC53B008C9F07 /* LivePhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LivePhoto.swift; sourceTree = "<group>"; };
-		879A0666254DCF07008C9F07 /* 8.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = 8.pdf; sourceTree = "<group>"; };
 		87A98D40254D777300ADC9E2 /* fontStyleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fontStyleCell.swift; sourceTree = "<group>"; };
 		87A98D41254D777300ADC9E2 /* fontStyleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = fontStyleCell.xib; sourceTree = "<group>"; };
 		87A98D45254D778C00ADC9E2 /* fontColorCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = fontColorCell.swift; sourceTree = "<group>"; };
@@ -149,7 +169,14 @@
 		04F38677254BE8C500EE7EE0 /* VideoBackground */ = {
 			isa = PBXGroup;
 			children = (
-				879A0666254DCF07008C9F07 /* 8.pdf */,
+				0484A078254EE2FE00918A65 /* 1.pdf */,
+				0484A07C254EE2FE00918A65 /* 2.pdf */,
+				0484A07D254EE2FE00918A65 /* 3.pdf */,
+				0484A07B254EE2FE00918A65 /* 4.pdf */,
+				0484A079254EE2FE00918A65 /* 5.pdf */,
+				0484A07A254EE2FE00918A65 /* 6.pdf */,
+				0484A07E254EE2FF00918A65 /* 7.pdf */,
+				0484A077254EE2FE00918A65 /* 8.pdf */,
 				04F3867B254BEFFF00EE7EE0 /* 1.mp4 */,
 				04F3867F254BF00000EE7EE0 /* 2.mp4 */,
 				04F3867D254BEFFF00EE7EE0 /* 3.mp4 */,
@@ -167,6 +194,7 @@
 			children = (
 				04F386C6254E675600EE7EE0 /* RealmDao.swift */,
 				04F386C9254E676000EE7EE0 /* AmongUsDao.swift */,
+				04F386D0254EAAB300EE7EE0 /* AmongUsEntity.swift */,
 			);
 			path = Realm;
 			sourceTree = "<group>";
@@ -306,6 +334,7 @@
 				04F38692254C276B00EE7EE0 /* UIView+Ext.swift */,
 				04F38695254C286200EE7EE0 /* UIBezierPath+Ext.swift */,
 				04F386AC254C381500EE7EE0 /* UITextView+Ext.swift */,
+				0484A095254EF84200918A65 /* UIImage+Ext.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -328,6 +357,7 @@
 				FC36D093254A6E1D00CC0726 /* PushVC.swift */,
 				FC36D097254A78F400CC0726 /* Extension.swift */,
 				044ACAD8254BCEFA00DD8AD6 /* Storyboarded.swift */,
+				04F386CD254EA06F00EE7EE0 /* FileManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -408,6 +438,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FC36D091254A6C3C00CC0726 /* DiscoverCell.xib in Resources */,
+				0484A08B254EE4C200918A65 /* 6.pdf in Resources */,
+				0484A091254EE4C200918A65 /* 5.pdf in Resources */,
 				BB70EDBC254950A800520E6E /* AmongUsMain.storyboard in Resources */,
 				87A98D43254D777300ADC9E2 /* fontStyleCell.xib in Resources */,
 				879A065F254DB48C008C9F07 /* backgroundCell.xib in Resources */,
@@ -416,17 +448,22 @@
 				BB70EDE52549725200520E6E /* Setting.storyboard in Resources */,
 				DA3C3352254C747D000CB8DB /* Preview.storyboard in Resources */,
 				BB70EDAF25494AC200520E6E /* LaunchScreen.storyboard in Resources */,
+				0484A08D254EE4C200918A65 /* 1.pdf in Resources */,
 				044ACAB1254BCC4A00DD8AD6 /* GoogleService-Info.plist in Resources */,
+				0484A08A254EE4C200918A65 /* 4.pdf in Resources */,
+				0484A08E254EE4C200918A65 /* 2.pdf in Resources */,
 				04F38681254BF00000EE7EE0 /* 8.mp4 in Resources */,
 				044ACB10254BD9E700DD8AD6 /* MyWallpaperCell.xib in Resources */,
 				87A98D48254D778C00ADC9E2 /* fontColorCell.xib in Resources */,
+				0484A08C254EE4C200918A65 /* 8.pdf in Resources */,
 				04F38685254BF00000EE7EE0 /* 3.mp4 in Resources */,
 				04F38687254BF00000EE7EE0 /* 2.mp4 in Resources */,
 				04F38682254BF00000EE7EE0 /* 5.mp4 in Resources */,
+				0484A090254EE4C200918A65 /* 3.pdf in Resources */,
 				BB70EDAC25494AC200520E6E /* Assets.xcassets in Resources */,
-				879A0667254DCF07008C9F07 /* 8.pdf in Resources */,
 				DA249BDF254B45BE00CCD5FA /* SettingCell.xib in Resources */,
 				04F38683254BF00000EE7EE0 /* 1.mp4 in Resources */,
+				0484A08F254EE4C200918A65 /* 7.pdf in Resources */,
 				FC763CE7254AD6EB00ECF9E8 /* IconCell.xib in Resources */,
 				04F38686254BF00000EE7EE0 /* 4.mp4 in Resources */,
 				BB70EDC92549637B00520E6E /* Home.storyboard in Resources */,
@@ -493,12 +530,15 @@
 				879A065E254DB48C008C9F07 /* backgroundCell.swift in Sources */,
 				8749249E254B3C6000FDCECA /* VideoEditor.swift in Sources */,
 				87A98D47254D778C00ADC9E2 /* fontColorCell.swift in Sources */,
+				0484A096254EF84200918A65 /* UIImage+Ext.swift in Sources */,
 				BB70EDCC2549639500520E6E /* HomeVC.swift in Sources */,
 				FC36D098254A78F400CC0726 /* Extension.swift in Sources */,
+				04F386D1254EAAB300EE7EE0 /* AmongUsEntity.swift in Sources */,
 				FC36D090254A6C3C00CC0726 /* DiscoverCell.swift in Sources */,
 				DA249BDE254B45BE00CCD5FA /* SettingCell.swift in Sources */,
 				044ACB0A254BD06F00DD8AD6 /* BaseNavigation.swift in Sources */,
 				FC36D094254A6E1D00CC0726 /* PushVC.swift in Sources */,
+				04F386CE254EA06F00EE7EE0 /* FileManager.swift in Sources */,
 				04F38693254C276B00EE7EE0 /* UIView+Ext.swift in Sources */,
 				DA249BE2254B470800CCD5FA /* UICollectionView+Ext.swift in Sources */,
 				BB70EDC2254950EE00520E6E /* AmongUsMainVC.swift in Sources */,
