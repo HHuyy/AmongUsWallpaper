@@ -50,6 +50,11 @@ class SettingVC: UIViewController, StoryboardInstantiatable {
         super.viewWillAppear(animated)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        self.navigationController?.isToolbarHidden = true
+    }
+    
     func setupGesture() {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
         premiumView.addGestureRecognizer(tapGesture)
@@ -71,13 +76,16 @@ extension SettingVC: UICollectionViewDelegateFlowLayout, UICollectionViewDelegat
             break
         case 1:
             let privacyVC = PrivacyVC.instantiate()
-            navigationController?.pushViewController(privacyVC, animated: true)
+            privacyVC.modalPresentationStyle = .overFullScreen
+            present(privacyVC, animated: true, completion: nil)
         case 2:
             let contactUsVC = ContactUsViewController.instantiate()
-            navigationController?.pushViewController(contactUsVC, animated: true)
+            contactUsVC.modalPresentationStyle = .overFullScreen
+            present(contactUsVC, animated: true, completion: nil)
         case 3:
             let termOfUseVC = TermOfUseVC.instantiate()
-            navigationController?.pushViewController(termOfUseVC, animated: true)
+            termOfUseVC.modalPresentationStyle = .overFullScreen
+            present(termOfUseVC, animated: true, completion: nil)
         default:
             break
         }

@@ -23,7 +23,12 @@ class ContactUsViewController: UIViewController, StoryboardInstantiatable {
         WebViewManager.shared.openContactUs(self.webView)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
     @IBAction func backButtonDidTap(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
+        self.dismiss(animated: true, completion: nil)
     }
 }

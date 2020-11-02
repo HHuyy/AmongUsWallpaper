@@ -31,6 +31,7 @@ private struct Const {
 class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoViewDelegate, StoryboardInstantiatable {
     static var storyboardName: AppStoryboard = .amongUsMain
     
+    // MARK: - IBOutlets
     @IBOutlet weak var iconButton: UIButton!
     @IBOutlet weak var fontButton: UIButton!
     @IBOutlet weak var backgroundButton: UIButton!
@@ -52,6 +53,7 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
     @IBOutlet weak var widthEditTextViewConstraint: NSLayoutConstraint!
     @IBOutlet weak var heightEditContainerViewConstraint: NSLayoutConstraint!
     
+    // MARK: - Properties
     private var videoEditor: VideoEditor!
     
     var iconArray: [String]! = []
@@ -79,6 +81,7 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
     
     private var defaultHeight: CGFloat = 0.0
     
+    // MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         self.iconCollectionView.register(UINib.init(nibName: "IconCell", bundle: .main), forCellWithReuseIdentifier: "IconCell")
@@ -91,7 +94,7 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
             i += 1
             iconCollectionView.reloadData()
         }
-        self.fontStyleArray = ["ArialRoundedMTBold", "ArialRoundedMTBold", "ArialRoundedMTBold", "ArialRoundedMTBold", "ArialRoundedMTBold", "ArialRoundedMTBold", "ArialRoundedMTBold", "ArialRoundedMTBold", "ArialRoundedMTBold", "ArialRoundedMTBold"]
+        self.fontStyleArray = StaticDataProvider.shared.listFonts
         fontStyleCollectionView.reloadData()
         editTextView.textAlignment = .left
         self.fontColorArray = [0xFFFFFF, 0xF98B8E, 0xFFA1EC, 0x9D9AFB, 0xA7FEF5, 0xA7FF97, 0xFFCA7B, 0xFF9D9C] // add 0x at the beginning of hex color code
@@ -134,6 +137,7 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
         editView.layer.shadowOpacity = 0.8
     }
     
+    // MARK: - Functions
     func setupUI() {
         editTextView.isUserInteractionEnabled = false
         editImageView.isUserInteractionEnabled = true
@@ -219,6 +223,7 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
         self.view.layoutIfNeeded()
     }
     
+    // MARK: - Actions
     @IBAction func tapBackButton(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -283,23 +288,6 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
         }
     }
     
-    func showPreview() {
-        let attrs: [NSAttributedString.Key : Any] = [
-            .font: UIFont.systemFont(ofSize: 15),
-            .foregroundColor: UIColor.white
-        ]
-        
-        let testAttrString = NSAttributedString(string: "THIS IS MY PHONE", attributes: attrs)
-        let testCoordinate = Coordinate(x: 20, y: self.editView.frame.maxY/2 - testAttrString.height(containerWidth: self.editView.frame.width - 40))
-        self.currentCoordinate = testCoordinate
-        
-        self.videoEditor = VideoEditor(fileName: currentBackground, type: videoType.rawValue)
-        
-        let videoCompostion = self.videoEditor.build(attrString: testAttrString, position: self.currentCoordinate)
-//        self.editView.apply(with: videoCompostion)
-        
-    }
-    
     private let editor = VideoEditors()
     func showDemo() {
         let backgroundImage = backgroundArray[backgroundSelectedIndex]
@@ -331,32 +319,6 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
             previewVC.amongUs = amongUsModel
             self.navigationController?.pushViewController(previewVC, animated: true)
         }
-    }
-    
-    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
-        let size = image.size
-
-        let widthRatio  = targetSize.width  / size.width
-        let heightRatio = targetSize.height / size.height
-
-        // Figure out what our orientation is, and use that to form the rectangle
-        var newSize: CGSize
-        if(widthRatio > heightRatio) {
-            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
-        } else {
-            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
-        }
-
-        // This is the rect that we've calculated out and this is what is actually used below
-        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
-
-        // Actually do the resizing to the rect using the ImageContext stuff
-        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-        image.draw(in: rect)
-        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-
-        return newImage!
     }
     
     @objc func handlePanGesture(gesture: UIPanGestureRecognizer) {
@@ -489,6 +451,7 @@ extension AmongUsMainVC: UICollectionViewDataSource {
         case fontStyleCollectionView:
             fontStyleSelectedIndex = indexPath.row
             self.editTextView.font = UIFont(name: fontStyleArray[indexPath.row], size: self.editTextView.font!.pointSize)
+            self.configTextViewSize()
         case fontColorCollectionView:
             fontColorSelectedIndex = indexPath.row
             self.editTextView.textColor = UIColor.init(rgb: fontColorArray[indexPath.row])
@@ -565,4 +528,32 @@ extension AmongUsMainVC {
 // MARK: Slide Delegate
 extension AmongUsMainVC {
     
+}
+
+extension AmongUsMainVC {
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
+        return newImage!
+    }
 }

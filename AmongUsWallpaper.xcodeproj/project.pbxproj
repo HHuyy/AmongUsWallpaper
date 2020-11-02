@@ -25,6 +25,35 @@
 		04AB7195255008F300CFE08F /* TermOfUseVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AB7194255008F300CFE08F /* TermOfUseVC.swift */; };
 		04AB719825500F2F00CFE08F /* WebViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AB719725500F2F00CFE08F /* WebViewManager.swift */; };
 		04AB719B25501AFC00CFE08F /* ContactUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AB719A25501AFC00CFE08F /* ContactUsViewController.swift */; };
+		04AB71BA2550247700CFE08F /* ArchitectsDaughter-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB719E2550247700CFE08F /* ArchitectsDaughter-Regular.ttf */; };
+		04AB71BB2550247700CFE08F /* NotoSansJP-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB719F2550247700CFE08F /* NotoSansJP-Regular.otf */; };
+		04AB71BC2550247700CFE08F /* IndieFlower-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71A02550247700CFE08F /* IndieFlower-Regular.ttf */; };
+		04AB71BD2550247700CFE08F /* Caveat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71A12550247700CFE08F /* Caveat-Bold.ttf */; };
+		04AB71BE2550247700CFE08F /* Kalam-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71A22550247700CFE08F /* Kalam-Regular.ttf */; };
+		04AB71BF2550247700CFE08F /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71A32550247700CFE08F /* Roboto-Regular.ttf */; };
+		04AB71C02550247700CFE08F /* Cardo-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71A42550247700CFE08F /* Cardo-Italic.ttf */; };
+		04AB71C12550247700CFE08F /* DancingScript-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71A52550247700CFE08F /* DancingScript-Bold.ttf */; };
+		04AB71C22550247700CFE08F /* Caveat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71A62550247700CFE08F /* Caveat-Regular.ttf */; };
+		04AB71C32550247700CFE08F /* Lateef-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71A72550247700CFE08F /* Lateef-Regular.ttf */; };
+		04AB71C42550247700CFE08F /* Cardo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71A82550247700CFE08F /* Cardo-Bold.ttf */; };
+		04AB71C52550247700CFE08F /* NanumGothicCoding-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71A92550247700CFE08F /* NanumGothicCoding-Regular.ttf */; };
+		04AB71C62550247700CFE08F /* MarckScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71AA2550247700CFE08F /* MarckScript-Regular.ttf */; };
+		04AB71C72550247700CFE08F /* Damion-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71AB2550247700CFE08F /* Damion-Regular.ttf */; };
+		04AB71C82550247700CFE08F /* Kalam-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71AC2550247700CFE08F /* Kalam-Light.ttf */; };
+		04AB71C92550247700CFE08F /* NanumGothicCoding-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71AD2550247700CFE08F /* NanumGothicCoding-Bold.ttf */; };
+		04AB71CA2550247700CFE08F /* FontModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AB71AE2550247700CFE08F /* FontModel.swift */; };
+		04AB71CB2550247700CFE08F /* BadScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71AF2550247700CFE08F /* BadScript-Regular.ttf */; };
+		04AB71CC2550247700CFE08F /* Kalam-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71B02550247700CFE08F /* Kalam-Bold.ttf */; };
+		04AB71CD2550247700CFE08F /* DancingScript-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71B12550247700CFE08F /* DancingScript-Medium.ttf */; };
+		04AB71CE2550247700CFE08F /* Cardo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71B22550247700CFE08F /* Cardo-Regular.ttf */; };
+		04AB71CF2550247700CFE08F /* Archivo_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71B32550247700CFE08F /* Archivo_Regular.ttf */; };
+		04AB71D02550247700CFE08F /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71B42550247700CFE08F /* Montserrat-Regular.ttf */; };
+		04AB71D12550247700CFE08F /* DancingScript-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71B52550247700CFE08F /* DancingScript-Regular.ttf */; };
+		04AB71D22550247700CFE08F /* OpenSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71B62550247700CFE08F /* OpenSans-Regular.ttf */; };
+		04AB71D32550247700CFE08F /* DancingScript-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71B72550247700CFE08F /* DancingScript-SemiBold.ttf */; };
+		04AB71D42550247700CFE08F /* DancingScript-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71B82550247700CFE08F /* DancingScript-VariableFont_wght.ttf */; };
+		04AB71D52550247700CFE08F /* font_resource.json in Resources */ = {isa = PBXBuildFile; fileRef = 04AB71B92550247700CFE08F /* font_resource.json */; };
+		04AB71DA255024EF00CFE08F /* StaticDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04AB71D9255024EF00CFE08F /* StaticDataProvider.swift */; };
 		04F38680254BF00000EE7EE0 /* 6.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 04F38678254BEFFE00EE7EE0 /* 6.mp4 */; };
 		04F38681254BF00000EE7EE0 /* 8.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 04F38679254BEFFE00EE7EE0 /* 8.mp4 */; };
 		04F38682254BF00000EE7EE0 /* 5.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = 04F3867A254BEFFE00EE7EE0 /* 5.mp4 */; };
@@ -97,6 +126,35 @@
 		04AB7194255008F300CFE08F /* TermOfUseVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermOfUseVC.swift; sourceTree = "<group>"; };
 		04AB719725500F2F00CFE08F /* WebViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewManager.swift; sourceTree = "<group>"; };
 		04AB719A25501AFC00CFE08F /* ContactUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactUsViewController.swift; sourceTree = "<group>"; };
+		04AB719E2550247700CFE08F /* ArchitectsDaughter-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ArchitectsDaughter-Regular.ttf"; sourceTree = "<group>"; };
+		04AB719F2550247700CFE08F /* NotoSansJP-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansJP-Regular.otf"; sourceTree = "<group>"; };
+		04AB71A02550247700CFE08F /* IndieFlower-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "IndieFlower-Regular.ttf"; sourceTree = "<group>"; };
+		04AB71A12550247700CFE08F /* Caveat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Caveat-Bold.ttf"; sourceTree = "<group>"; };
+		04AB71A22550247700CFE08F /* Kalam-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Regular.ttf"; sourceTree = "<group>"; };
+		04AB71A32550247700CFE08F /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		04AB71A42550247700CFE08F /* Cardo-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cardo-Italic.ttf"; sourceTree = "<group>"; };
+		04AB71A52550247700CFE08F /* DancingScript-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-Bold.ttf"; sourceTree = "<group>"; };
+		04AB71A62550247700CFE08F /* Caveat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Caveat-Regular.ttf"; sourceTree = "<group>"; };
+		04AB71A72550247700CFE08F /* Lateef-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lateef-Regular.ttf"; sourceTree = "<group>"; };
+		04AB71A82550247700CFE08F /* Cardo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cardo-Bold.ttf"; sourceTree = "<group>"; };
+		04AB71A92550247700CFE08F /* NanumGothicCoding-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumGothicCoding-Regular.ttf"; sourceTree = "<group>"; };
+		04AB71AA2550247700CFE08F /* MarckScript-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MarckScript-Regular.ttf"; sourceTree = "<group>"; };
+		04AB71AB2550247700CFE08F /* Damion-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Damion-Regular.ttf"; sourceTree = "<group>"; };
+		04AB71AC2550247700CFE08F /* Kalam-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Light.ttf"; sourceTree = "<group>"; };
+		04AB71AD2550247700CFE08F /* NanumGothicCoding-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NanumGothicCoding-Bold.ttf"; sourceTree = "<group>"; };
+		04AB71AE2550247700CFE08F /* FontModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontModel.swift; sourceTree = "<group>"; };
+		04AB71AF2550247700CFE08F /* BadScript-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BadScript-Regular.ttf"; sourceTree = "<group>"; };
+		04AB71B02550247700CFE08F /* Kalam-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Kalam-Bold.ttf"; sourceTree = "<group>"; };
+		04AB71B12550247700CFE08F /* DancingScript-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-Medium.ttf"; sourceTree = "<group>"; };
+		04AB71B22550247700CFE08F /* Cardo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cardo-Regular.ttf"; sourceTree = "<group>"; };
+		04AB71B32550247700CFE08F /* Archivo_Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Archivo_Regular.ttf; sourceTree = "<group>"; };
+		04AB71B42550247700CFE08F /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		04AB71B52550247700CFE08F /* DancingScript-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-Regular.ttf"; sourceTree = "<group>"; };
+		04AB71B62550247700CFE08F /* OpenSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-Regular.ttf"; sourceTree = "<group>"; };
+		04AB71B72550247700CFE08F /* DancingScript-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-SemiBold.ttf"; sourceTree = "<group>"; };
+		04AB71B82550247700CFE08F /* DancingScript-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "DancingScript-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		04AB71B92550247700CFE08F /* font_resource.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = font_resource.json; sourceTree = "<group>"; };
+		04AB71D9255024EF00CFE08F /* StaticDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StaticDataProvider.swift; sourceTree = "<group>"; };
 		04F38678254BEFFE00EE7EE0 /* 6.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 6.mp4; sourceTree = "<group>"; };
 		04F38679254BEFFE00EE7EE0 /* 8.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 8.mp4; sourceTree = "<group>"; };
 		04F3867A254BEFFE00EE7EE0 /* 5.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = 5.mp4; sourceTree = "<group>"; };
@@ -174,6 +232,50 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
+		04AB719D2550247700CFE08F /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				04AB719E2550247700CFE08F /* ArchitectsDaughter-Regular.ttf */,
+				04AB719F2550247700CFE08F /* NotoSansJP-Regular.otf */,
+				04AB71A02550247700CFE08F /* IndieFlower-Regular.ttf */,
+				04AB71A12550247700CFE08F /* Caveat-Bold.ttf */,
+				04AB71A22550247700CFE08F /* Kalam-Regular.ttf */,
+				04AB71A32550247700CFE08F /* Roboto-Regular.ttf */,
+				04AB71A42550247700CFE08F /* Cardo-Italic.ttf */,
+				04AB71A52550247700CFE08F /* DancingScript-Bold.ttf */,
+				04AB71A62550247700CFE08F /* Caveat-Regular.ttf */,
+				04AB71A72550247700CFE08F /* Lateef-Regular.ttf */,
+				04AB71A82550247700CFE08F /* Cardo-Bold.ttf */,
+				04AB71A92550247700CFE08F /* NanumGothicCoding-Regular.ttf */,
+				04AB71AA2550247700CFE08F /* MarckScript-Regular.ttf */,
+				04AB71AB2550247700CFE08F /* Damion-Regular.ttf */,
+				04AB71AC2550247700CFE08F /* Kalam-Light.ttf */,
+				04AB71AD2550247700CFE08F /* NanumGothicCoding-Bold.ttf */,
+				04AB71AE2550247700CFE08F /* FontModel.swift */,
+				04AB71AF2550247700CFE08F /* BadScript-Regular.ttf */,
+				04AB71B02550247700CFE08F /* Kalam-Bold.ttf */,
+				04AB71B12550247700CFE08F /* DancingScript-Medium.ttf */,
+				04AB71B22550247700CFE08F /* Cardo-Regular.ttf */,
+				04AB71B32550247700CFE08F /* Archivo_Regular.ttf */,
+				04AB71B42550247700CFE08F /* Montserrat-Regular.ttf */,
+				04AB71B52550247700CFE08F /* DancingScript-Regular.ttf */,
+				04AB71B62550247700CFE08F /* OpenSans-Regular.ttf */,
+				04AB71B72550247700CFE08F /* DancingScript-SemiBold.ttf */,
+				04AB71B82550247700CFE08F /* DancingScript-VariableFont_wght.ttf */,
+				04AB71B92550247700CFE08F /* font_resource.json */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		04AB71D8255024D300CFE08F /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				04AB719D2550247700CFE08F /* Font */,
+				04AB71D9255024EF00CFE08F /* StaticDataProvider.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
 		04F38677254BE8C500EE7EE0 /* VideoBackground */ = {
 			isa = PBXGroup;
 			children = (
@@ -242,6 +344,7 @@
 				BB70EDB725494D2A00520E6E /* Scene */,
 				FC36D092254A6E0900CC0726 /* Utilities */,
 				04F38677254BE8C500EE7EE0 /* VideoBackground */,
+				04AB71D8255024D300CFE08F /* Resource */,
 				DA249BDA254B2BC600CCD5FA /* Extension */,
 				BB70EDA225494AC200520E6E /* AppDelegate.swift */,
 				BB70EDAB25494AC200520E6E /* Assets.xcassets */,
@@ -449,35 +552,62 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04AB71C42550247700CFE08F /* Cardo-Bold.ttf in Resources */,
+				04AB71D52550247700CFE08F /* font_resource.json in Resources */,
 				FC36D091254A6C3C00CC0726 /* DiscoverCell.xib in Resources */,
+				04AB71BE2550247700CFE08F /* Kalam-Regular.ttf in Resources */,
 				0484A08B254EE4C200918A65 /* 6.pdf in Resources */,
 				0484A091254EE4C200918A65 /* 5.pdf in Resources */,
+				04AB71C92550247700CFE08F /* NanumGothicCoding-Bold.ttf in Resources */,
 				BB70EDBC254950A800520E6E /* AmongUsMain.storyboard in Resources */,
 				87A98D43254D777300ADC9E2 /* fontStyleCell.xib in Resources */,
+				04AB71C72550247700CFE08F /* Damion-Regular.ttf in Resources */,
+				04AB71D42550247700CFE08F /* DancingScript-VariableFont_wght.ttf in Resources */,
 				879A065F254DB48C008C9F07 /* backgroundCell.xib in Resources */,
 				BB70EDDC2549720500520E6E /* MyWallpaper.storyboard in Resources */,
 				04F38680254BF00000EE7EE0 /* 6.mp4 in Resources */,
+				04AB71C12550247700CFE08F /* DancingScript-Bold.ttf in Resources */,
 				BB70EDE52549725200520E6E /* Setting.storyboard in Resources */,
+				04AB71CC2550247700CFE08F /* Kalam-Bold.ttf in Resources */,
 				DA3C3352254C747D000CB8DB /* Preview.storyboard in Resources */,
+				04AB71D32550247700CFE08F /* DancingScript-SemiBold.ttf in Resources */,
 				BB70EDAF25494AC200520E6E /* LaunchScreen.storyboard in Resources */,
 				0484A08D254EE4C200918A65 /* 1.pdf in Resources */,
 				044ACAB1254BCC4A00DD8AD6 /* GoogleService-Info.plist in Resources */,
+				04AB71BA2550247700CFE08F /* ArchitectsDaughter-Regular.ttf in Resources */,
+				04AB71BC2550247700CFE08F /* IndieFlower-Regular.ttf in Resources */,
+				04AB71CD2550247700CFE08F /* DancingScript-Medium.ttf in Resources */,
+				04AB71C22550247700CFE08F /* Caveat-Regular.ttf in Resources */,
 				0484A08A254EE4C200918A65 /* 4.pdf in Resources */,
 				0484A08E254EE4C200918A65 /* 2.pdf in Resources */,
+				04AB71BD2550247700CFE08F /* Caveat-Bold.ttf in Resources */,
 				04F38681254BF00000EE7EE0 /* 8.mp4 in Resources */,
 				044ACB10254BD9E700DD8AD6 /* MyWallpaperCell.xib in Resources */,
 				87A98D48254D778C00ADC9E2 /* fontColorCell.xib in Resources */,
+				04AB71CE2550247700CFE08F /* Cardo-Regular.ttf in Resources */,
+				04AB71C52550247700CFE08F /* NanumGothicCoding-Regular.ttf in Resources */,
 				0484A08C254EE4C200918A65 /* 8.pdf in Resources */,
+				04AB71CF2550247700CFE08F /* Archivo_Regular.ttf in Resources */,
+				04AB71CB2550247700CFE08F /* BadScript-Regular.ttf in Resources */,
 				04F38685254BF00000EE7EE0 /* 3.mp4 in Resources */,
+				04AB71C32550247700CFE08F /* Lateef-Regular.ttf in Resources */,
+				04AB71D02550247700CFE08F /* Montserrat-Regular.ttf in Resources */,
 				04F38687254BF00000EE7EE0 /* 2.mp4 in Resources */,
+				04AB71D22550247700CFE08F /* OpenSans-Regular.ttf in Resources */,
 				04F38682254BF00000EE7EE0 /* 5.mp4 in Resources */,
 				0484A090254EE4C200918A65 /* 3.pdf in Resources */,
 				BB70EDAC25494AC200520E6E /* Assets.xcassets in Resources */,
+				04AB71BB2550247700CFE08F /* NotoSansJP-Regular.otf in Resources */,
 				DA249BDF254B45BE00CCD5FA /* SettingCell.xib in Resources */,
+				04AB71C82550247700CFE08F /* Kalam-Light.ttf in Resources */,
 				04F38683254BF00000EE7EE0 /* 1.mp4 in Resources */,
 				0484A08F254EE4C200918A65 /* 7.pdf in Resources */,
 				FC763CE7254AD6EB00ECF9E8 /* IconCell.xib in Resources */,
 				04F38686254BF00000EE7EE0 /* 4.mp4 in Resources */,
+				04AB71C02550247700CFE08F /* Cardo-Italic.ttf in Resources */,
+				04AB71D12550247700CFE08F /* DancingScript-Regular.ttf in Resources */,
+				04AB71BF2550247700CFE08F /* Roboto-Regular.ttf in Resources */,
+				04AB71C62550247700CFE08F /* MarckScript-Regular.ttf in Resources */,
 				BB70EDC92549637B00520E6E /* Home.storyboard in Resources */,
 				04F38684254BF00000EE7EE0 /* 7.mp4 in Resources */,
 				BB70EDD6254971C200520E6E /* Discover.storyboard in Resources */,
@@ -539,11 +669,13 @@
 				04F386CA254E676000EE7EE0 /* AmongUsDao.swift in Sources */,
 				04AB7192255008E700CFE08F /* PrivacyVC.swift in Sources */,
 				FC763CE6254AD6EB00ECF9E8 /* IconCell.swift in Sources */,
+				04AB71CA2550247700CFE08F /* FontModel.swift in Sources */,
 				BB70EDA325494AC200520E6E /* AppDelegate.swift in Sources */,
 				879A065E254DB48C008C9F07 /* backgroundCell.swift in Sources */,
 				8749249E254B3C6000FDCECA /* VideoEditor.swift in Sources */,
 				87A98D47254D778C00ADC9E2 /* fontColorCell.swift in Sources */,
 				0484A096254EF84200918A65 /* UIImage+Ext.swift in Sources */,
+				04AB71DA255024EF00CFE08F /* StaticDataProvider.swift in Sources */,
 				BB70EDCC2549639500520E6E /* HomeVC.swift in Sources */,
 				FC36D098254A78F400CC0726 /* Extension.swift in Sources */,
 				04F386D1254EAAB300EE7EE0 /* AmongUsEntity.swift in Sources */,
