@@ -56,23 +56,57 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
     // MARK: - Properties
     private var videoEditor: VideoEditor!
     
-    var iconArray: [String]! = []
-    var fontStyleArray: [String]! = []
-    var fontColorArray: [UInt]! = []
-    var backgroundArray: [String]! = []
-    var reSizebackgroundArray: [UIImage] = []
+    lazy var iconArray: [String] = {
+        var _temp = [String]()
+        var i = 1
+        while i <= 41 {
+            _temp.append("icon-\(i)")
+            i += 1
+        }
+        return _temp
+    }()
+    
+    lazy var iconImageArray: [UIImage] = {
+        var _temp = [UIImage]()
+        return iconArray.map({
+            UIImage(named: $0)!.resize(to: CGSize(width: 70, height: iconHeight))
+        })
+    }()
+    
+    lazy var fontStyleArray: [String] = {
+        return StaticDataProvider.shared.listFonts
+    }()
+    
+    lazy var fontColorArray: [UInt]! = {
+        return [0xFFFFFF, 0xF98B8E, 0xFFA1EC, 0x9D9AFB, 0xA7FEF5, 0xA7FF97, 0xFFCA7B, 0xFF9D9C]
+    }()
+    
+    lazy var backgroundArray: [String] = {
+       return ["1", "2", "3", "4", "5", "6", "7", "8"]
+    }()
+    
+    lazy var reSizebackgroundArray: [UIImage] = {
+        var array = [UIImage]()
+        backgroundArray.forEach { (i) in
+            let reSizeBG = resizeImage(image: UIImage.init(named: i)!, targetSize: CGSize(width: 70, height: 108))
+            
+            array.append(reSizeBG)
+        }
+        return array
+    }()
+    
     var iconSelectedIndex = 0
     var fontStyleSelectedIndex = 0
     var fontColorSelectedIndex = 0
     var backgroundSelectedIndex = 0
     var positionY: CGFloat?
-//    var currentPosition: CGAffineTransform?
+    var iconHeight: CGFloat = 50*3/2
 
     var currentAlignment: TextAlignment = .left
     var currentIconDirection: Bool = false
     
     private var currentAmongUs: AmongUsModel?
-    private var currentAttrString: NSAttributedString!
+    private var currentFontSize: CGFloat = Const.minFontSize
     private var currentCoordinate: Coordinate!
     private var videoType: VideoType = .mp4
     private var currentBackground: String = "1"
@@ -88,26 +122,10 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
         self.fontStyleCollectionView.register(UINib.init(nibName: "fontStyleCell", bundle: .main), forCellWithReuseIdentifier: "fontStyleCell")
         self.fontColorCollectionView.register(UINib.init(nibName: "fontColorCell", bundle: .main), forCellWithReuseIdentifier: "fontColorCell")
         self.backgroundCollectionView.register(UINib.init(nibName: "backgroundCell", bundle: .main), forCellWithReuseIdentifier: "backgroundCell")
-        var i = 1
-        while i <= 41 {
-            iconArray?.append("icon-\(i)")
-            i += 1
-            iconCollectionView.reloadData()
-        }
-        self.fontStyleArray = StaticDataProvider.shared.listFonts
-        fontStyleCollectionView.reloadData()
+
+
         editTextView.textAlignment = .left
-        self.fontColorArray = [0xFFFFFF, 0xF98B8E, 0xFFA1EC, 0x9D9AFB, 0xA7FEF5, 0xA7FF97, 0xFFCA7B, 0xFF9D9C] // add 0x at the beginning of hex color code
         editTextView.textColor = UIColor.init(rgb: fontColorArray[0])
-        fontColorCollectionView.reloadData()
-        backgroundArray = ["1", "2", "3", "4", "5", "6", "7", "8"]
-        backgroundArray.forEach { (i) in
-            let reSizeBG = resizeImage(image: UIImage.init(named: i)!, targetSize: CGSize(width: 70, height: 108))
-            
-            reSizebackgroundArray.append(reSizeBG)
-        }
-        backgroundCollectionView.reloadData()
-        
         editTextView.textContainer.maximumNumberOfLines = 3
         
         let pan = UIPanGestureRecognizer(target: self, action: #selector(self.handlePanGesture))
@@ -162,7 +180,7 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
         self.fontSizeSlider.maximumValue = Float(Const.maxFontSize)
         setupEditView()
     }
-    
+
     func setupForEditting() {
         guard let amongUs = self.currentAmongUs else {
             return
@@ -198,26 +216,26 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
     }
     
     func setupEditView() {
-        self.view.layoutIfNeeded()
         editImageView.contentMode = .scaleAspectFill
         editTextView.delegate = self
         editTextView.backgroundColor = .clear
         editTextView.isScrollEnabled = false
-        editTextView.attributedPlaceholder = NSAttributedString(string: Const.placeholder, attributes: [NSAttributedString.Key.foregroundColor: UIColor.white, NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15)])
-        editTextView.font = UIFont.systemFont(ofSize: 15)
         
         editTextView.textColor = self.currentTextColor
         configTextViewSize()
     }
     
     func configTextViewSize() {
-        if editTextView.text.isEmpty {
-            defaultHeight = editTextView.sizeForText(text: editTextView.attributedPlaceholder, width: self.editView.frame.width - 20).height
-            heightEditTextViewConstraint.constant = defaultHeight
-            widthEditTextViewConstraint.constant = editTextView!.attributedText.width(containerHeight: heightEditTextViewConstraint.constant) + editTextView.textContainer.lineFragmentPadding*2
-        } else {
+        editTextView.attributedPlaceholder = NSAttributedString(string: Const.placeholder, attributes: [NSAttributedString.Key.foregroundColor: self.currentTextColor, NSAttributedString.Key.font: UIFont(name: fontStyleArray[fontStyleSelectedIndex], size: currentFontSize)])
+        editTextView.font = UIFont(name: fontStyleArray[fontStyleSelectedIndex], size: currentFontSize)
+        
+        if !editTextView.text.isEmpty {
             heightEditTextViewConstraint.constant = editTextView!.sizeForText(text: editTextView.attributedText, width: self.editView.frame.width).height
             widthEditTextViewConstraint.constant = editTextView!.attributedText.width(containerHeight: heightEditTextViewConstraint.constant) + editTextView.textContainer.lineFragmentPadding*2
+        } else {
+            defaultHeight = editTextView.sizeForText(text: editTextView.attributedPlaceholder, width: self.editView.frame.width - 20).height
+            heightEditTextViewConstraint.constant = defaultHeight
+            widthEditTextViewConstraint.constant = editTextView!.attributedPlaceholder.width(containerHeight: heightEditTextViewConstraint.constant) + editTextView.textContainer.lineFragmentPadding*2
         }
         
         self.view.layoutIfNeeded()
@@ -338,7 +356,6 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
     @IBAction func sliderDidChange(_ sender: UISlider) {
         let size = CGFloat(Int(sender.value))
         
-        print(size)
         self.editTextView.font = UIFont(name: self.fontStyleArray[fontStyleSelectedIndex], size: size)
         configTextViewSize()
     }
@@ -348,7 +365,8 @@ extension AmongUsMainVC: UICollectionViewDelegate, UICollectionViewDelegateFlowL
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         switch collectionView {
         case iconCollectionView:
-            return CGSize(width: 50, height: collectionView.frame.height)
+            self.iconHeight = collectionView.frame.height
+            return CGSize(width: collectionView.frame.height * 2/3, height: collectionView.frame.height)
         case fontStyleCollectionView:
             return CGSize(width: 50, height: collectionView.frame.height)
         case fontColorCollectionView:
@@ -384,19 +402,14 @@ extension AmongUsMainVC: UICollectionViewDataSource {
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IconCell", for: indexPath) as? IconCell else {
                 return UICollectionViewCell()
             }
-
-            DispatchQueue.global(qos: .background).async {
-                let image = UIImage(named: self.iconArray[indexPath.row])
-
-                DispatchQueue.main.async {
-                    cell.imageIcon.image = image
-                }
-            }
+            cell.bindData(self.iconImageArray[indexPath.row])
+                
             if indexPath.row == iconSelectedIndex {
                 cell.bottomView.isHidden = false
             } else {
                 cell.bottomView.isHidden = true
             }
+            
             return cell
         case fontStyleCollectionView:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "fontStyleCell", for: indexPath) as? fontStyleCell else {
@@ -415,6 +428,7 @@ extension AmongUsMainVC: UICollectionViewDataSource {
                 cell.styleLabel.textColor = UIColor.init(rgb: 0x9EB0CC)
                 cell.bottomView.isHidden = true
             }
+            
             return cell
         case fontColorCollectionView:
             guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "fontColorCell", for: indexPath) as? fontColorCell else {
@@ -451,6 +465,7 @@ extension AmongUsMainVC: UICollectionViewDataSource {
         case fontStyleCollectionView:
             fontStyleSelectedIndex = indexPath.row
             self.editTextView.font = UIFont(name: fontStyleArray[indexPath.row], size: self.editTextView.font!.pointSize)
+            self.currentFontSize = self.editTextView.font!.pointSize
             self.configTextViewSize()
         case fontColorCollectionView:
             fontColorSelectedIndex = indexPath.row
@@ -497,8 +512,7 @@ extension AmongUsMainVC: UITextViewDelegate {
                     contentWidth = widthEditTextViewConstraint.constant
                 }
             }
-            
-            print("contentHeight: \(heightEditTextViewConstraint.constant)")
+
         } else {
             widthEditTextViewConstraint.constant = contentWidth
             if heightEditTextViewConstraint.constant > defaultHeight {

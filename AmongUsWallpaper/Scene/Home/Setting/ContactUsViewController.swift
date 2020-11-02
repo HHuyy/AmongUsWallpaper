@@ -21,14 +21,23 @@ class ContactUsViewController: UIViewController, StoryboardInstantiatable {
         contentView.addSubview(webView)
         webView.fitSuperviewConstraint()
         WebViewManager.shared.openContactUs(self.webView)
+        if let homeVC = self.navigationController?.viewControllers.first as? HomeVC {
+            homeVC.titleLabel.isHidden = true
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if let homeVC = self.navigationController?.viewControllers.first as? HomeVC {
+            homeVC.titleLabel.isHidden = false
+        }
     }
     
     @IBAction func backButtonDidTap(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
 }

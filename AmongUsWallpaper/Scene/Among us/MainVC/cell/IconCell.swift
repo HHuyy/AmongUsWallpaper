@@ -17,5 +17,15 @@ class IconCell: UICollectionViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
+    func bindData(_ image: UIImage) {
+        DispatchQueue.main.async {
+            self.imageIcon.image = image
+        }
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        imageIcon.image = nil
+    }
 }

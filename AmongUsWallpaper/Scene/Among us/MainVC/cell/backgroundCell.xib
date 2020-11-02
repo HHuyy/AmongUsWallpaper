@@ -11,21 +11,21 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="backgroundCell" id="gTV-IL-0wX" customClass="backgroundCell" customModule="AmongUsWallpaper" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="70" height="120"/>
+            <rect key="frame" x="0.0" y="0.0" width="198" height="242"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="70" height="120"/>
+                <rect key="frame" x="0.0" y="0.0" width="198" height="242"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F5g-h4-bRu" userLabel="BottomView" customClass="RoundUIView" customModule="AmongUsWallpaper" customModuleProvider="target">
-                        <rect key="frame" x="14" y="114" width="42" height="6"/>
+                        <rect key="frame" x="39.5" y="230" width="119" height="12"/>
                         <color key="backgroundColor" red="1" green="0.65490196079999996" blue="0.20392156859999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="fullRound" value="YES"/>
                         </userDefinedRuntimeAttributes>
                     </view>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1" translatesAutoresizingMaskIntoConstraints="NO" id="GdM-hf-bbm">
-                        <rect key="frame" x="0.0" y="0.0" width="70" height="108"/>
+                        <rect key="frame" x="0.0" y="0.0" width="198" height="218"/>
                     </imageView>
                 </subviews>
             </view>
@@ -41,11 +41,12 @@
                 <constraint firstItem="F5g-h4-bRu" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" multiplier="0.05" id="psr-45-0qs"/>
                 <constraint firstItem="GdM-hf-bbm" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="wDR-t7-kEF"/>
             </constraints>
+            <size key="customSize" width="198" height="242"/>
             <connections>
                 <outlet property="backgroundImage" destination="GdM-hf-bbm" id="v8J-gG-E6Y"/>
                 <outlet property="bottomView" destination="F5g-h4-bRu" id="uLZ-9R-oHK"/>
             </connections>
-            <point key="canvasLocation" x="137.68115942028987" y="80.357142857142847"/>
+            <point key="canvasLocation" x="228.98550724637684" y="120.53571428571428"/>
         </collectionViewCell>
     </objects>
     <resources>
