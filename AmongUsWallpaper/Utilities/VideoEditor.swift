@@ -215,7 +215,7 @@ class VideoEditor: NSObject {
 }
 
 class VideoEditors {
-    func makeVideo(fromVideoAt videoURL: URL, icon: UIImage, fontStyle: String, textString text: String, textColor: UInt, background: UIImage, textSize: CGFloat, alignment: TextAlignment, y: CGFloat, scaleHeight: CGFloat, textScaleWidth: CGFloat, onComplete: @escaping (URL?) -> Void) {
+    func makeVideo(fromVideoAt videoURL: URL, icon: UIImage, fontStyle: String, textString text: String, textColor: UInt, background: UIImage, textSize: CGFloat, alignment: TextAlignment, y: CGFloat, scaleHeight: CGFloat, scaleWidth: CGFloat, textScaleHeight: CGFloat, textScaleWidth: CGFloat, onComplete: @escaping (URL?) -> Void) {
 //    onComplete(videoURL)
     let asset = AVURLAsset(url: videoURL)
     let composition = AVMutableComposition()
@@ -267,7 +267,7 @@ class VideoEditors {
     overlayLayer.frame = CGRect(origin: .zero, size: videoSize)
         overlayLayer.isGeometryFlipped = true
     
-    add(text: text, y: y, textStyle: fontStyle, textColor: UIColor.init(rgb: textColor), textSize: textSize, icon: icon, to: overlayLayer, videoSize: videoSize, alignment: alignment, scaleHeight: scaleHeight, textScaleWidth: textScaleWidth)
+        add(text: text, y: y, textStyle: fontStyle, textColor: UIColor.init(rgb: textColor), textSize: textSize, icon: icon, to: overlayLayer, videoSize: videoSize, alignment: alignment, scaleHeight: scaleHeight, scaleWidth: scaleWidth, textScaleHeight: textScaleHeight, textScaleWidth: textScaleWidth)
         
     let outputLayer = CALayer()
     outputLayer.frame = CGRect(origin: .zero, size: videoSize)
@@ -340,7 +340,7 @@ class VideoEditors {
     layer.addSublayer(imageLayer)
   }
   
-    private func add(text: String, y: CGFloat, textStyle: String, textColor: UIColor, textSize: CGFloat, icon: UIImage, to layer: CALayer, videoSize: CGSize, alignment: TextAlignment, scaleHeight: CGFloat, textScaleWidth: CGFloat) {
+    private func add(text: String, y: CGFloat, textStyle: String, textColor: UIColor, textSize: CGFloat, icon: UIImage, to layer: CALayer, videoSize: CGSize, alignment: TextAlignment, scaleHeight: CGFloat, scaleWidth: CGFloat, textScaleHeight: CGFloat, textScaleWidth: CGFloat) {
 
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = .center
@@ -353,6 +353,7 @@ class VideoEditors {
     let textLayer = CATextLayer()
     textLayer.string = attributedText
     textLayer.shouldRasterize = true
+      textLayer.isWrapped = true
     textLayer.rasterizationScale = UIScreen.main.scale
     textLayer.backgroundColor = UIColor.clear.cgColor
 //    textLayer.isGeometryFlipped = true
@@ -368,11 +369,10 @@ class VideoEditors {
         }
     
     textLayer.frame = CGRect(
-      x: 0,
+      x: 10 * scaleWidth,
       y: mainY,
         width: videoSize.width * textScaleWidth,
-        height: attributedText.height(containerWidth: videoSize.width))
-    
+        height: videoSize.height * textScaleHeight) //attributedText.height(containerWidth: videoSize.width)
     
     let gradient = CAGradientLayer()
     let cor1 = UIColor.clear.cgColor
@@ -384,17 +384,14 @@ class VideoEditors {
     gradient.frame = CGRect(
         x: textLayer.frame.origin.x,
           y: mainY,
-        width: videoSize.width * textScaleWidth,
+        width: videoSize.width,
         height: textLayer.frame.height)
-//    gradient.displayIfNeeded()
     
     let textAnimation = CABasicAnimation(keyPath: "position")
-    textAnimation.fromValue = [textLayer.frame.origin.x + attributedText.width(containerHeight: videoSize.height)/2, mainY + attributedText.height(containerWidth: videoSize.width)/2] //attributedText.width(containerHeight: videoSize.height)*2
-    textAnimation.toValue = [textLayer.frame.width*2, mainY + attributedText.height(containerWidth: videoSize.width)/2]
-    textAnimation.duration = 6
-//    scaleAnimation.repeatCount = 0
+    textAnimation.fromValue = [0 , mainY + textLayer.frame.height/2] //attributedText.width(containerHeight: videoSize.height)*2
+    textAnimation.toValue = [videoSize.width, mainY + textLayer.frame.height/2]
+    textAnimation.duration = 7
     textAnimation.autoreverses = true
-        textAnimation.speed = 0.8
     textAnimation.timingFunction = CAMediaTimingFunction(name: .default)
         textAnimation.beginTime = AVCoreAnimationBeginTimeAtZero
     textAnimation.isRemovedOnCompletion = false
@@ -417,9 +414,9 @@ class VideoEditors {
     crewIconLayer.contents = myImage
     
     let crewMoveAnimation = CABasicAnimation(keyPath: "position")
-    crewMoveAnimation.fromValue = [ -crewIconLayer.frame.width, mainY + attributedText.height(containerWidth: videoSize.width)/2]
-        crewMoveAnimation.toValue = [textLayer.frame.width, mainY + attributedText.height(containerWidth: videoSize.width)/2]
-    crewMoveAnimation.duration = 6
+        crewMoveAnimation.fromValue = [ -crewIconLayer.frame.width, mainY + textLayer.frame.height/2] //attributedText.height(containerWidth: videoSize.width)
+        crewMoveAnimation.toValue = [videoSize.width + crewIconLayer.frame.width, mainY + textLayer.frame.height/2]
+    crewMoveAnimation.duration = 7
 //        crewMoveAnimation.speed = 0.4
     crewMoveAnimation.autoreverses = false
     crewMoveAnimation.timingFunction = CAMediaTimingFunction(name: .default)
@@ -436,7 +433,7 @@ class VideoEditors {
     
     let groupAnimation = CAAnimationGroup()
     groupAnimation.beginTime = AVCoreAnimationBeginTimeAtZero
-    groupAnimation.duration = 6
+    groupAnimation.duration = 7
     groupAnimation.animations = [crewRotationAnimation, crewMoveAnimation]
     crewIconLayer.add(groupAnimation, forKey: "groupAnimation")
 

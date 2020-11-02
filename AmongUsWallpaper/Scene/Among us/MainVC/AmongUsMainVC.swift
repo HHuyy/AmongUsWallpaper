@@ -24,6 +24,7 @@ private struct Const {
     static let placeholder: String = "Enter text here ..."
     static let maxLines: CGFloat = 3
     static let originVideoHeight: CGFloat = 1920
+    static let originVideoWidth: CGFloat = 1080
     static let minFontSize: CGFloat = 15
     static let maxFontSize: CGFloat = 35
 }
@@ -300,7 +301,7 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
         
         let urlPath = Bundle.main.url(forResource: backgroundArray[backgroundSelectedIndex], withExtension: "mp4")!
 
-        self.editor.makeVideo(fromVideoAt: urlPath, icon: UIImage.init(named: iconArray[iconSelectedIndex])!, fontStyle: fontStyleArray[fontStyleSelectedIndex], textString: editTextView.text, textColor: fontColorArray[fontColorSelectedIndex], background: reSizebackgroundArray[backgroundSelectedIndex], textSize: editTextView.font!.pointSize, alignment: currentAlignment, y: positionY!/editView.frame.height, scaleHeight: Const.originVideoHeight / editView.frame.height, textScaleWidth: editTextView.frame.width/editView.frame.width) { exportedURL in
+        self.editor.makeVideo(fromVideoAt: urlPath, icon: UIImage.init(named: iconArray[iconSelectedIndex])!, fontStyle: fontStyleArray[fontStyleSelectedIndex], textString: editTextView.text, textColor: fontColorArray[fontColorSelectedIndex], background: reSizebackgroundArray[backgroundSelectedIndex], textSize: editTextView.font!.pointSize, alignment: currentAlignment, y: positionY!/editView.frame.height, scaleHeight: Const.originVideoHeight / editView.frame.height, scaleWidth: Const.originVideoWidth / editView.frame.width, textScaleHeight: editTextView.frame.height / editView.frame.height, textScaleWidth: editTextView.frame.width/editView.frame.width) { exportedURL in
             
             guard let exportedURL = exportedURL else {
                 return
