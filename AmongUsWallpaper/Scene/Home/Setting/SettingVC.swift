@@ -67,11 +67,19 @@ extension SettingVC: UICollectionViewDelegateFlowLayout, UICollectionViewDelegat
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
-        case 0:break
-        case 1:break
-        case 2:break
-        case 3:break
-        default:break
+        case 0:
+            break
+        case 1:
+            let privacyVC = PrivacyVC.instantiate()
+            navigationController?.pushViewController(privacyVC, animated: true)
+        case 2:
+            let contactUsVC = ContactUsViewController.instantiate()
+            navigationController?.pushViewController(contactUsVC, animated: true)
+        case 3:
+            let termOfUseVC = TermOfUseVC.instantiate()
+            navigationController?.pushViewController(termOfUseVC, animated: true)
+        default:
+            break
         }
     }
 }

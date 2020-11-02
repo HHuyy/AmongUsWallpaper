@@ -24,10 +24,13 @@ private struct Const {
     static let placeholder: String = "Enter text here ..."
     static let maxLines: CGFloat = 3
     static let originVideoHeight: CGFloat = 1920
+    static let minFontSize: CGFloat = 15
+    static let maxFontSize: CGFloat = 35
 }
 
-class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoViewDelegate {
-
+class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoViewDelegate, StoryboardInstantiatable {
+    static var storyboardName: AppStoryboard = .amongUsMain
+    
     @IBOutlet weak var iconButton: UIButton!
     @IBOutlet weak var fontButton: UIButton!
     @IBOutlet weak var backgroundButton: UIButton!
@@ -66,7 +69,7 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
     var currentAlignment: TextAlignment = .left
     var currentIconDirection: Bool = false
     
-    
+    private var currentAmongUs: AmongUsModel?
     private var currentAttrString: NSAttributedString!
     private var currentCoordinate: Coordinate!
     private var videoType: VideoType = .mp4
@@ -106,9 +109,8 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
         
         let pan = UIPanGestureRecognizer(target: self, action: #selector(self.handlePanGesture))
         pan.delegate = self
-//        editContainerView.addGestureRecognizer(pan)
-//        editTextView.addGestureRecognizer(pan)
         editImageView.addGestureRecognizer(pan)
+        setupForEditting()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -152,7 +154,43 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
         self.editView.setupPlayerItem(asset: videoEditor.composition)
         self.editView.delegate = self
         
+        self.fontSizeSlider.minimumValue = Float(Const.minFontSize)
+        self.fontSizeSlider.maximumValue = Float(Const.maxFontSize)
         setupEditView()
+    }
+    
+    func setupForEditting() {
+        guard let amongUs = self.currentAmongUs else {
+            return
+        }
+        
+        if let iconIndex = self.iconArray.enumerated().filter({$0.element == amongUs.icon}).first?.offset {
+            self.iconSelectedIndex = iconIndex
+        }
+        
+        if let fontIndex = self.fontStyleArray.enumerated().filter({$0.element == amongUs.font}).first?.offset {
+            self.fontStyleSelectedIndex = fontIndex
+        }
+        
+        if let fontColorIndex = self.fontColorArray.enumerated().filter({$0.element == amongUs.textColor}).first?.offset {
+            self.fontColorSelectedIndex = fontColorIndex
+        }
+        
+        if let backgroundIndex = self.backgroundArray.enumerated().filter({$0.element == amongUs.backgoundImage}).first?.offset {
+            self.backgroundSelectedIndex = backgroundIndex
+        }
+        
+        self.fontSizeSlider.value = amongUs.fontSize
+        self.editTextView.font = UIFont(name: amongUs.font, size: CGFloat(amongUs.fontSize))
+        self.editTextView.text = amongUs.text
+        self.currentAlignment = amongUs.textAlignment
+        self.positionY = CGFloat(amongUs.position)
+        self.editTextView.center.y = self.positionY!
+        
+        self.iconCollectionView.reloadData()
+        self.fontStyleCollectionView.reloadData()
+        self.fontColorCollectionView.reloadData()
+        self.backgroundCollectionView.reloadData()
     }
     
     func setupEditView() {
@@ -165,11 +203,20 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
         editTextView.font = UIFont.systemFont(ofSize: 15)
         
         editTextView.textColor = self.currentTextColor
+        configTextViewSize()
+    }
+    
+    func configTextViewSize() {
+        if editTextView.text.isEmpty {
+            defaultHeight = editTextView.sizeForText(text: editTextView.attributedPlaceholder, width: self.editView.frame.width - 20).height
+            heightEditTextViewConstraint.constant = defaultHeight
+            widthEditTextViewConstraint.constant = editTextView!.attributedText.width(containerHeight: heightEditTextViewConstraint.constant) + editTextView.textContainer.lineFragmentPadding*2
+        } else {
+            heightEditTextViewConstraint.constant = editTextView!.sizeForText(text: editTextView.attributedText, width: self.editView.frame.width).height
+            widthEditTextViewConstraint.constant = editTextView!.attributedText.width(containerHeight: heightEditTextViewConstraint.constant) + editTextView.textContainer.lineFragmentPadding*2
+        }
         
-        defaultHeight = editTextView.sizeForText(text: editTextView.attributedPlaceholder, width: self.editView.frame.width-20).height
-        heightEditTextViewConstraint.constant = defaultHeight
-//        heightEditContainerViewConstraint.constant = defaultHeight + 10
-        widthEditTextViewConstraint.constant = editTextView.sizeForText(text: editTextView.attributedPlaceholder, width: self.editView.frame.width-20).width + editTextView.textContainer.lineFragmentPadding*2
+        self.view.layoutIfNeeded()
     }
     
     @IBAction func tapBackButton(_ sender: Any) {
@@ -264,7 +311,6 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
         let position: Float = Float(positionY!)
         
         let urlPath = Bundle.main.url(forResource: backgroundArray[backgroundSelectedIndex], withExtension: "mp4")!
-//        let icon = resizeImage(image: UIImage.init(named: iconArray[iconSelectedIndex])!, targetSize: CGSize(width: editImageView.frame.width, height: editImageView.frame.height))
 
         self.editor.makeVideo(fromVideoAt: urlPath, icon: UIImage.init(named: iconArray[iconSelectedIndex])!, fontStyle: fontStyleArray[fontStyleSelectedIndex], textString: editTextView.text, textColor: fontColorArray[fontColorSelectedIndex], background: reSizebackgroundArray[backgroundSelectedIndex], textSize: editTextView.font!.pointSize, alignment: currentAlignment, y: positionY!/editView.frame.height, scaleHeight: Const.originVideoHeight / editView.frame.height, textScaleWidth: editTextView.frame.width/editView.frame.width) { exportedURL in
             
@@ -314,23 +360,6 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
     }
     
     @objc func handlePanGesture(gesture: UIPanGestureRecognizer) {
-//        if gesture.state == .began {
-//            print("began")
-//            if let position = currentPosition {
-//                editContainerView.transform = CGAffineTransform(translationX: 0, y: position.ty)
-//                print(position.ty)
-//            }
-//        } else if gesture.state == .changed {
-//            print("changed")
-//            let translation = gesture.translation(in: self.editView)
-//            editContainerView.transform = CGAffineTransform(translationX: 0, y: translation.y)
-////            print(translation.y)
-//        } else if gesture.state == .ended {
-//            print("ended")
-//            let translation = gesture.translation(in: self.editView)
-//            currentPosition = CGAffineTransform(translationX: 0, y: translation.y)
-////            print(translation.y)
-//        }
         let translation = gesture.translation(in: self.editView)
         let centerY = editTextView.center.y + translation.y
         if centerY < 340, centerY > 40 {
@@ -342,6 +371,14 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
         gesture.setTranslation(CGPoint.zero, in: self.editView)
         positionY = editTextView.center.y
         print(editTextView.center.y)
+    }
+    
+    @IBAction func sliderDidChange(_ sender: UISlider) {
+        let size = CGFloat(Int(sender.value))
+        
+        print(size)
+        self.editTextView.font = UIFont(name: self.fontStyleArray[fontStyleSelectedIndex], size: size)
+        configTextViewSize()
     }
 }
 
@@ -517,4 +554,15 @@ extension AmongUsMainVC: UITextViewDelegate {
         let linesAfterChange = existingLines.count + newLines.count - 1
         return linesAfterChange <= textView.textContainer.maximumNumberOfLines
     }
+}
+
+extension AmongUsMainVC {
+    func configForEditing(amongUs: AmongUsModel) {
+        self.currentAmongUs = amongUs
+    }
+}
+
+// MARK: Slide Delegate
+extension AmongUsMainVC {
+    
 }

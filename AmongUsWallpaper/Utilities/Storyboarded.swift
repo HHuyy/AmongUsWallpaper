@@ -13,6 +13,7 @@ public enum AppStoryboard: String {
     case myWallpaper = "MyWallpaper"
     case setting = "Setting"
     case preview = "Preview"
+    case amongUsMain = "AmongUsMain"
 }
 
 public enum StoryboardInstantiateType {

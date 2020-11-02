@@ -3,7 +3,7 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,7 +12,7 @@
         <!--Among Us MainVC-->
         <scene sceneID="EDE-s6-63K">
             <objects>
-                <viewController storyboardIdentifier="AmongUsMain" id="9pa-Ab-5Jf" customClass="AmongUsMainVC" customModule="AmongUsWallpaper" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AmongUsMainVC" id="9pa-Ab-5Jf" customClass="AmongUsMainVC" customModule="AmongUsWallpaper" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qoZ-vi-JEB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -241,6 +241,9 @@
                                                                         <color key="minimumTrackTintColor" red="1" green="0.65490196078431373" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <color key="maximumTrackTintColor" red="0.61960784310000006" green="0.69019607839999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
                                                                         <color key="thumbTintColor" red="1" green="0.65490196078431373" blue="0.20392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                                                        <connections>
+                                                                            <action selector="sliderDidChange:" destination="9pa-Ab-5Jf" eventType="valueChanged" id="wh8-FJ-JR2"/>
+                                                                        </connections>
                                                                     </slider>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cJc-Yi-zvU">
                                                                         <rect key="frame" x="242.33333333333331" y="0.0" width="130.33333333333331" height="39.333333333333336"/>

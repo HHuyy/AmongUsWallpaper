@@ -46,7 +46,11 @@ extension MyWallpaperVC: UICollectionViewDelegate, UICollectionViewDelegateFlowL
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        let editVC = 
+        let wallpaper = self.wallpapers[indexPath.row]
+        
+        let amongUsMainVC = AmongUsMainVC.instantiate()
+        amongUsMainVC.configForEditing(amongUs: wallpaper)
+        self.navigationController?.pushViewController(amongUsMainVC, animated: true)
     }
 }
 
@@ -78,6 +82,10 @@ extension MyWallpaperVC {
     }
     
     func resizeAllWallpaper() {
+        if self.backgroundWallpaper.first?.size == self.cellSize {
+            return
+        }
+        
         self.backgroundWallpaper = self.backgroundWallpaper.map {$0.resize(to: self.cellSize)}
         self.collectionView.reloadData()
     }
