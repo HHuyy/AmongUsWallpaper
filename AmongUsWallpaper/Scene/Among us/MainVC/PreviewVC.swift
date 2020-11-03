@@ -146,9 +146,9 @@ class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDele
     }
     
     func livePhotoDemo() {
-        LivePhoto.generate(from: nil, videoURL: pickedURL!) { (percent) in
+        LivePhoto.generate(from: nil, videoURL: pickedURL!, progress: { (percent) in
             
-        } completion: { (livePhoto, resources) in
+        }) { (livePhoto, resources) in
             if let resources = resources {
                 LivePhoto.saveToLibrary(resources, completion: { (success) in
                     if success {
@@ -161,7 +161,6 @@ class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDele
                 })
             }
         }
-        
     }
     
     // MARK: PHLivePhotoViewDelegate

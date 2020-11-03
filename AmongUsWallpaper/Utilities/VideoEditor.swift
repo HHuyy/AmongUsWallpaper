@@ -215,7 +215,7 @@ class VideoEditor: NSObject {
 }
 
 class VideoEditors {
-    func makeVideo(fromVideoAt videoURL: URL, icon: UIImage, fontStyle: String, textString text: String, textColor: UInt, background: UIImage, textSize: CGFloat, alignment: TextAlignment, y: CGFloat, scaleHeight: CGFloat, scaleWidth: CGFloat, textScaleHeight: CGFloat, textScaleWidth: CGFloat, onComplete: @escaping (URL?) -> Void) {
+    func makeVideo(fromVideoAt videoURL: URL, icon: UIImage, fontStyle: String, textString text: String, textColor: UInt, background: UIImage, textSize: CGFloat, alignment: TextAlignment, y: CGFloat, scaleHeight: CGFloat, scaleWidth: CGFloat, textScaleHeight: CGFloat, textScaleWidth: CGFloat, backgroundColor: UInt, onComplete: @escaping (URL?) -> Void) {
 //    onComplete(videoURL)
     let asset = AVURLAsset(url: videoURL)
     let composition = AVMutableComposition()
@@ -267,7 +267,7 @@ class VideoEditors {
     overlayLayer.frame = CGRect(origin: .zero, size: videoSize)
         overlayLayer.isGeometryFlipped = true
     
-        add(text: text, y: y, textStyle: fontStyle, textColor: UIColor.init(rgb: textColor), textSize: textSize, icon: icon, to: overlayLayer, videoSize: videoSize, alignment: alignment, scaleHeight: scaleHeight, scaleWidth: scaleWidth, textScaleHeight: textScaleHeight, textScaleWidth: textScaleWidth)
+        add(text: text, y: y, textStyle: fontStyle, textColor: UIColor.init(rgb: textColor), textSize: textSize, icon: icon, to: overlayLayer, videoSize: videoSize, alignment: alignment, scaleHeight: scaleHeight, scaleWidth: scaleWidth, textScaleHeight: textScaleHeight, textScaleWidth: textScaleWidth, backgroundColor: backgroundColor)
         
     let outputLayer = CALayer()
     outputLayer.frame = CGRect(origin: .zero, size: videoSize)
@@ -340,7 +340,7 @@ class VideoEditors {
     layer.addSublayer(imageLayer)
   }
   
-    private func add(text: String, y: CGFloat, textStyle: String, textColor: UIColor, textSize: CGFloat, icon: UIImage, to layer: CALayer, videoSize: CGSize, alignment: TextAlignment, scaleHeight: CGFloat, scaleWidth: CGFloat, textScaleHeight: CGFloat, textScaleWidth: CGFloat) {
+    private func add(text: String, y: CGFloat, textStyle: String, textColor: UIColor, textSize: CGFloat, icon: UIImage, to layer: CALayer, videoSize: CGSize, alignment: TextAlignment, scaleHeight: CGFloat, scaleWidth: CGFloat, textScaleHeight: CGFloat, textScaleWidth: CGFloat, backgroundColor: UInt) {
 
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = .center
@@ -374,11 +374,12 @@ class VideoEditors {
         width: videoSize.width * textScaleWidth,
         height: videoSize.height * textScaleHeight) //attributedText.height(containerWidth: videoSize.width)
     
+        let gradientColor = UIColor.init(rgb: backgroundColor).cgColor
     let gradient = CAGradientLayer()
     let cor1 = UIColor.clear.cgColor
     let cor2 = UIColor.black.cgColor
     gradient.type = .axial
-    gradient.colors = [cor1, cor2, cor2]
+    gradient.colors = [cor1, cor2, cor2] // TODO: - replace 'cor2' with 'gradientColor'
     gradient.startPoint = CGPoint(x: 0, y: 1)
     gradient.endPoint = CGPoint(x: 0.1, y: 1)
     gradient.frame = CGRect(

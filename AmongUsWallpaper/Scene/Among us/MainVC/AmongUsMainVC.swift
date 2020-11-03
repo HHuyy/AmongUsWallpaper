@@ -85,6 +85,10 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
     lazy var backgroundArray: [String] = {
        return ["1", "2", "3", "4", "5", "6", "7", "8"]
     }()
+    // TODO: - add color 
+    lazy var backgroundColorArray: [UInt]! = {
+        return []
+    }()
     
     lazy var reSizebackgroundArray: [UIImage] = {
         var array = [UIImage]()
@@ -316,10 +320,11 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
         let font = editTextView.font!.fontName
         let textColor: UInt = fontColorArray[fontColorSelectedIndex]
         let position: Float = Float(positionY!)
+        let backgroundColor = backgroundColorArray[backgroundSelectedIndex]
         
         let urlPath = Bundle.main.url(forResource: backgroundArray[backgroundSelectedIndex], withExtension: "mp4")!
 
-        self.editor.makeVideo(fromVideoAt: urlPath, icon: UIImage.init(named: iconArray[iconSelectedIndex])!, fontStyle: fontStyleArray[fontStyleSelectedIndex], textString: editTextView.text, textColor: fontColorArray[fontColorSelectedIndex], background: reSizebackgroundArray[backgroundSelectedIndex], textSize: editTextView.font!.pointSize, alignment: currentAlignment, y: positionY!/editView.frame.height, scaleHeight: Const.originVideoHeight / editView.frame.height, scaleWidth: Const.originVideoWidth / editView.frame.width, textScaleHeight: editTextView.frame.height / editView.frame.height, textScaleWidth: editTextView.frame.width/editView.frame.width) { exportedURL in
+        self.editor.makeVideo(fromVideoAt: urlPath, icon: UIImage.init(named: iconArray[iconSelectedIndex])!, fontStyle: fontStyleArray[fontStyleSelectedIndex], textString: editTextView.text, textColor: fontColorArray[fontColorSelectedIndex], background: reSizebackgroundArray[backgroundSelectedIndex], textSize: editTextView.font!.pointSize, alignment: currentAlignment, y: positionY!/editView.frame.height, scaleHeight: Const.originVideoHeight / editView.frame.height, scaleWidth: Const.originVideoWidth / editView.frame.width, textScaleHeight: editTextView.frame.height / editView.frame.height, textScaleWidth: editTextView.frame.width/editView.frame.width, backgroundColor: backgroundColor) { exportedURL in
             
             guard let exportedURL = exportedURL else {
                 return
