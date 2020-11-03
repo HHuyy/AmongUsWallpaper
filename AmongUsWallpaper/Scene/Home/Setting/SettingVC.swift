@@ -72,7 +72,15 @@ extension SettingVC: UICollectionViewDelegateFlowLayout, UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            break
+            
+            if let name = URL(string: ""), !name.absoluteString.isEmpty {
+                    let objectsToShare = [name]
+                    let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+
+                    self.present(activityVC, animated: true, completion: nil)
+                }else  {
+                    // show alert for not available
+                }
         case 1:
             let contactUsVC = ContactUsViewController.instantiate()
             self.navigationController?.pushViewController(contactUsVC, animated: true)

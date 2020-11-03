@@ -11,6 +11,7 @@ import Photos
 import PhotosUI
 import AVFoundation
 import AVKit
+import SVProgressHUD
 
 class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDelegate {
     static var storyboardName: AppStoryboard = .preview
@@ -42,6 +43,7 @@ class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDele
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        moreButton.isHidden = true
         self.playerView.setupPlayerItem(asset: compostion, videoComposition: videoCompostion)
         livePhotoView.contentMode = .scaleAspectFit
         livePhotoView.delegate = self
@@ -146,11 +148,13 @@ class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDele
     }
     
     func livePhotoDemo() {
+        SVProgressHUD.show()
         LivePhoto.generate(from: nil, videoURL: pickedURL!, progress: { (percent) in
-            
+            //add progress bar here
         }) { (livePhoto, resources) in
             if let resources = resources {
                 LivePhoto.saveToLibrary(resources, completion: { (success) in
+                    SVProgressHUD.dismiss()
                     if success {
                         self.saveWallpaper()
                         self.postAlert("Live Photo Saved", message:"The live photo was successfully saved to Photos.")

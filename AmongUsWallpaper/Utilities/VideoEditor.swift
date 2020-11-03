@@ -64,10 +64,10 @@ class VideoEditor: NSObject {
         outputLayer.addSublayer(videoLayer)
         outputLayer.addSublayer(overlayLayer)
         
-        add(
-        text: "demo text",
-        to: overlayLayer,
-        videoSize: videoSize)
+//        add(
+//        text: "demo text",
+//        to: overlayLayer,
+//        videoSize: videoSize)
         
         self.videoComposition.renderSize = videoSize
         self.videoComposition.frameDuration = CMTime(value: 1, timescale: 30)
@@ -341,21 +341,22 @@ class VideoEditors {
   }
   
     private func add(text: String, y: CGFloat, textStyle: String, textColor: UIColor, textSize: CGFloat, icon: UIImage, to layer: CALayer, videoSize: CGSize, alignment: TextAlignment, scaleHeight: CGFloat, scaleWidth: CGFloat, textScaleHeight: CGFloat, textScaleWidth: CGFloat, backgroundColor: UInt) {
+        
 
         let paragraph = NSMutableParagraphStyle()
         paragraph.alignment = .center
-    let attributedText = NSAttributedString(string: text, attributes: [
+        let attributedText = NSAttributedString(string: text, attributes: [
             .font: UIFont(name: textStyle, size: textSize * scaleHeight) as Any,
             .foregroundColor: textColor])
 //    let mainY = videoSize.height * 0.66
-    let mainY = 1920 * y
-    
-    let textLayer = CATextLayer()
-    textLayer.string = attributedText
-    textLayer.shouldRasterize = true
-      textLayer.isWrapped = true
-    textLayer.rasterizationScale = UIScreen.main.scale
-    textLayer.backgroundColor = UIColor.clear.cgColor
+        let mainY = 1920 * y
+        let imageHeight = videoSize.height * 0.15
+        let textLayer = CATextLayer()
+        textLayer.string = attributedText
+        textLayer.shouldRasterize = true
+        textLayer.isWrapped = true
+        textLayer.rasterizationScale = UIScreen.main.scale
+        textLayer.backgroundColor = UIColor.clear.cgColor
 //    textLayer.isGeometryFlipped = true
         switch alignment {
         case .left:
@@ -368,45 +369,43 @@ class VideoEditors {
             textLayer.alignmentMode = .center
         }
     
-    textLayer.frame = CGRect(
-      x: 10 * scaleWidth,
-      y: mainY,
-        width: videoSize.width * textScaleWidth,
-        height: videoSize.height * textScaleHeight) //attributedText.height(containerWidth: videoSize.width)
+        textLayer.frame = CGRect(
+            x: 10 * scaleWidth,
+            y: mainY,
+            width: videoSize.width * textScaleWidth,
+            height: videoSize.height * textScaleHeight) //attributedText.height(containerWidth: videoSize.width)
     
         let gradientColor = UIColor.init(rgb: backgroundColor).cgColor
-    let gradient = CAGradientLayer()
-    let cor1 = UIColor.clear.cgColor
-    let cor2 = UIColor.black.cgColor
-    gradient.type = .axial
-    gradient.colors = [cor1, cor2, cor2] // TODO: - replace 'cor2' with 'gradientColor'
-    gradient.startPoint = CGPoint(x: 0, y: 1)
-    gradient.endPoint = CGPoint(x: 0.1, y: 1)
-    gradient.frame = CGRect(
-        x: textLayer.frame.origin.x,
+        let gradient = CAGradientLayer()
+        let cor1 = UIColor.clear.cgColor
+        let cor2 = UIColor.black.cgColor
+        gradient.type = .axial
+        gradient.colors = [cor1, gradientColor, gradientColor] // TODO: - replace 'cor2' with 'gradientColor'
+        gradient.startPoint = CGPoint(x: 0, y: 1)
+        gradient.endPoint = CGPoint(x: 0.1, y: 1)
+        gradient.frame = CGRect(
+        x: gradient.frame.width/2 - imageHeight * (2/3),
           y: mainY,
-        width: videoSize.width,
+            width: videoSize.width * 1.1,
         height: textLayer.frame.height)
     
-    let textAnimation = CABasicAnimation(keyPath: "position")
-    textAnimation.fromValue = [0 , mainY + textLayer.frame.height/2] //attributedText.width(containerHeight: videoSize.height)*2
-    textAnimation.toValue = [videoSize.width, mainY + textLayer.frame.height/2]
-    textAnimation.duration = 7
-    textAnimation.autoreverses = true
-    textAnimation.timingFunction = CAMediaTimingFunction(name: .default)
+        let textAnimation = CABasicAnimation(keyPath: "position")
+        textAnimation.fromValue = [videoSize.width/2 - imageHeight * (2/3), mainY + textLayer.frame.height/2] //attributedText.width(containerHeight: videoSize.height)*2
+        textAnimation.toValue = [videoSize.width*2, mainY + textLayer.frame.height/2]
+        textAnimation.duration = 9
+        textAnimation.autoreverses = false
+        textAnimation.timingFunction = CAMediaTimingFunction(name: .default)
         textAnimation.beginTime = AVCoreAnimationBeginTimeAtZero
-    textAnimation.isRemovedOnCompletion = false
+        textAnimation.isRemovedOnCompletion = false
         
-    textLayer.displayIfNeeded()
-    gradient.displayIfNeeded()
-        
-    gradient.add(textAnimation, forKey: "position1")
+        textLayer.displayIfNeeded()
+        gradient.displayIfNeeded()
+            
+        gradient.add(textAnimation, forKey: "position1")
     
     let crewIconLayer = CALayer()
     let myImage = icon.cgImage
-    let imageHeight = videoSize.height * 0.15
-//    let w = myImage?.width
-//    let h = myImage?.height
+    
     crewIconLayer.frame = CGRect(
         x: 0,
         y: mainY,

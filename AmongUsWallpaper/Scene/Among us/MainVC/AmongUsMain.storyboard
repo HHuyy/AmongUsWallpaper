@@ -3,7 +3,7 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -428,9 +428,27 @@
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nw4-md-0Fo" customClass="RoundUIView" customModule="AmongUsWallpaper" customModuleProvider="target">
+                                                <rect key="frame" x="30.000000000000004" y="208.66666666666669" width="49.333333333333343" height="73.666666666666686"/>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
+                                            <constraint firstItem="nw4-md-0Fo" firstAttribute="centerY" secondItem="W6H-db-sVU" secondAttribute="centerY" id="4EU-6J-bwo"/>
+                                            <constraint firstItem="nw4-md-0Fo" firstAttribute="height" secondItem="W6H-db-sVU" secondAttribute="height" id="5dq-NS-a3x"/>
+                                            <constraint firstItem="nw4-md-0Fo" firstAttribute="centerX" secondItem="W6H-db-sVU" secondAttribute="centerX" id="CAy-zw-Afo"/>
                                             <constraint firstItem="W6H-db-sVU" firstAttribute="height" secondItem="qjY-Ev-7xa" secondAttribute="height" multiplier="0.15" id="FY8-20-JXa"/>
                                             <constraint firstItem="S4G-1h-14f" firstAttribute="centerY" secondItem="v5r-hV-RPa" secondAttribute="centerY" id="FzS-Tf-ylz"/>
                                             <constraint firstItem="v5r-hV-RPa" firstAttribute="centerY" secondItem="qjY-Ev-7xa" secondAttribute="centerY" id="M8C-BJ-icw"/>
@@ -439,6 +457,7 @@
                                             <constraint firstItem="v5r-hV-RPa" firstAttribute="leading" secondItem="qjY-Ev-7xa" secondAttribute="leading" constant="10" id="TYm-J3-2s0"/>
                                             <constraint firstItem="W6H-db-sVU" firstAttribute="centerY" secondItem="v5r-hV-RPa" secondAttribute="centerY" id="WdM-1A-s5q"/>
                                             <constraint firstItem="S4G-1h-14f" firstAttribute="width" secondItem="v5r-hV-RPa" secondAttribute="width" id="m0h-V6-vUu"/>
+                                            <constraint firstItem="nw4-md-0Fo" firstAttribute="width" secondItem="W6H-db-sVU" secondAttribute="width" id="nA2-zP-LYD"/>
                                             <constraint firstItem="S4G-1h-14f" firstAttribute="centerX" secondItem="v5r-hV-RPa" secondAttribute="centerX" id="sMX-vh-ogo"/>
                                         </constraints>
                                         <userDefinedRuntimeAttributes>
@@ -490,7 +509,9 @@
                         <outlet property="backgroundButton" destination="yQa-27-P1r" id="TsQ-Sq-oIC"/>
                         <outlet property="backgroundCollectionView" destination="iR5-bs-3w5" id="xC8-w9-3Kb"/>
                         <outlet property="backgroundContainView" destination="OMX-Vo-hEz" id="mRp-0V-gx1"/>
+                        <outlet property="editImageBorderView" destination="nw4-md-0Fo" id="Rrs-AE-HgC"/>
                         <outlet property="editImageView" destination="W6H-db-sVU" id="iJQ-dJ-ISp"/>
+                        <outlet property="editTextBorderView" destination="S4G-1h-14f" id="Qrg-qL-aVK"/>
                         <outlet property="editTextView" destination="v5r-hV-RPa" id="1Dx-k5-8CA"/>
                         <outlet property="editView" destination="qjY-Ev-7xa" id="Ie5-zv-wij"/>
                         <outlet property="fontButton" destination="s5O-EL-SZB" id="eF1-Eg-ySB"/>
