@@ -51,8 +51,7 @@ class SettingVC: UIViewController, StoryboardInstantiatable {
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        self.navigationController?.isToolbarHidden = true
+        super.viewWillDisappear(animated)
     }
     
     func setupGesture() {
@@ -75,17 +74,14 @@ extension SettingVC: UICollectionViewDelegateFlowLayout, UICollectionViewDelegat
         case 0:
             break
         case 1:
-            let privacyVC = PrivacyVC.instantiate()
-            privacyVC.modalPresentationStyle = .overFullScreen
-            present(privacyVC, animated: true, completion: nil)
-        case 2:
             let contactUsVC = ContactUsViewController.instantiate()
-            contactUsVC.modalPresentationStyle = .overFullScreen
-            present(contactUsVC, animated: true, completion: nil)
-        case 3:
+            self.navigationController?.pushViewController(contactUsVC, animated: true)
+        case 2:
             let termOfUseVC = TermOfUseVC.instantiate()
-            termOfUseVC.modalPresentationStyle = .overFullScreen
-            present(termOfUseVC, animated: true, completion: nil)
+            self.navigationController?.pushViewController(termOfUseVC, animated: true)
+        case 3:
+            let privacyVC = PrivacyVC.instantiate()
+            self.navigationController?.pushViewController(privacyVC, animated: true)
         default:
             break
         }
