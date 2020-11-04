@@ -14,6 +14,7 @@ target 'AmongUsWallpaper' do
   pod 'IQKeyboardManager'
   pod 'UITextView+Placeholder'
   pod 'SVProgressHUD'
+  pod 'Google-Mobile-Ads-SDK'
   # Pods for AmongUsWallpaper
 
 end

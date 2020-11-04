@@ -12,10 +12,12 @@ import PhotosUI
 import AVFoundation
 import AVKit
 import SVProgressHUD
+import GoogleMobileAds
 
 class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDelegate {
     static var storyboardName: AppStoryboard = .preview
     
+
     @IBOutlet weak var livePhotoView: PHLivePhotoView!
     
     @IBOutlet weak var backButton: UIButton!
@@ -40,6 +42,8 @@ class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDele
     private var player: AVPlayer!
     private var playerLayer: AVPlayerLayer!
     private var asset: AVAsset!
+    
+    private var interstitialAd: GADInterstitial?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,6 +90,7 @@ class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDele
     private func restart() {
         player.seek(to: .zero)
         player.play()
+        setupFullscreenAd()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -136,6 +141,7 @@ class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDele
     
     @IBAction func downloadButtonDidTap(_ sender: Any) {
         livePhotoDemo()
+        showAd()
     }
     @IBAction func backButtonDidTap(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -223,5 +229,32 @@ extension PreviewVC {
                 }
             }
         }
+    }
+}
+    
+extension PreviewVC: GADInterstitialDelegate {
+    func setupFullscreenAd() {
+        self.interstitialAd = createAndLoadInterstitial()
+    }
+    
+    func createAndLoadInterstitial() -> GADInterstitial {
+        var interstitial = GADInterstitial(adUnitID: Constant.fullscreenId)
+//          var interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        interstitial.delegate = self
+        interstitial.load(GADRequest())
+        return interstitial
+    }
+    
+    func showAd() {
+        if interstitialAd!.isReady {
+            interstitialAd!.present(fromRootViewController: self)
+        } else {
+            print("Ad wasn't ready")
+        }
+    }
+    
+    func interstitialDidDismissScreen(_ ad: GADInterstitial) {
+        // download here
+        self.interstitialAd = createAndLoadInterstitial()
     }
 }

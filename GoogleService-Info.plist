@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>147080485425-h8asocff11qhlbdbbjron5642m8r7ojp.apps.googleusercontent.com</string>
+	<string>147080485425-prb3lui972ag13g7ptcjj7uuqac19rfc.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.147080485425-h8asocff11qhlbdbbjron5642m8r7ojp</string>
+	<string>com.googleusercontent.apps.147080485425-prb3lui972ag13g7ptcjj7uuqac19rfc</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDu0bSzlPsFsdmnvbqYXhGtk49VMV7og2E</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +13,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.linhanh68.AmongUsWallpaper</string>
+	<string>com.amonglivewwallpaper</string>
 	<key>PROJECT_ID</key>
 	<string>among-us-wallpaper-30e85</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +29,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:147080485425:ios:414b4a285f7a5deb321310</string>
+	<string>1:147080485425:ios:1bcc9c4f0efa4c1f321310</string>
 	<key>DATABASE_URL</key>
 	<string>https://among-us-wallpaper-30e85.firebaseio.com</string>
 </dict>

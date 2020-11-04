@@ -11,6 +11,7 @@ import SnapKit
 import Photos
 import PhotosUI
 import SVProgressHUD
+import GoogleMobileAds
 
 struct AUIconCellModel {
     var imageName: String
@@ -57,6 +58,7 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
     
     // MARK: - Properties
     private var videoEditor: VideoEditor!
+    var bannerView: GADBannerView!
     
     var iconArray: [String] = {
         var _temp = [String]()
@@ -620,5 +622,16 @@ extension AmongUsMainVC {
         UIGraphicsEndImageContext()
         
         return newImage!
+    }
+}
+
+//MARK: Admob
+extension AmongUsMainVC: GADBannerViewDelegate {
+    func addBannerView() {
+        bannerView = GADBannerView(adSize: kGADAdSizeBanner)
+        bannerView.adUnitID = "ca-app-pub-6503869472106217/4674523867"
+        bannerView.rootViewController = self
+        bannerView.load(GADRequest())
+        bannerView.delegate = self
     }
 }
