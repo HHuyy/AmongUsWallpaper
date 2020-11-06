@@ -3,7 +3,7 @@
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -539,8 +539,8 @@
         <image name="AU-tab-bg-icon-ON" width="66" height="38"/>
         <image name="AU-tab-crew-icon-OFF" width="24" height="38"/>
         <image name="AU-tab-crew-icon-ON" width="24" height="38"/>
-        <image name="AU-tab-font-icon-OFF" width="26" height="38"/>
-        <image name="AU-tab-font-icon-ON" width="26" height="38"/>
+        <image name="AU-tab-font-icon-OFF" width="24" height="38"/>
+        <image name="AU-tab-font-icon-ON" width="24" height="38"/>
         <image name="align-icon-left-OFF" width="25" height="18"/>
         <image name="align-icon-left-ON" width="25" height="18"/>
         <image name="align-icon-mid-OFF" width="25" height="18"/>

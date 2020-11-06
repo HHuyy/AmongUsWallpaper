@@ -18,24 +18,28 @@ class MyWallpaperVC: UIViewController, StoryboardInstantiatable {
     
     private var wallpapers: [AmongUsModel] = []
     private var backgroundWallpaper: [UIImage] = []
-    
-    private var cellSize: CGSize!
+    private var dispatchGroup = DispatchGroup()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.registerCell(type: MyWallpaperCell.self)
-        self.getWallpapers()
+        registerNotification()
+    }
+    
+    func registerNotification() {
+        NotificationCenter.default.addObserver(self, selector: #selector(didUpdateAmongUs(_:)), name: .didSaveAmongUsKey, object: nil)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.getWallpapers()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        self.cellSize = CGSize(width: (self.collectionView.frame.width/2)-12, height: self.view.frame.height * Const.ratioHeight)
+        StaticDataProvider.shared.cellSize = CGSize(width: (self.collectionView.frame.width/2)-12, height: self.view.frame.height * Const.ratioHeight)
         resizeAllWallpaper()
     }
 }
@@ -69,28 +73,43 @@ extension MyWallpaperVC: UICollectionViewDataSource {
 
 extension MyWallpaperVC {
     func getWallpapers() {
+        self.backgroundWallpaper = []
         let amongUsDao = AmongUsDao()
         self.wallpapers = amongUsDao.getWallpaper()
         
-        for wallpaper in wallpapers {
-            guard let data = try? Data(contentsOf: wallpaper.getLocalWallpaperURL()) else {return}
-            
-            if let image = UIImage(data: data) {
-                self.backgroundWallpaper.append(image)
+        var count = 0
+        DispatchQueue.main.async {
+            for wallpaper in self.wallpapers {
+                guard let data = try? Data(contentsOf: wallpaper.getLocalWallpaperURL()) else {return}
+                
+                if let image = UIImage(data: data) {
+                    count += 1
+                    self.backgroundWallpaper.append(image)
+                    if count == self.wallpapers.count {
+                        self.resizeAllWallpaper()
+                    }
+                }
             }
         }
     }
     
     func resizeAllWallpaper() {
-        if self.backgroundWallpaper.first?.size == self.cellSize {
+        if self.backgroundWallpaper.first?.size == StaticDataProvider.shared.cellSize || StaticDataProvider.shared.cellSize == CGSize(width: 0, height: 0) {
             return
         }
         
-        self.backgroundWallpaper = self.backgroundWallpaper.map {$0.resize(to: self.cellSize)}
+        self.backgroundWallpaper = self.backgroundWallpaper.map {$0.resize(to: StaticDataProvider.shared.cellSize)}
         self.collectionView.reloadData()
     }
     
     func setUpItems() {
         
+    }
+}
+
+// MARK: - Notification
+extension MyWallpaperVC {
+    @objc func didUpdateAmongUs(_ object: Notification) {
+        self.getWallpapers()
     }
 }

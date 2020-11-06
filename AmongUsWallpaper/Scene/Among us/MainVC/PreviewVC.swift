@@ -205,6 +205,7 @@ extension PreviewVC {
                         try data.write(to: wallpaperURL)
                         print("File saved at: \(wallpaperURL.absoluteString)")
                         amongUsDao.saveWallpaper(amongUs.realmEntity())
+                        NotificationCenter.default.post(name: .didSaveAmongUsKey, object: amongUs.realmEntity())
                     } catch {
                         print("error saving file:", error)
                     }
@@ -246,7 +247,7 @@ extension PreviewVC: GADInterstitialDelegate {
     }
     
     func showAd() {
-        if interstitialAd!.isReady {
+        if interstitialAd?.isReady == true {
             interstitialAd!.present(fromRootViewController: self)
         } else {
             print("Ad wasn't ready")

@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+
 class StaticDataProvider {
     public static let shared = StaticDataProvider()
     
@@ -24,4 +26,5 @@ class StaticDataProvider {
         }
     }()
 
+    lazy var cellSize = CGSize(width: 0, height: 0)
 }

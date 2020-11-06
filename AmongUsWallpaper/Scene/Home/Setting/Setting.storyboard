@@ -37,13 +37,20 @@
                                             <constraint firstAttribute="width" secondItem="dCh-6C-Ax0" secondAttribute="height" multiplier="175/74" id="WK2-Am-8EI"/>
                                         </constraints>
                                     </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_among_us_background" translatesAutoresizingMaskIntoConstraints="NO" id="8Ir-tQ-uZM">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="160"/>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.12156862745098039" green="0.14509803921568626" blue="0.1803921568627451" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="8Ir-tQ-uZM" secondAttribute="trailing" id="Dhu-wB-CRI"/>
+                                    <constraint firstAttribute="bottom" secondItem="8Ir-tQ-uZM" secondAttribute="bottom" id="QIt-M7-gnX"/>
+                                    <constraint firstItem="8Ir-tQ-uZM" firstAttribute="top" secondItem="RHN-05-BrG" secondAttribute="top" id="Sc8-QV-vSA"/>
                                     <constraint firstItem="NV7-qc-x76" firstAttribute="centerY" secondItem="RHN-05-BrG" secondAttribute="centerY" id="TxG-GD-def"/>
                                     <constraint firstItem="dCh-6C-Ax0" firstAttribute="height" secondItem="RHN-05-BrG" secondAttribute="height" multiplier="74/160" id="UBb-4Q-4UV"/>
                                     <constraint firstItem="NV7-qc-x76" firstAttribute="height" secondItem="RHN-05-BrG" secondAttribute="height" multiplier="91.26/160" id="WJF-Ed-JYu"/>
                                     <constraint firstItem="dCh-6C-Ax0" firstAttribute="centerY" secondItem="NV7-qc-x76" secondAttribute="centerY" id="eYc-z0-uzP"/>
+                                    <constraint firstItem="8Ir-tQ-uZM" firstAttribute="leading" secondItem="RHN-05-BrG" secondAttribute="leading" id="idh-ar-dIK"/>
                                     <constraint firstItem="dCh-6C-Ax0" firstAttribute="leading" secondItem="NV7-qc-x76" secondAttribute="trailing" constant="25" id="osJ-rZ-en9"/>
                                     <constraint firstItem="NV7-qc-x76" firstAttribute="leading" secondItem="RHN-05-BrG" secondAttribute="leading" constant="34" id="yxJ-R2-rRF"/>
                                 </constraints>
@@ -335,6 +342,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="ic_among_us_background" width="374" height="160"/>
         <image name="ic_premium" width="175" height="74"/>
         <image name="ic_preview_back" width="34" height="34"/>
         <image name="ic_rocket" width="84" height="92"/>
