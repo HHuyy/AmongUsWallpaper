@@ -8,19 +8,27 @@
 import UIKit
 import GoogleMobileAds
 
+protocol TabbarDelegate: class {
+    func didTapEditButton()
+}
+
 class HomeVC: UIViewController, StoryboardInstantiatable {
     static var storyboardName: AppStoryboard = .home
     
     @IBOutlet var tabButtons: [UIButton]!
     @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var editButton: UIButton!
     
+    weak var delegate: TabbarDelegate?
     
     var discoverVC: UIViewController!
     var myWallpaperVC: UIViewController!
     var settingVC: UIViewController!
     var viewControllers: [UIViewController]!
     var selectedIndex: Int = 0
+    
+    var currentStatusForEditButton: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,10 +56,13 @@ class HomeVC: UIViewController, StoryboardInstantiatable {
         switch selectedIndex {
         case 0:
             titleLabel.text = "Discover"
+            editButton.isHidden = true
         case 1:
             titleLabel.text = "My Wallpaper"
+            editButton.isHidden = false
         case 2:
             titleLabel.text = "Setting"
+            editButton.isHidden = true
         default:
             break
         }
@@ -69,6 +80,9 @@ class HomeVC: UIViewController, StoryboardInstantiatable {
         vc.didMove(toParent: self) //Call the viewDidAppear method of the vc
     }
     
+    @IBAction func editButtonDidTap(_ sender: Any) {
+        NotificationCenter.default.post(name: .didEditMyWallpaper, object: nil)
+    }
     
     @objc func goToAUScreen() {
         PushVC.shared.goToAmongUs(nav: self.navigationController)

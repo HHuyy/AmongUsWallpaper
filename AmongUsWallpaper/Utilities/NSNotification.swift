@@ -9,4 +9,5 @@ import Foundation
 
 extension NSNotification.Name {
     static let didSaveAmongUsKey = NSNotification.Name("didSaveAmongUsKey")
+    static let didEditMyWallpaper = NSNotification.Name("didEditMyWallpaper")
 }

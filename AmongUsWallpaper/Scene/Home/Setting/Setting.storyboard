@@ -37,7 +37,7 @@
                                             <constraint firstAttribute="width" secondItem="dCh-6C-Ax0" secondAttribute="height" multiplier="175/74" id="WK2-Am-8EI"/>
                                         </constraints>
                                     </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_among_us_background" translatesAutoresizingMaskIntoConstraints="NO" id="8Ir-tQ-uZM">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_among_us_background" translatesAutoresizingMaskIntoConstraints="NO" id="8Ir-tQ-uZM">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="160"/>
                                     </imageView>
                                 </subviews>

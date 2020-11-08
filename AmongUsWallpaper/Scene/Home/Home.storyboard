@@ -36,11 +36,27 @@
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwc-cH-Fj7">
+                                                <rect key="frame" x="334" y="0.0" width="60" height="32.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="7oZ-OO-ehU"/>
+                                                </constraints>
+                                                <state key="normal" title="Edit">
+                                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="editButtonDidTap:" destination="2XB-0H-oDN" eventType="touchUpInside" id="0Bm-YX-e1X"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="wUy-L7-adM" firstAttribute="centerY" secondItem="rte-R7-eF9" secondAttribute="centerY" multiplier="0.5" id="7O4-GV-MYU"/>
                                             <constraint firstItem="wUy-L7-adM" firstAttribute="centerX" secondItem="rte-R7-eF9" secondAttribute="centerX" id="AAL-nG-SAS"/>
+                                            <constraint firstItem="uwc-cH-Fj7" firstAttribute="top" secondItem="rte-R7-eF9" secondAttribute="top" id="Atb-Jg-iio"/>
+                                            <constraint firstAttribute="trailing" secondItem="uwc-cH-Fj7" secondAttribute="trailing" constant="20" id="gA9-kH-43S"/>
+                                            <constraint firstItem="uwc-cH-Fj7" firstAttribute="centerY" secondItem="wUy-L7-adM" secondAttribute="centerY" id="vrV-ec-9eO"/>
+                                            <constraint firstItem="uwc-cH-Fj7" firstAttribute="height" secondItem="wUy-L7-adM" secondAttribute="height" multiplier="1.03175" id="wdP-QY-UH6"/>
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XtA-ky-xdR" userLabel="Tab View">
@@ -154,6 +170,7 @@
                     <navigationItem key="navigationItem" id="ETK-OO-c0f"/>
                     <connections>
                         <outlet property="contentView" destination="dqC-Sh-G3b" id="nrP-wO-G1t"/>
+                        <outlet property="editButton" destination="uwc-cH-Fj7" id="FOu-yF-NBR"/>
                         <outlet property="titleLabel" destination="wUy-L7-adM" id="GcO-VV-EmF"/>
                         <outletCollection property="tabButtons" destination="m6d-Tv-Ec9" collectionClass="NSMutableArray" id="2jw-qq-DUd"/>
                         <outletCollection property="tabButtons" destination="3NR-M6-50P" collectionClass="NSMutableArray" id="NZS-hB-4by"/>

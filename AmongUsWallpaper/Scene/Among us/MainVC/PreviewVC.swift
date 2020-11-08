@@ -13,11 +13,11 @@ import AVFoundation
 import AVKit
 import SVProgressHUD
 import GoogleMobileAds
+import StoreKit
 
 class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDelegate {
     static var storyboardName: AppStoryboard = .preview
     
-
     @IBOutlet weak var livePhotoView: PHLivePhotoView!
     
     @IBOutlet weak var backButton: UIButton!
@@ -37,6 +37,7 @@ class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDele
     var pickedURL: URL?
     // MARK: - Properties
     var amongUs: AmongUsModel?
+    private var products: [SKProduct] = []
     
     //demo
     private var player: AVPlayer!
@@ -95,7 +96,8 @@ class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDele
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        SVProgressHUD.show()
+        loadInapp()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -140,8 +142,11 @@ class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDele
     }
     
     @IBAction func downloadButtonDidTap(_ sender: Any) {
-        livePhotoDemo()
-        showAd()
+        if UserDefaults.isShowInapp {
+            checkStatusInapp()
+        } else {
+            showAd()
+        }
     }
     @IBAction func backButtonDidTap(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
@@ -232,7 +237,7 @@ extension PreviewVC {
         }
     }
 }
-    
+
 extension PreviewVC: GADInterstitialDelegate {
     func setupFullscreenAd() {
         self.interstitialAd = createAndLoadInterstitial()
@@ -240,22 +245,57 @@ extension PreviewVC: GADInterstitialDelegate {
     
     func createAndLoadInterstitial() -> GADInterstitial {
         var interstitial = GADInterstitial(adUnitID: Constant.fullscreenId)
-//          var interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
+        //          var interstitial = GADInterstitial(adUnitID: "ca-app-pub-3940256099942544/4411468910")
         interstitial.delegate = self
         interstitial.load(GADRequest())
         return interstitial
     }
     
     func showAd() {
+        if !UserDefaults.isShowInapp {
+            UserDefaults.standard.setValue(true, forKey: UserDefaultKeys.showInappKey)
+        }
+        
         if interstitialAd?.isReady == true {
             interstitialAd!.present(fromRootViewController: self)
         } else {
             print("Ad wasn't ready")
+            livePhotoDemo()
         }
     }
     
     func interstitialDidDismissScreen(_ ad: GADInterstitial) {
         // download here
         self.interstitialAd = createAndLoadInterstitial()
+    }
+    
+    func interstitialWillDismissScreen(_ ad: GADInterstitial) {
+        livePhotoDemo()
+    }
+}
+
+// MARK: Inapp purchase
+extension PreviewVC {
+    func loadInapp() {
+        AmongUsProduct.store.requestProducts { [weak self] (success, products) in
+            guard let self = self else { return }
+            if success {
+                self.products = products!
+            }
+            
+            SVProgressHUD.dismiss()
+        }
+    }
+    
+    func checkStatusInapp() {
+        if AmongUsProduct.store.isProductPurchased(InappId.buyOne.rawValue) {
+            livePhotoDemo()
+        } else {
+            let inappVC = InappViewController.instantiate()
+            let baseNavigation = UINavigationController(rootViewController: inappVC)
+            baseNavigation.modalPresentationStyle = .overFullScreen
+            inappVC.products = self.products
+            self.present(baseNavigation, animated: true, completion: nil)
+        }
     }
 }

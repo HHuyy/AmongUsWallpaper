@@ -14,6 +14,7 @@ public enum AppStoryboard: String {
     case setting = "Setting"
     case preview = "Preview"
     case amongUsMain = "AmongUsMain"
+    case inapp = "Inapp"
 }
 
 public enum StoryboardInstantiateType {

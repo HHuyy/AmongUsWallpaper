@@ -123,6 +123,13 @@
 		DA249BE2254B470800CCD5FA /* UICollectionView+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA249BE1254B470800CCD5FA /* UICollectionView+Ext.swift */; };
 		DA3C3352254C747D000CB8DB /* Preview.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA3C3351254C747D000CB8DB /* Preview.storyboard */; };
 		DA3C3355254C7497000CB8DB /* PreviewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3C3354254C7497000CB8DB /* PreviewVC.swift */; };
+		DAED2D382557DBFB000E2557 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DAED2D372557DBFB000E2557 /* StoreKit.framework */; };
+		DAED2D3B2557DCCB000E2557 /* AppInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAED2D3A2557DCCB000E2557 /* AppInfo.swift */; };
+		DAED2D402557DDC5000E2557 /* IAPHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAED2D3F2557DDC5000E2557 /* IAPHelper.swift */; };
+		DAED2D442557DE5A000E2557 /* AmongUsProduct.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAED2D432557DE5A000E2557 /* AmongUsProduct.swift */; };
+		DAED2D482557E7C6000E2557 /* UserDefaultKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAED2D472557E7C6000E2557 /* UserDefaultKeys.swift */; };
+		DAED2D4D25582FB7000E2557 /* Inapp.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DAED2D4C25582FB7000E2557 /* Inapp.storyboard */; };
+		DAED2D502558300D000E2557 /* InappViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAED2D4F2558300D000E2557 /* InappViewController.swift */; };
 		DAEE6D4D254DE8E8005BA38A /* Constant.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE6D4C254DE8E8005BA38A /* Constant.swift */; };
 		FC36D090254A6C3C00CC0726 /* DiscoverCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FC36D08E254A6C3C00CC0726 /* DiscoverCell.swift */; };
 		FC36D091254A6C3C00CC0726 /* DiscoverCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FC36D08F254A6C3C00CC0726 /* DiscoverCell.xib */; };
@@ -254,6 +261,13 @@
 		DA249BE1254B470800CCD5FA /* UICollectionView+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Ext.swift"; sourceTree = "<group>"; };
 		DA3C3351254C747D000CB8DB /* Preview.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Preview.storyboard; sourceTree = "<group>"; };
 		DA3C3354254C7497000CB8DB /* PreviewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewVC.swift; sourceTree = "<group>"; };
+		DAED2D372557DBFB000E2557 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		DAED2D3A2557DCCB000E2557 /* AppInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppInfo.swift; sourceTree = "<group>"; };
+		DAED2D3F2557DDC5000E2557 /* IAPHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IAPHelper.swift; sourceTree = "<group>"; };
+		DAED2D432557DE5A000E2557 /* AmongUsProduct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmongUsProduct.swift; sourceTree = "<group>"; };
+		DAED2D472557E7C6000E2557 /* UserDefaultKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultKeys.swift; sourceTree = "<group>"; };
+		DAED2D4C25582FB7000E2557 /* Inapp.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Inapp.storyboard; sourceTree = "<group>"; };
+		DAED2D4F2558300D000E2557 /* InappViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InappViewController.swift; sourceTree = "<group>"; };
 		DAEE6D4C254DE8E8005BA38A /* Constant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constant.swift; sourceTree = "<group>"; };
 		FC36D08E254A6C3C00CC0726 /* DiscoverCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiscoverCell.swift; sourceTree = "<group>"; };
 		FC36D08F254A6C3C00CC0726 /* DiscoverCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DiscoverCell.xib; sourceTree = "<group>"; };
@@ -270,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0F499FEA5433AA52D5964A1A /* Pods_AmongUsWallpaper.framework in Frameworks */,
+				DAED2D382557DBFB000E2557 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +403,7 @@
 		A2E16933802D98384EB326F2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DAED2D372557DBFB000E2557 /* StoreKit.framework */,
 				9A6F38BCFB6A544D3B00B921 /* Pods_AmongUsWallpaper.framework */,
 			);
 			name = Frameworks;
@@ -468,6 +484,7 @@
 				BB70EDD125496FF600520E6E /* Discover */,
 				BB70EDD22549703100520E6E /* My Wallpaper */,
 				BB70EDD32549704A00520E6E /* Setting */,
+				DAED2D4B25582EFF000E2557 /* Inapp */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -530,6 +547,26 @@
 			path = Extension;
 			sourceTree = "<group>";
 		};
+		DAED2D3E2557DDB4000E2557 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				DAED2D3A2557DCCB000E2557 /* AppInfo.swift */,
+				DAED2D3F2557DDC5000E2557 /* IAPHelper.swift */,
+				DAED2D432557DE5A000E2557 /* AmongUsProduct.swift */,
+				DAED2D472557E7C6000E2557 /* UserDefaultKeys.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		DAED2D4B25582EFF000E2557 /* Inapp */ = {
+			isa = PBXGroup;
+			children = (
+				DAED2D4C25582FB7000E2557 /* Inapp.storyboard */,
+				DAED2D4F2558300D000E2557 /* InappViewController.swift */,
+			);
+			path = Inapp;
+			sourceTree = "<group>";
+		};
 		FC36D087254A676300CC0726 /* cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -551,6 +588,7 @@
 				04F386CD254EA06F00EE7EE0 /* FileManager.swift */,
 				DAEE6D4C254DE8E8005BA38A /* Constant.swift */,
 				0430392325554D6800E76DD4 /* NSNotification.swift */,
+				DAED2D3E2557DDB4000E2557 /* Helper */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -649,6 +687,7 @@
 				043039172555038800E76DD4 /* 12.pdf in Resources */,
 				04AB71D42550247700CFE08F /* DancingScript-VariableFont_wght.ttf in Resources */,
 				043038DC2554F91100E76DD4 /* 11.mp4 in Resources */,
+				DAED2D4D25582FB7000E2557 /* Inapp.storyboard in Resources */,
 				879A065F254DB48C008C9F07 /* backgroundCell.xib in Resources */,
 				BB70EDDC2549720500520E6E /* MyWallpaper.storyboard in Resources */,
 				04ADE3572552F2D4003E4690 /* 2.mp4 in Resources */,
@@ -781,8 +820,12 @@
 				BB70EDCC2549639500520E6E /* HomeVC.swift in Sources */,
 				FC36D098254A78F400CC0726 /* Extension.swift in Sources */,
 				04F386D1254EAAB300EE7EE0 /* AmongUsEntity.swift in Sources */,
+				DAED2D482557E7C6000E2557 /* UserDefaultKeys.swift in Sources */,
 				04AB719825500F2F00CFE08F /* WebViewManager.swift in Sources */,
+				DAED2D502558300D000E2557 /* InappViewController.swift in Sources */,
 				FC36D090254A6C3C00CC0726 /* DiscoverCell.swift in Sources */,
+				DAED2D3B2557DCCB000E2557 /* AppInfo.swift in Sources */,
+				DAED2D442557DE5A000E2557 /* AmongUsProduct.swift in Sources */,
 				DA249BDE254B45BE00CCD5FA /* SettingCell.swift in Sources */,
 				044ACB0A254BD06F00DD8AD6 /* BaseNavigation.swift in Sources */,
 				DAEE6D4D254DE8E8005BA38A /* Constant.swift in Sources */,
@@ -804,6 +847,7 @@
 				DA3C3355254C7497000CB8DB /* PreviewVC.swift in Sources */,
 				879A0664254DC53B008C9F07 /* LivePhoto.swift in Sources */,
 				04AB719B25501AFC00CFE08F /* ContactUsViewController.swift in Sources */,
+				DAED2D402557DDC5000E2557 /* IAPHelper.swift in Sources */,
 				0430392425554D6800E76DD4 /* NSNotification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -953,7 +997,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.amonglivewwallpaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -977,7 +1021,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.amonglivewwallpaper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

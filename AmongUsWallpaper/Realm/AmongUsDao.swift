@@ -92,6 +92,14 @@ class AmongUsModel {
     func getLocalWallpaperURL() -> URL {
         return FileManager.wallpaperURL().appendingPathComponent("\(id).\(fileExtension())")
     }
+    
+    func isEqual(_ object: Any?) -> Bool {
+        guard let object = object as? AmongUsModel else {
+            return false
+        }
+        
+        return object.id == self.id
+    }
 }
 
 class AmongUsDao: RealmDao {
@@ -106,6 +114,11 @@ class AmongUsDao: RealmDao {
         }
         
         try? self.deleteObjects(Array(listWallpaper))
+    }
+    
+    func deleteWallpapers(_ ids: [String]) {
+        let predicate = NSPredicate(format: "id IN %@", ids)
+        try? self.deleteObjects(type: AmongUsEntity.self, predicate: predicate)
     }
     
     func getWallpaper() -> [AmongUsModel] {
