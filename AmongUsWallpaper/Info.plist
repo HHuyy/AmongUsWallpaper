@@ -25,7 +25,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Photo Library Access Warning</string>
+	<string>We need permission to download wallpaper to your library</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>DancingScript-SemiBold.ttf</string>

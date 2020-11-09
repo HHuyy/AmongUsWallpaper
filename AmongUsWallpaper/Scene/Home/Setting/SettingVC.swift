@@ -15,7 +15,7 @@ enum SettingUseCase: CaseIterable {
     
     var data: SettingModel {
         switch self {
-        case .shareApp: return SettingModel(image: UIImage(named: "ic_shareapp")!, title: "Share app")
+        case .shareApp: return SettingModel(image: UIImage(named: "ic_shareapp")!, title: "Rate app")
         case .contactUs: return SettingModel(image: UIImage(named: "ic_contactus")!, title: "Contact us")
         case .termOfUse: return SettingModel(image: UIImage(named: "ic_termofuse")!, title: "Term of User")
         case .privacy: return SettingModel(image: UIImage(named: "ic_privacy")!, title: "Privacy Policy")
@@ -72,15 +72,7 @@ extension SettingVC: UICollectionViewDelegateFlowLayout, UICollectionViewDelegat
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         switch indexPath.row {
         case 0:
-            
-            if let name = URL(string: ""), !name.absoluteString.isEmpty {
-                    let objectsToShare = [name]
-                    let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-
-                    self.present(activityVC, animated: true, completion: nil)
-                }else  {
-                    // show alert for not available
-                }
+            AppStoreReviewManager.requestReviewIfAppropriate()
         case 1:
             let contactUsVC = ContactUsViewController.instantiate()
             self.navigationController?.pushViewController(contactUsVC, animated: true)

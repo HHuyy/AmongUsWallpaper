@@ -159,7 +159,8 @@ class AmongUsMainVC: UIViewController, UIGestureRecognizerDelegate, PHLivePhotoV
         self.videoEditor = VideoEditor(fileName: self.currentBackground, type: self.videoType.rawValue)
         self.editView.setupPlayerItem(asset: self.videoEditor.composition)
         self.dispatchGroup.enter()
-        DispatchQueue.main.async {
+        
+        DispatchQueue.main.async(flags: .barrier) {
             for icon in self.iconArray {
                 //                self.iconImageArray.append(UIImage(named: icon)!.resize(to: CGSize(width: 70, height: self.iconHeight)))
                     UIImage(named: icon)!.resize(to: CGSize(width: 70, height: self.iconHeight)) { [weak self] image in

@@ -26,7 +26,12 @@ class InappViewController: UIViewController, StoryboardInstantiatable {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = true
-        titleLabel.text = products.first?.localizedTitle
+        if products.first?.localizedTitle.isEmpty == true {
+            titleLabel.text = "Unlimited Feature"
+        } else {
+            titleLabel.text = products.first?.localizedTitle
+        }
+        
         if let price = products.first?.localizedPrice {
             priceLabel.text = price
         }

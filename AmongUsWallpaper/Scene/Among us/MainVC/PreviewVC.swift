@@ -109,45 +109,39 @@ class PreviewVC: UIViewController, StoryboardInstantiatable, PHLivePhotoViewDele
                 self.livePhotoView.stopPlayback()
             }
         }
-        
+    }
+    
+    @IBAction func downloadButtonDidTap(_ sender: Any) {
         // Get the current authorization state.
         let status = PHPhotoLibrary.authorizationStatus()
-        
         if (status == PHAuthorizationStatus.authorized) {
             // Access has been granted.
+            if UserDefaults.isShowInapp {
+                checkStatusInapp()
+            } else {
+                showAd()
+            }
         }
         
-        else if (status == PHAuthorizationStatus.denied) {
+        else if (status == .denied) || (status == .restricted) {
             // Access has been denied.
+            self.showAlert(title: "Notifications", message: "We need your permission to download wallpaper to your library. Please go to Setting and change Photo permission", titleButtons: ["OK"], destructiveIndexs: []) { _ in
+                guard let settingURL = URL(string: UIApplication.openSettingsURLString) else {return}
+                
+                UIApplication.shared.open(settingURL)
+            }
         }
         
         else if (status == PHAuthorizationStatus.notDetermined) {
-            
             // Access has not been determined.
             PHPhotoLibrary.requestAuthorization({ (newStatus) in
-                
                 if (newStatus == PHAuthorizationStatus.authorized) {
-                    
-                }
-                
-                else {
                     
                 }
             })
         }
-        
-        else if (status == PHAuthorizationStatus.restricted) {
-            // Restricted access - normally won't happen.
-        }
     }
     
-    @IBAction func downloadButtonDidTap(_ sender: Any) {
-        if UserDefaults.isShowInapp {
-            checkStatusInapp()
-        } else {
-            showAd()
-        }
-    }
     @IBAction func backButtonDidTap(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
@@ -297,5 +291,23 @@ extension PreviewVC {
             inappVC.products = self.products
             self.present(baseNavigation, animated: true, completion: nil)
         }
+    }
+}
+
+extension PreviewVC {
+    func showAlert(title: String = "", message: String = "", titleButtons: [String] = ["OK"], destructiveIndexs: [Int] = [], action: ((Int) -> Void)? = nil) {
+        let alert = UIAlertController.init(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+
+        titleButtons.forEach { (titleButton) in
+            let index = titleButtons.firstIndex(of: titleButton)!
+            let style = destructiveIndexs.contains(index) ? UIAlertAction.Style.destructive : UIAlertAction.Style.default
+            let alertAction = UIAlertAction.init(title: titleButton, style: style, handler: { (_) in
+                action?(index)
+            })
+
+            alert.addAction(alertAction)
+        }
+
+        self.present(alert, animated: true, completion: nil)
     }
 }
